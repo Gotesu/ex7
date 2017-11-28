@@ -9,6 +9,7 @@ GameSession::~GameSession() {
 };
 void GameSession::playRound() {
     int gameOver = 2;
+<<<<<<< HEAD
     vector<Move*> optionsX;
     vector<Move*> optionsO;
     Move* choiceX;
@@ -42,6 +43,41 @@ void GameSession::playRound() {
 }
 
 void GameSession::updateBoard(Side s, Move *choice) {
+=======
+    vector<Point*> optionsX;
+    vector<Point*> optionsO;
+    Point* choiceX;
+    Point* choiceO;
+    while (gameOver != 0) {
+        vis->printBoard();
+        gameOver = 2;
+        cout << "X its your move." << endl;
+        optionsX = logic->allowedActions(board, BLACK);
+        choiceX = player1->doMove(optionsX);
+        if (choiceX != NULL) {
+            updateBoard(BLACK, choiceX);
+            delete choiceX;
+            optionsX.clear();
+        }
+        else
+            gameOver--;
+        vis->printBoard();
+        cout << "O its your move." << endl;
+        optionsO = logic->allowedActions(board, WHITE);
+        choiceO = player2->doMove(optionsO);
+        if (choiceO != NULL) {
+            updateBoard(WHITE, choiceO);
+            delete choiceO;
+            optionsO.clear();
+        }
+        else
+            gameOver--;
+    }
+    finalCountdown(board);
+}
+
+void GameSession::updateBoard(Side s, Point *choice) {
+>>>>>>> branch 'master' of https://github.com/Jed-El/ex3
     int i = 1;
     int j = 1;
     board->getBoard()[choice->getR()][choice->getC()] = s;

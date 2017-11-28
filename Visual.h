@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Jed-El/ex3
 #ifndef EX2_VISUAL_H
 #define EX2_VISUAL_H
 
