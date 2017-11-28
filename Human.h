@@ -1,11 +1,8 @@
-
-
 #ifndef EX2_HUMAN_H
 #define EX2_HUMAN_H
 
 #include <iostream>
 #include "Board.h"
-<<<<<<< HEAD
 #include "vector"
 #include "Player.h"
 #include <limits>

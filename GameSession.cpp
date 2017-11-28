@@ -1,5 +1,3 @@
-
-
 #include "GameSession.h"
 
 GameSession::GameSession(Board* board, Visual* vis, Logic* logic, Player* p1, Player* p2):

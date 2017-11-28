@@ -1,5 +1,3 @@
-
-<<<<<<< HEAD
 a.out: Board.o  Move.o Logic.o Player.o Human.o Visual.o StdVisual.o StdLogic.o GameSession.o main.o
 	g++ Board.o Move.o Logic.o Player.o Human.o Visual.o StdVisual.o StdLogic.o GameSession.o main.o
 

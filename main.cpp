@@ -1,10 +1,8 @@
-
 #include <iostream>
 #include "GameSession.h"
 #include "Human.h"
 #include "StdVisual.h"
 
-<<<<<<< HEAD
 int main() {
     Board* b1;
     Visual* vis;

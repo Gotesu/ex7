@@ -3,7 +3,6 @@
 #define EX2_STDLOGIC_H
 #include <vector>
 #include "Board.h"
-<<<<<<< HEAD
 #include "Logic.h"
 #include "Move.h"
 /***************************

@@ -1,5 +1,3 @@
-
-
 #ifndef EX2_STDVISUAL_H
 #define EX2_STDVISUAL_H
 

@@ -1,5 +1,3 @@
-
-
 #include "StdVisual.h"
 using namespace std;
 StdVisual::StdVisual(Board* b) : Visual(b) , b(b) {

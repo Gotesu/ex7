@@ -1,10 +1,7 @@
-
-
 #include "StdLogic.h"
 using namespace std;
 StdLogic::StdLogic():Logic() {}
 
-<<<<<<< HEAD
 vector<Move*> StdLogic::allowedActions(Board* b, Side s) {
     //array of directions symbols.
     char directions[] = {'R','L','D','U','\\','/',',','`'};

@@ -1,5 +1,3 @@
-
-
 #ifndef EX2_GAMESESSION_H
 #define EX2_GAMESESSION_H
 

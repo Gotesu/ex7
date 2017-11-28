@@ -1,6 +1,3 @@
-
-<<<<<<< HEAD
-
 #ifndef EX2_LOGIC_H
 #define EX2_LOGIC_H
 

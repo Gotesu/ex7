@@ -1,8 +1,3 @@
-
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/Jed-El/ex3
 #ifndef EX1_BOARD_H
 #define EX1_BOARD_H
 enum Side {WHITE, BLACK, EMPTY};

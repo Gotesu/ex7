@@ -1,6 +1,3 @@
-
-<<<<<<< HEAD
-
 #include "Human.h"
 #include <stdio.h>
 Human::Human(Side s):Player(s){};

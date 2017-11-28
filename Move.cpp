@@ -1,4 +1,3 @@
-
 #include "Move.h"
 
 Move::Move(int r, int c, vector<int> dir): r(r), c(c), dir(dir) {}
