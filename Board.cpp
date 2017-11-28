@@ -1,8 +1,4 @@
-/*
- * Ouriel Gotesdyner
- * gotesdo
- * 305554834
- */
+
 #include "Board.h"
 #include <iostream>
 #include <cstdlib>

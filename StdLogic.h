@@ -1,8 +1,4 @@
-/*
- * Ouriel Gotesdyner
- * gotesdo
- * 305554834
- */
+
 #ifndef EX2_STDLOGIC_H
 #define EX2_STDLOGIC_H
 #include <vector>

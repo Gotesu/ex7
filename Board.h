@@ -1,8 +1,3 @@
-/*
- * Ouriel Gotesdyner
- * gotesdo
- * 305554834
- */
 
 #ifndef EX1_BOARD_H
 #define EX1_BOARD_H

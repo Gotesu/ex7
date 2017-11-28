@@ -1,8 +1,4 @@
-/*
- * Ouriel Gotesdyner
- * gotesdo
- * 305554834
- */
+
 
 #ifndef EX2_PLAYER_H
 #define EX2_PLAYER_H

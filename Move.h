@@ -1,11 +1,4 @@
-/*
-* Ouriel Gotesdyner
-* gotesdo
-* 305554834
-*
-* Elad jedwab
-* 308193689
- */
+
 #ifndef MOVE_H
 #define MOVE_H
 

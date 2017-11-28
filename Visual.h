@@ -1,8 +1,3 @@
-/*
- * Ouriel Gotesdyner
- * gotesdo
- * 305554834
- */
 
 #ifndef EX2_VISUAL_H
 #define EX2_VISUAL_H

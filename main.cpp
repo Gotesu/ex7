@@ -1,8 +1,4 @@
-/*
- * Ouriel Gotesdyner
- * gotesdo
- * 305554834
- */
+
 #include <iostream>
 #include "GameSession.h"
 #include "Human.h"

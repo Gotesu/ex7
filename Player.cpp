@@ -1,8 +1,3 @@
-/*
- * Ouriel Gotesdyner
- * gotesdo
- * 305554834
- */
 
 #include "Player.h"
 

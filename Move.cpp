@@ -1,11 +1,4 @@
-/*
-* Ouriel Gotesdyner
-* gotesdo
-* 305554834
-*
-* Elad jedwab
-* 308193689
- */
+
 #include "Move.h"
 
 Move::Move(int r, int c, vector<int> dir): r(r), c(c), dir(dir) {}
