@@ -1,0 +1,35 @@
+/*
+* Ouriel Gotesdyner
+* gotesdo
+* 305554834
+*
+* Elad jedwab
+* 308193689
+ */
+#include "Move.h"
+
+Move::Move(int r, int c, vector<int> dir): r(r), c(c), dir(dir) {}
+
+int Move::getR() const {return r;}
+
+int Move::getC() const {return c;}
+
+vector<int> Move::getDir() {return dir;};
+
+void Move::pMove() const {
+    cout << "(" << r + 1 << ", " << c + 1 << ")";
+}
+
+bool Move::isEqual(Move *m2) {
+    if (m2->getC() == c && m2->getR() == r) {
+        return true;
+    }
+    return false;
+}
+
+bool Move::isEqual(int r2, int c2) {
+    if ((c2 == c) && (r2 == r)) {
+        return true;
+    }
+    return false;
+}

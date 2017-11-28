@@ -8,17 +8,17 @@
 using namespace std;
 StdLogic::StdLogic():Logic() {}
 
-vector<Point*> StdLogic::allowedActions(Board* b, Side s) {
+vector<Move*> StdLogic::allowedActions(Board* b, Side s) {
     //array of directions symbols.
     char directions[] = {'R','L','D','U','\\','/',',','`'};
-    vector<Point*> positions;
+    vector<Move*> positions;
     positions = mapPositions(b, s);
-    vector<Point*> allowedMoves;
+    vector<Move*> allowedMoves;
     //we need to check legitimate moves for each piece.
     for (int k = 0; k < positions.size(); k++) {
         for (int i = 0; i < 8; i++) {
-            Point *pos = findPossibility(positions[k], b, s, directions[i]);
-            //making sure we are not putting a point which is already there.
+            Move *pos = findPossibility(positions[k], b, s, directions[i]);
+            //making sure we are not putting a Move which is already there.
             if (pos != 0 && isANewOne(allowedMoves, pos)) {
                 allowedMoves.push_back(pos);
             }
@@ -32,13 +32,13 @@ vector<Point*> StdLogic::allowedActions(Board* b, Side s) {
     return allowedMoves;
 }
 
-std::vector<Point *> StdLogic::mapPositions(Board* b, Side s) {
-    vector<Point*> positions;
+std::vector<Move *> StdLogic::mapPositions(Board* b, Side s) {
+    vector<Move*> positions;
     //mapping all the relevant pieces of s side to a vector.
     for (int i = 0; i < b->getRow(); i++) {
         for (int j = 0; j < b->getCol(); j++) {
             if (s == b->getBoard()[i][j]) {
-                Point *p = new Point(i, j);
+                Move *p = new Move(i, j);
                 positions.push_back(p);
             }
         }
@@ -46,7 +46,7 @@ std::vector<Point *> StdLogic::mapPositions(Board* b, Side s) {
     return positions;
 }
 
-Point* StdLogic::findPossibility(Point* p, Board* b, Side s, char c) {
+Move* StdLogic::findPossibility(Move* p, Board* b, Side s, char c) {
     int i;
     switch(c) {
         //down direction.
@@ -63,8 +63,8 @@ Point* StdLogic::findPossibility(Point* p, Board* b, Side s, char c) {
             }
             if (p->getR() + i < b->getRow()
                 && b->getBoard()[p->getR() + i][p->getC()] == EMPTY && i != 1) {
-                Point* opPoint = new Point(p->getR() + i, p->getC());
-                return opPoint;
+                Move* opMove = new Move(p->getR() + i, p->getC());
+                return opMove;
             }
             break;
         //up direction
@@ -81,8 +81,8 @@ Point* StdLogic::findPossibility(Point* p, Board* b, Side s, char c) {
             }
             if (p->getR() - i >= 0
                 && b->getBoard()[p->getR() - i][p->getC()] == EMPTY && i != 1) {
-                Point* opPoint = new Point(p->getR() - i, p->getC());
-                return opPoint;
+                Move* opMove = new Move(p->getR() - i, p->getC());
+                return opMove;
             }
             break;
 
@@ -99,8 +99,8 @@ Point* StdLogic::findPossibility(Point* p, Board* b, Side s, char c) {
                 }
             }
             if (b->getBoard()[p->getR()][p->getC() + i] == EMPTY && i != 1) {
-                Point* opPoint = new Point(p->getR(), p->getC() + i);
-                return opPoint;
+                Move* opMove = new Move(p->getR(), p->getC() + i);
+                return opMove;
             }
             break;
         //left
@@ -116,8 +116,8 @@ Point* StdLogic::findPossibility(Point* p, Board* b, Side s, char c) {
                 }
             }
             if (b->getBoard()[p->getR()][p->getC() - i] == EMPTY && i != 1) {
-                Point* opPoint = new Point(p->getR(), p->getC() - i);
-                return opPoint;
+                Move* opMove = new Move(p->getR(), p->getC() - i);
+                return opMove;
             }
             break;
         //lower right direction
@@ -134,8 +134,8 @@ Point* StdLogic::findPossibility(Point* p, Board* b, Side s, char c) {
             }
             if (p->getR() + i < b->getRow()
                 && b->getBoard()[p->getR() +i][p->getC() +i] == EMPTY && i != 1) {
-                Point* opPoint = new Point(p->getR() + i, p->getC() + i);
-                return opPoint;
+                Move* opMove = new Move(p->getR() + i, p->getC() + i);
+                return opMove;
             }
             break;
         //upper right direction
@@ -152,8 +152,8 @@ Point* StdLogic::findPossibility(Point* p, Board* b, Side s, char c) {
             }
             if (p->getR() - i >= 0
                 && b->getBoard()[p->getR() - i][p->getC() + i] == EMPTY && i != 1) {
-                Point* opPoint = new Point(p->getR() - i, p->getC() + i);
-                return opPoint;
+                Move* opMove = new Move(p->getR() - i, p->getC() + i);
+                return opMove;
             }
             break;
         //upper left direction
@@ -170,8 +170,8 @@ Point* StdLogic::findPossibility(Point* p, Board* b, Side s, char c) {
             }
             if (p->getR() - i >= 0
                 && b->getBoard()[p->getR() - i][p->getC() - i] == EMPTY && i != 1) {
-                Point* opPoint = new Point(p->getR() - i, p->getC() - i);
-                return opPoint;
+                Move* opMove = new Move(p->getR() - i, p->getC() - i);
+                return opMove;
             }
             break;
         //lower left direction.
@@ -188,15 +188,15 @@ Point* StdLogic::findPossibility(Point* p, Board* b, Side s, char c) {
             }
             if (p->getR() + i < b->getRow()
                 && b->getBoard()[p->getR() + i][p->getC() - i] == EMPTY && i != 1) {
-                Point* opPoint = new Point(p->getR() + i, p->getC() - i);
-                return opPoint;
+                Move* opMove = new Move(p->getR() + i, p->getC() - i);
+                return opMove;
             }
             break;
     };
     return 0;
 }
 
-bool StdLogic::isANewOne(vector<Point *> &vec, Point *p) {
+bool StdLogic::isANewOne(vector<Move *> &vec, Move *p) {
     for (int i = 0; i < vec.size(); i++){
         if (p->isEqual(vec[i]))
             return false;

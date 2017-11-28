@@ -28,7 +28,7 @@ public:
      *********************/
     GameSession(Board* board, Visual* vis, Logic* logic, Player* p1, Player* p2);
     /********************
-     * destroyer is needed because we have object pointer members which
+     * destroyer is needed because we have object Moveer members which
      * GameSession is composed of.
      ***********************/
     ~GameSession();
@@ -50,11 +50,11 @@ private:
     /***********************
      * Function name: updateBoard
      * @param s the side
-     * @param choice the point of choice
+     * @param choice the Move of choice
      * Operation: this function changes the board according
      * the player's chosen move.
      */
-    void updateBoard(Side s, Point* choice);
+    void updateBoard(Side s, Move* choice);
     Board *board;
     Visual* vis;
     Logic *logic;

@@ -13,10 +13,10 @@ GameSession::~GameSession() {
 };
 void GameSession::playRound() {
     int gameOver = 2;
-    vector<Point*> optionsX;
-    vector<Point*> optionsO;
-    Point* choiceX;
-    Point* choiceO;
+    vector<Move*> optionsX;
+    vector<Move*> optionsO;
+    Move* choiceX;
+    Move* choiceO;
     while (gameOver != 0) {
         vis->printBoard();
         gameOver = 2;
@@ -45,7 +45,7 @@ void GameSession::playRound() {
     finalCountdown(board);
 }
 
-void GameSession::updateBoard(Side s, Point *choice) {
+void GameSession::updateBoard(Side s, Move *choice) {
     int i = 1;
     int j = 1;
     board->getBoard()[choice->getR()][choice->getC()] = s;

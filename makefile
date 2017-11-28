@@ -2,14 +2,14 @@
 #gotesdo
 #305554834
 
-a.out: Board.o  Point.o Logic.o Player.o Human.o Visual.o StdVisual.o StdLogic.o GameSession.o main.o
-	g++ Board.o Point.o Logic.o Player.o Human.o Visual.o StdVisual.o StdLogic.o GameSession.o main.o
+a.out: Board.o  Move.o Logic.o Player.o Human.o Visual.o StdVisual.o StdLogic.o GameSession.o main.o
+	g++ Board.o Move.o Logic.o Player.o Human.o Visual.o StdVisual.o StdLogic.o GameSession.o main.o
 
 Board.o: Board.cpp Board.h
 	g++ -c Board.cpp
 
-Point.o: Point.cpp Point.h
-	g++ -c Point.cpp
+Move.o: Move.cpp Move.h
+	g++ -c Move.cpp
 
 Logic.o: Logic.cpp Logic.h
 	g++ -c Logic.cpp

@@ -15,8 +15,8 @@ set(SOURCE_FILES
     main.cpp
     Player.cpp
     Player.h
-    Point.cpp
-    Point.h
+    Move.cpp
+    Move.h
     StdLogic.cpp
     StdLogic.h
     StdVisual.cpp
