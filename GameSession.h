@@ -22,7 +22,6 @@ public:
      *********************/
     GameSession(Board* board, Visual* vis, Logic* logic, Player* p1, Player* p2);
     /********************
-<<<<<<< HEAD
      * destroyer is needed because we have object Moveer members which
      * GameSession is composed of.
      ***********************/
@@ -50,35 +49,6 @@ private:
      * the player's chosen move.
      */
     void updateBoard(Side s, Move* choice);
-=======
-     * destroyer is needed because we have object pointer members which
-     * GameSession is composed of.
-     ***********************/
-    ~GameSession();
-    /*******************
-     * Function name: playRound
-     * function Operation: this function is the function that actually
-     * coordinates a round of a game, using the board, the logic to know what
-     * are the possible moves and asks the players to pick their move in turn.
-     *******************/
-    void playRound();
-private:
-    /*********************
-     * Function name: finalCountdown
-     * @param b the board.
-     * Operation: this function is called when no player has legal moves
-     * which means the game ended. and counts and annouces who is the winner.
-     */
-    void finalCountdown(Board* b);
-    /***********************
-     * Function name: updateBoard
-     * @param s the side
-     * @param choice the point of choice
-     * Operation: this function changes the board according
-     * the player's chosen move.
-     */
-    void updateBoard(Side s, Point* choice);
->>>>>>> branch 'master' of https://github.com/Jed-El/ex3
     Board *board;
     Visual* vis;
     Logic *logic;

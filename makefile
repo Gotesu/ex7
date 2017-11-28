@@ -6,16 +6,6 @@ Board.o: Board.cpp Board.h
 
 Move.o: Move.cpp Move.h
 	g++ -c Move.cpp
-=======
-a.out: Board.o  Point.o Logic.o Player.o Human.o Visual.o StdVisual.o StdLogic.o GameSession.o main.o
-	g++ Board.o Point.o Logic.o Player.o Human.o Visual.o StdVisual.o StdLogic.o GameSession.o main.o
-
-Board.o: Board.cpp Board.h
-	g++ -c Board.cpp
-
-Point.o: Point.cpp Point.h
-	g++ -c Point.cpp
->>>>>>> branch 'master' of https://github.com/Jed-El/ex3
 
 Logic.o: Logic.cpp Logic.h
 	g++ -c Logic.cpp
