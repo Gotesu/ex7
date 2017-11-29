@@ -6,6 +6,12 @@
 
 using namespace std;
 
+//  using directions as numbers helps save the information in a vector
+enum directions {up = 0, down = 1,
+						righ = 2, lef = 3,
+						downright = 4, downleft = 5,
+						upright = 6, upleft = 7};
+
 /****************
  * class Move objective is just to be a more human readable representation of a position in our board
  * which I made analogic with row and col axis' ( I defined it as a Move in space just for
@@ -18,7 +24,7 @@ public:
 	* The Input: x row value, y column value,
 	* d a vector with numbers of enemy's blocks that will change by the move, for every direction.
 	******************************************/
-	Move(int x, int y, vector<int> d = vector<int> (8,0));
+	Move(int x, int y, vector<int> d);
 	/******************************************
 	* function name: getR()
 	* The Output: the move row value.
@@ -33,23 +39,15 @@ public:
     int getC() const;
 	/******************************************
 	* function name: getDir()
-	* The Output: a vector with numbers of enemy's blocks that will change
-  * by the move, for every direction.
-	* The function operation: this is a getter function for dir.
+	* The Output: a numbers of enemy's blocks that will change by the move, in dirction i
+	* The function operation: this is a getter function for dir[i].
 	******************************************/
-    vector<int> getDir();
+    int getDir(int i);
     /************************
 	* Function name : pPrint()
 	* The function operation: prints the Move in a conventional way (row,col).
      **********************/
     void pMove() const;
-    /************************
-	* Function name : isEqual
-	* The Input: m2 a Move to compare to this Move.
-	* The Output: true if the given Move row & column values equal to this move values, false otherwise.
-	* The function operation: compare row & column values of two Moves.
-     **********************/
-    bool isEqual(Move *m2);
     /************************
 	* Function name : isEqual
 	* The Input: r2 a value to compare to r, c2 a value to compare to c.

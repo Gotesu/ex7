@@ -1,5 +1,8 @@
-#ifndef EX1_BOARD_H
-#define EX1_BOARD_H
+#ifndef BOARD_H
+#define BOARD_H
+
+#include "Move.h"
+
 enum Side {WHITE, BLACK, EMPTY};
 
 /*****************************
@@ -16,10 +19,24 @@ public:
      * except for the central four.
      ***************************/
     Board(int row = 8, int col = 8);
+    /***************************
+     * Function name : Board()
+     * Arguments: a Board refrence
+     * The Function operation : a copy-constructor. allocates the reversi board according
+     * to the given Board rows and columns value, and copy all the slots.
+     ***************************/
+    Board(const Board& obj);
     /*******************
      * destructor.
      ****************/
     ~Board();
+
+    /****************************
+     * Function name: check(i, j)
+     * this is a getter function.
+     * @return the value in [i][j].
+     ******************************/
+    Side check(int row, int col) const;
 
     /****************************
      * Function name : getter functions : getCol/ getRow / getBoard
@@ -27,7 +44,14 @@ public:
      ******************************/
     int getCol() const;
     int getRow() const;
-    Side** getBoard();
+    /***********************
+     * Function name: update
+     * @param s the side
+     * @param choice the Move of choice
+     * Operation: this function changes the board according
+     * the player's chosen move.
+     */
+    void update(Side s, Move *choice);
 private:
     //board information is saved in a 2D array of chars.
     Side** playBoard;
@@ -37,4 +61,4 @@ private:
 };
 
 
-#endif //EX1_BOARD_H
+#endif //BOARD_H

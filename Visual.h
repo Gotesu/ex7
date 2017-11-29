@@ -1,13 +1,13 @@
-#ifndef EX2_VISUAL_H
-#define EX2_VISUAL_H
+#ifndef VISUAL_H
+#define VISUAL_H
 
 #include "Board.h"
 class Visual {
 public:
     //constructor.
-    Visual(Board* b);
+    Visual(Board* b):b(b){};
     //destroyer
-    ~Visual(){};
+    virtual ~Visual(){};
     /**********************
      * printBoard
      * Operation : represents the board visually.
@@ -18,4 +18,4 @@ private:
 };
 
 
-#endif //EX2_VISUAL_H
+#endif //VISUAL_H

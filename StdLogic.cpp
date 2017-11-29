@@ -2,199 +2,179 @@
 using namespace std;
 StdLogic::StdLogic():Logic() {}
 
-vector<Move*> StdLogic::allowedActions(Board* b, Side s) {
-    //array of directions symbols.
-    char directions[] = {'R','L','D','U','\\','/',',','`'};
-    vector<Move*> positions;
-    positions = mapPositions(b, s);
-    vector<Move*> allowedMoves;
-    //we need to check legitimate moves for each piece.
-    for (int k = 0; k < positions.size(); k++) {
-        for (int i = 0; i < 8; i++) {
-            Move *pos = findPossibility(positions[k], b, s, directions[i]);
-            //making sure we are not putting a Move which is already there.
-            if (pos != 0 && isANewOne(allowedMoves, pos)) {
-                allowedMoves.push_back(pos);
-            }
-        }
-    }
-    //freeing the positions vector.
-    for (int j = 0; j < positions.size(); j++) {
-        delete positions[j];
-    }
-    positions.clear();
-    return allowedMoves;
-}
-
-std::vector<Move *> StdLogic::mapPositions(Board* b, Side s) {
-    vector<Move*> positions;
-    //mapping all the relevant pieces of s side to a vector.
-    for (int i = 0; i < b->getRow(); i++) {
-        for (int j = 0; j < b->getCol(); j++) {
-            if (s == b->getBoard()[i][j]) {
-                Move *p = new Move(i, j);
-                positions.push_back(p);
-            }
-        }
-    }
-    return positions;
-}
-
-Move* StdLogic::findPossibility(Move* p, Board* b, Side s, char c) {
-    int i;
-    switch(c) {
-        //down direction.
-        case 'D':
-            i = 1;
-            while (p->getR() + i < b->getRow()) {
-                if (b->getBoard()[p->getR() + i][p->getC()] != s
-                        && b->getBoard()[p->getR() + i][p->getC()] != EMPTY) {
-                    i++;
-                }
-                else {
-                    break;
-                }
-            }
-            if (p->getR() + i < b->getRow()
-                && b->getBoard()[p->getR() + i][p->getC()] == EMPTY && i != 1) {
-                Move* opMove = new Move(p->getR() + i, p->getC());
-                return opMove;
-            }
-            break;
-        //up direction
-        case 'U':
-            i = 1;
-            while (p->getR() - i > 0) {
-                if (b->getBoard()[p->getR() - i][p->getC()] != s
-                    && b->getBoard()[p->getR() - i][p->getC()] != EMPTY) {
-                    i++;
-                }
-                else {
-                    break;
-                }
-            }
-            if (p->getR() - i >= 0
-                && b->getBoard()[p->getR() - i][p->getC()] == EMPTY && i != 1) {
-                Move* opMove = new Move(p->getR() - i, p->getC());
-                return opMove;
-            }
-            break;
-
-        //Right direction
-        case 'R':
-            i = 1;
-            while (p->getC() + i < b->getCol()) {
-                if (b->getBoard()[p->getR()][p->getC() + i] != s
-                    && b->getBoard()[p->getR()][p->getC() + i] != EMPTY) {
-                    i++;
-                }
-                else {
-                    break;
-                }
-            }
-            if (b->getBoard()[p->getR()][p->getC() + i] == EMPTY && i != 1) {
-                Move* opMove = new Move(p->getR(), p->getC() + i);
-                return opMove;
-            }
-            break;
-        //left
-        case 'L':
-            i = 1;
-            while (p->getC() - i > 0) {
-                if (b->getBoard()[p->getR()][p->getC() - i] != s
-                    && b->getBoard()[p->getR()][p->getC() - i] != EMPTY) {
-                    i++;
-                }
-                else {
-                    break;
-                }
-            }
-            if (b->getBoard()[p->getR()][p->getC() - i] == EMPTY && i != 1) {
-                Move* opMove = new Move(p->getR(), p->getC() - i);
-                return opMove;
-            }
-            break;
-        //lower right direction
-        case '\\':
-            i = 1;
-            while (p->getR() + i < b->getRow() && p->getC() + i < b->getCol()) {
-                if (b->getBoard()[p->getR() + i][p->getC() + i] != s
-                        && b->getBoard()[p->getR() + i][p->getC() +i] != EMPTY) {
-                    i++;
-                }
-                else {
-                    break;
-                }
-            }
-            if (p->getR() + i < b->getRow()
-                && b->getBoard()[p->getR() +i][p->getC() +i] == EMPTY && i != 1) {
-                Move* opMove = new Move(p->getR() + i, p->getC() + i);
-                return opMove;
-            }
-            break;
-        //upper right direction
-        case '/':
-            i = 1;
-            while (p->getR() - i > 0 && p->getC() + i < b->getCol()) {
-                if (b->getBoard()[p->getR() - i][p->getC() + i] != s
-                    && b->getBoard()[p->getR() - i][p->getC() + i] != EMPTY) {
-                    i++;
-                }
-                else {
-                    break;
-                }
-            }
-            if (p->getR() - i >= 0
-                && b->getBoard()[p->getR() - i][p->getC() + i] == EMPTY && i != 1) {
-                Move* opMove = new Move(p->getR() - i, p->getC() + i);
-                return opMove;
-            }
-            break;
-        //upper left direction
-        case '`':
-            i = 1;
-            while (p->getR() - i > 0 && p->getC() - i > 0) {
-                if (b->getBoard()[p->getR() - i][p->getC() - i] != s
-                    && b->getBoard()[p->getR() - i][p->getC() - i] != EMPTY) {
-                    i++;
-                }
-                else {
-                    break;
-                }
-            }
-            if (p->getR() - i >= 0
-                && b->getBoard()[p->getR() - i][p->getC() - i] == EMPTY && i != 1) {
-                Move* opMove = new Move(p->getR() - i, p->getC() - i);
-                return opMove;
-            }
-            break;
-        //lower left direction.
-        case ',':
-            i = 1;
-            while (p->getR() + i < b->getRow() && p->getC() - i > 0) {
-                if (b->getBoard()[p->getR() + i][p->getC() - i] != s
-                    && b->getBoard()[p->getR() + i][p->getC() - i] != EMPTY) {
-                    i++;
-                }
-                else {
-                    break;
-                }
-            }
-            if (p->getR() + i < b->getRow()
-                && b->getBoard()[p->getR() + i][p->getC() - i] == EMPTY && i != 1) {
-                Move* opMove = new Move(p->getR() + i, p->getC() - i);
-                return opMove;
-            }
-            break;
-    };
-    return 0;
-}
-
-bool StdLogic::isANewOne(vector<Move *> &vec, Move *p) {
-    for (int i = 0; i < vec.size(); i++){
-        if (p->isEqual(vec[i]))
-            return false;
-    }
-    return true;
+vector<Move*> StdLogic::allowedActions(Board& board, Side s) {
+	vector<Move*> moves;
+	for (int i = 0; i < board.getRow(); i++) {
+		for (int j = 0; j < board.getCol(); j++) {
+			if (board.check(i,j) == EMPTY) {
+				vector<int> changes(8, 0);
+				vector<int> count(8, 0);
+				vector<bool> check(8, true);
+				// check how many enemy blocks will change, it is a long check :(
+				// the loop continues until all the direction (0-7) stop
+				for (int k = 1; (check[0] || check[1] || check[2] || check[3]
+													|| check[4] || check[5] || check[6] || check[7]); k++) {
+					// check the down direction
+					if (i + k < board.getRow()) {
+						// check for a break
+						if (check[down]) {
+							if ((board.check(i + k, j) != s) &&
+									(board.check(i + k, j) != EMPTY))
+								count[down]++;
+							else {
+								if (board.check(i + k, j) == s) {
+									// add to the total score of the move
+									changes[down] = count[down];
+								}
+								check[down] = false;
+							}
+					}
+				} else {
+					// stop if out of borders
+					check[down] = false;
+				}
+					// check the up direction
+					if (i - k >= 0) {
+						// check for a break
+						if (check[up]) {
+							if ((board.check(i - k, j) != s) &&
+									(board.check(i - k, j) != EMPTY))
+								count[up]++;
+							else {
+								if (board.check(i - k, j) == s) {
+									// add to the total score of the move
+									changes[up] = count[up];
+								}
+								check[up] = false;
+							}
+					}
+				} else {
+						// stop if out of borders
+						check[up] = false;
+					}
+					// check the right direction
+					if (j + k < board.getCol()) {
+						// check for a break
+						if (check[righ]) {
+							if ((board.check(i, j + k) != s) &&
+									(board.check(i, j + k) != EMPTY))
+								count[righ]++;
+							else {
+								if (board.check(i, j + k) == s) {
+									// add to the total score of the move
+									changes[righ] = count[righ];
+								}
+								check[righ] = false;
+							}
+					}
+				} else {
+						// stop if out of borders
+						check[righ] = false;
+					}					// check the left direction
+					if (j - k >= 0) {
+						// check for a break
+						if (check[lef]) {
+							if ((board.check(i, j - k) != s) &&
+									(board.check(i, j - k) != EMPTY))
+								count[lef]++;
+							else {
+								if (board.check(i, j - k) == s) {
+									// add to the total score of the move
+									changes[lef] = count[lef];
+								}
+								check[lef] = false;
+							}
+					}
+				} else {
+						// stop if out of borders
+						check[lef] = false;
+					}
+					// check the down-right direction
+					if ((j + k < board.getCol()) && (i + k < board.getRow())) {
+						// check for a break
+						if (check[downright]) {
+							if ((board.check(i + k, j + k) != s) &&
+									(board.check(i + k, j + k) != EMPTY))
+								count[downright]++;
+							else {
+								if (board.check(i + k, j + k) == s) {
+									// add to the total score of the move
+									changes[downright] = count[downright];
+								}
+								check[downright] = false;
+							}
+					}
+				} else {
+						// stop if out of borders
+						check[downright] = false;
+					}
+					// check the down-left direction
+					if ((j - k >= 0) && (i + k < board.getRow())) {
+						// check for a break
+						if (check[downleft] >= 0) {
+							if ((board.check(i + k, j - k) != s) &&
+									(board.check(i + k, j - k) != EMPTY))
+								count[downleft]++;
+							else {
+								if (board.check(i + k, j - k) == s) {
+									// add to the total score of the move
+									changes[downleft] = count[downleft];
+								}
+								check[downleft] = false;
+							}
+					}
+				} else {
+						// stop if out of borders
+						check[downleft] = false;
+					}
+					// check the up-right direction
+					if ((j + k < board.getCol()) && (i - k >= 0)) {
+						// check for a break
+						if (check[upright]) {
+							if ((board.check(i - k, j + k) != s) &&
+									(board.check(i - k, j + k) != EMPTY))
+								count[upright]++;
+							else {
+								if (board.check(i - k, j + k) == s) {
+									// add to the total score of the move
+									changes[upright] = count[upright];
+								}
+								check[upright] = false;
+							}
+					}
+				} else {
+						// stop if out of borders
+						check[upright] = false;
+					}
+					// check the up-left direction
+					if ((j - k >= 0) && (i - k >= 0)) {
+						// check for a break
+						if (check[upleft]) {
+							if ((board.check(i - k,j - k) != s) &&
+									(board.check(i - k,j - k) != EMPTY))
+								count[upleft]++;
+							else {
+								if (board.check(i - k,j - k) == s) {
+									// add to the total score of the move
+									changes[upleft] = count[upleft];
+								}
+								check[upleft] = false;
+							}
+					}
+				} else {
+						// stop if out of borders
+						check[upleft] = false;
+					}
+				}
+				// check if at least one move was found
+				if ((changes[0] + changes[1] + changes[2] + changes[3] +
+					changes[4] + changes[5] + changes[6] + changes[7]) > 0) {
+					Move* m = new Move(i, j, changes);
+					moves.push_back(m);
+				}
+			}
+		}
+	}
+	return moves;
 }
 

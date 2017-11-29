@@ -1,5 +1,5 @@
-#ifndef EX2_LOGIC_H
-#define EX2_LOGIC_H
+#ifndef LOGIC_H
+#define LOGIC_H
 
 #include "Board.h"
 #include <vector>
@@ -11,18 +11,18 @@
  ****************************/
 class Logic {
 public:
-    //constructor.
-    Logic();
-    //destroyer.
-    virtual ~Logic(){};
+  //constructor.
+  Logic() {};
+  //destroyer.
+  virtual ~Logic(){};
     /****************
-     * Function name: allowedActions
-     * @param b board
-     * @param s side
-     * @return a Move* vector with possible moves.
+ * Function name: allowedActions
+ * @param b board
+ * @param s side
+ * @return a Move* vector with possible moves.
      */
-    virtual vector<Move*> allowedActions(Board* b, Side s){};
+  virtual vector<Move*> allowedActions(Board& b, Side s) = 0;
 };
 
 
-#endif //EX2_LOGIC_H
+#endif //LOGIC_H

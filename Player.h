@@ -1,29 +1,29 @@
-#ifndef EX2_PLAYER_H
-#define EX2_PLAYER_H
+#ifndef PLAYER_H
+#define PLAYER_H
 
-#include "Board.h"
 #include <vector>
-
-#include "Move.h"
+#include "Logic.h"
+#include "Board.h"
 /***********************
  * class Player is an "interface" of player types.
  ************************/
 class Player {
 public:
     //constructor.
-    Player(Side s);
+    Player(Logic& l, Board& b, Side s): s(s), l(l), b(b) {};
     /***********************
-     * doMove
-     * @param options Move* vector with possible options to move.
-     * @return the chosen Move to make a move to.
+ * doMove
+ * @return true if the player had a possible move, false otherwise.
      */
-    virtual Move* doMove(const vector<Move*> &options){};
+    virtual bool doMove() = 0;
     //destroyer
     virtual ~Player() {};
 
 protected:
     Side s;
+    Logic& l;
+    Board& b;
 };
 
 
-#endif //EX2_PLAYER_H
+#endif //PLAYER_H

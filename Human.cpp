@@ -1,47 +1,59 @@
 #include "Human.h"
 #include <stdio.h>
-Human::Human(Side s):Player(s){};
+#include <vector>
 
-Move *Human::doMove(const vector<Move *> &options) {
-    int r;
-    int c;
-    char dummy;
-    int flag = 0;
-    Move *choice;
-    if (options.size() == 0) {
-        cout << "You have no possible moves, turn pass" << endl;
-        return NULL;
-    }
-    cout << "Your Possible Moves are :";
-    for (int i = 0; i < options.size(); i++) {
-        options[i]->pMove();
-    }
-    cout << endl;
-    while (flag == 0) {
-        cout <<  "Please enter your move row, col:" << endl;
-        while (true) {
-            cin >> r;
-            dummy = getchar();
-            cin >> c;
-            if (!cin.fail()) {
-                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //skip bad input
-                break;
-            }
-            // user didn't input a number
-            cout << "Please enter numbers only." << endl;
-            cin.clear(); // reset failbit
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //skip bad input
-        }
-        choice = new Move(r - 1, c - 1);
-        for (int k = 0; k < options.size(); k++) {
-            if (choice->isEqual(options[k]))
-                flag = 1;
-        }
-        if (!flag) {
-            cout << "invalid Choice" << endl;
-            delete choice;
-        }
-    }
-    return choice;
+Human::Human(Logic& l, Board& b, Side s):Player(l, b, s) {}
+
+Move* Human::checkMove(int i, int j, vector<Move*> options) {
+	unsigned int k;
+	for (k = 0; k < options.size(); k++)
+		if (options[k]->isEqual(i, j))
+			return (options[k]);
+	return NULL;
 }
 
+bool Human::doMove() {
+	vector<Move*> options;
+	options = l.allowedActions(b, s);
+	if (options.size() == 0) {
+		cout << "You have no possible moves, turn pass" << endl;
+		return false;
+	}
+	int i, j;
+	unsigned int k;
+	cout << "Your Possible Moves are :";
+	for (k = 0; k < options.size(); k++) {
+		if (k > 0)
+			cout <<  ", ";
+		options[k]->pMove();
+    }
+	cout << endl;
+	Move * choice;
+	// a loop for impossible moves value
+	do {
+		cout << endl << "Please enter your move row col (for example 3 5): ";
+		// get a move parameters
+		cin >> i >> j;
+		// check if the parameter are int type
+		if (!cin.fail()) {
+			//skip bad input
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			choice = checkMove(i - 1,j - 1, options);
+			// check if the move is possible (in the vector)
+			if (choice != NULL) {
+				b.update(s, choice);
+				for (k = 0; k < options.size(); k++)
+					delete options[k];
+				return true;
+			}
+			else
+				cout << "This isn't a possible move." << endl;
+		} else {
+			// user didn't input a number
+			cout << "Please enter numbers only." << endl;
+			cin.clear(); // reset failbit
+			//skip bad input
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+	} while(true);
+}

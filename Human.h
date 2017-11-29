@@ -1,12 +1,11 @@
-#ifndef EX2_HUMAN_H
-#define EX2_HUMAN_H
+#ifndef HUMAN_H
+#define HUMAN_H
 
 #include <iostream>
-#include "Board.h"
-#include "vector"
-#include "Player.h"
 #include <limits>
-#include "Move.h"
+#include "Player.h"
+#include "Logic.h"
+#include "Board.h"
 
 using namespace std;
 /************************
@@ -19,16 +18,23 @@ public:
      * constructor
      * @param s side
      */
-    Human(Side s);
+    Human(Logic& l, Board& b, Side s);
     /*****************
      * Function name: doMove
      * @param options , vector holding optional moves.
      * @return a Move of the chosen move.
      ******************/
-    virtual Move* doMove(const vector<Move*> &options);
+    virtual bool doMove();
 private:
-    Side s;
+	/******************************************
+	* function name: checkMove
+	* @param i/j - a number for row/col value.
+	* @param options a Move* vector with possible moves.
+	* The Output: true if the move possible, false otherwise.
+	* @return a Move * for the chosen move
+	******************************************/
+    Move* checkMove(int i, int j, vector<Move*> options);
 };
 
 
-#endif //EX2_HUMAN_H
+#endif //HUMAN_H
