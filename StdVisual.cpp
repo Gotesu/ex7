@@ -37,7 +37,7 @@ void StdVisual::printBoard() {
                 cout << i + 1 << "|";
             }//slot information
             else {
-                cout << " " << sideRepresentation(b->check(i, j - 1)) << " " << "|" ;
+                cout << " " << sideRepresentation(b->get(i, j - 1)) << " " << "|" ;
             }
         }
         cout << endl;

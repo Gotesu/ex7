@@ -6,7 +6,7 @@ vector<Move*> StdLogic::allowedActions(Board& board, Side s) {
 	vector<Move*> moves;
 	for (int i = 0; i < board.getRow(); i++) {
 		for (int j = 0; j < board.getCol(); j++) {
-			if (board.check(i,j) == EMPTY) {
+			if (board.get(i,j) == EMPTY) {
 				vector<int> changes(8, 0);
 				vector<int> count(8, 0);
 				vector<bool> check(8, true);
@@ -18,11 +18,11 @@ vector<Move*> StdLogic::allowedActions(Board& board, Side s) {
 					if (i + k < board.getRow()) {
 						// check for a break
 						if (check[down]) {
-							if ((board.check(i + k, j) != s) &&
-									(board.check(i + k, j) != EMPTY))
+							if ((board.get(i + k, j) != s) &&
+									(board.get(i + k, j) != EMPTY))
 								count[down]++;
 							else {
-								if (board.check(i + k, j) == s) {
+								if (board.get(i + k, j) == s) {
 									// add to the total score of the move
 									changes[down] = count[down];
 								}
@@ -37,11 +37,11 @@ vector<Move*> StdLogic::allowedActions(Board& board, Side s) {
 					if (i - k >= 0) {
 						// check for a break
 						if (check[up]) {
-							if ((board.check(i - k, j) != s) &&
-									(board.check(i - k, j) != EMPTY))
+							if ((board.get(i - k, j) != s) &&
+									(board.get(i - k, j) != EMPTY))
 								count[up]++;
 							else {
-								if (board.check(i - k, j) == s) {
+								if (board.get(i - k, j) == s) {
 									// add to the total score of the move
 									changes[up] = count[up];
 								}
@@ -56,11 +56,11 @@ vector<Move*> StdLogic::allowedActions(Board& board, Side s) {
 					if (j + k < board.getCol()) {
 						// check for a break
 						if (check[righ]) {
-							if ((board.check(i, j + k) != s) &&
-									(board.check(i, j + k) != EMPTY))
+							if ((board.get(i, j + k) != s) &&
+									(board.get(i, j + k) != EMPTY))
 								count[righ]++;
 							else {
-								if (board.check(i, j + k) == s) {
+								if (board.get(i, j + k) == s) {
 									// add to the total score of the move
 									changes[righ] = count[righ];
 								}
@@ -74,11 +74,11 @@ vector<Move*> StdLogic::allowedActions(Board& board, Side s) {
 					if (j - k >= 0) {
 						// check for a break
 						if (check[lef]) {
-							if ((board.check(i, j - k) != s) &&
-									(board.check(i, j - k) != EMPTY))
+							if ((board.get(i, j - k) != s) &&
+									(board.get(i, j - k) != EMPTY))
 								count[lef]++;
 							else {
-								if (board.check(i, j - k) == s) {
+								if (board.get(i, j - k) == s) {
 									// add to the total score of the move
 									changes[lef] = count[lef];
 								}
@@ -93,11 +93,11 @@ vector<Move*> StdLogic::allowedActions(Board& board, Side s) {
 					if ((j + k < board.getCol()) && (i + k < board.getRow())) {
 						// check for a break
 						if (check[downright]) {
-							if ((board.check(i + k, j + k) != s) &&
-									(board.check(i + k, j + k) != EMPTY))
+							if ((board.get(i + k, j + k) != s) &&
+									(board.get(i + k, j + k) != EMPTY))
 								count[downright]++;
 							else {
-								if (board.check(i + k, j + k) == s) {
+								if (board.get(i + k, j + k) == s) {
 									// add to the total score of the move
 									changes[downright] = count[downright];
 								}
@@ -112,11 +112,11 @@ vector<Move*> StdLogic::allowedActions(Board& board, Side s) {
 					if ((j - k >= 0) && (i + k < board.getRow())) {
 						// check for a break
 						if (check[downleft] >= 0) {
-							if ((board.check(i + k, j - k) != s) &&
-									(board.check(i + k, j - k) != EMPTY))
+							if ((board.get(i + k, j - k) != s) &&
+									(board.get(i + k, j - k) != EMPTY))
 								count[downleft]++;
 							else {
-								if (board.check(i + k, j - k) == s) {
+								if (board.get(i + k, j - k) == s) {
 									// add to the total score of the move
 									changes[downleft] = count[downleft];
 								}
@@ -131,11 +131,11 @@ vector<Move*> StdLogic::allowedActions(Board& board, Side s) {
 					if ((j + k < board.getCol()) && (i - k >= 0)) {
 						// check for a break
 						if (check[upright]) {
-							if ((board.check(i - k, j + k) != s) &&
-									(board.check(i - k, j + k) != EMPTY))
+							if ((board.get(i - k, j + k) != s) &&
+									(board.get(i - k, j + k) != EMPTY))
 								count[upright]++;
 							else {
-								if (board.check(i - k, j + k) == s) {
+								if (board.get(i - k, j + k) == s) {
 									// add to the total score of the move
 									changes[upright] = count[upright];
 								}
@@ -150,11 +150,11 @@ vector<Move*> StdLogic::allowedActions(Board& board, Side s) {
 					if ((j - k >= 0) && (i - k >= 0)) {
 						// check for a break
 						if (check[upleft]) {
-							if ((board.check(i - k,j - k) != s) &&
-									(board.check(i - k,j - k) != EMPTY))
+							if ((board.get(i - k,j - k) != s) &&
+									(board.get(i - k,j - k) != EMPTY))
 								count[upleft]++;
 							else {
-								if (board.check(i - k,j - k) == s) {
+								if (board.get(i - k,j - k) == s) {
 									// add to the total score of the move
 									changes[upleft] = count[upleft];
 								}

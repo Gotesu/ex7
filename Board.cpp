@@ -42,7 +42,7 @@ Board::Board(const Board& obj): row(obj.getRow()), col(obj.getCol()){
     //copy every place from the given board
     for (i = 0; i < row; i++) {
         for (j = 0; j < col; j++) {
-            this->playBoard[i][j] = obj.check(i, j);
+            this->playBoard[i][j] = obj.get(i, j);
         }
     }
 }
@@ -59,8 +59,8 @@ int Board::getCol() const {
 }
 
 void Board::set(int row, int col, Side s) {
-	if ((row <= 0) && (row < this.row) &&
-			(col <= 0) && (col < this.col))
+	if ((row <= 0) && (row < this->row) &&
+			(col <= 0) && (col < this->col))
 		playBoard[row][col] = s;
 }
 

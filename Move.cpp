@@ -22,3 +22,10 @@ bool Move::isEqual(int r2, int c2) {
     }
     return false;
 }
+
+bool Move::isEqual(Move * m2) {
+    if ((m2->getC() == c) && (m2->getR() == r)) {
+        return true;
+    }
+    return false;
+}

@@ -50,12 +50,12 @@ bool Computer::doMove() {
 		cout << "No possible moves, turn pass" << endl;
 		return false;
 	}
-	int i, min = -1, current;
+	int i, min, current;
 	Move * best = NULL;
 	// go over every possible move
 	for (i = 0; i < options.size(); i++) {
 		// check its value to the enemy
-		current = checkNext(options[i]);
+		current = checkNext(options[i]) - moveValue(options[i]);
 		// check if this is the first move, or if its value smaller than min
 		if ((best == NULL) || (current < min)) {
 			// save the current move as the new best, and its value in min

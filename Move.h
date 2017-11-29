@@ -55,6 +55,13 @@ public:
 	* The function operation: compared r2 to r, and c2 to c.
      **********************/
     bool isEqual(int r2, int c2);
+    /************************
+	* Function name : isEqual
+	* The Input: a pointer to another Move.
+	* The Output: true if the given row & column values of the moves are equal, false otherwise.
+	* The function operation: compared this->r to m2->r, and this->c to m2->c.
+     **********************/
+    bool isEqual(Move* m2);
 private:
     int r;
     int c;

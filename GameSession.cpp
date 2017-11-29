@@ -23,9 +23,9 @@ void GameSession::finalCountdown(Board* b) {
     int black = 0;
     for (int i = 0; i < b->getRow(); i++) {
         for (int j = 0; j < b->getCol(); j++) {
-            if (b->check(i, j) == BLACK)
+            if (b->get(i, j) == BLACK)
                 black++;
-            if (b->check(i, j) == WHITE)
+            if (b->get(i, j) == WHITE)
                 white++;
         }
     }
