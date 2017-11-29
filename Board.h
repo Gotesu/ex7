@@ -30,20 +30,24 @@ public:
      * destructor.
      ****************/
     ~Board();
-
     /****************************
-     * Function name: check(i, j)
+     * Function name: get(i, j)
      * this is a getter function.
      * @return the value in [i][j].
      ******************************/
-    Side check(int row, int col) const;
-
+    Side get(int row, int col) const;
     /****************************
      * Function name : getter functions : getCol/ getRow / getBoard
      * @return col number / row number / 2D playBoard.
      ******************************/
     int getCol() const;
     int getRow() const;
+	/******************************************
+	* function name: set()
+	* The Input: two numbers, for row and column, and new Side value.
+	* The function operation: this is a setter function for playBoard[row][col].
+	******************************************/
+    void set(int row, int col, Side s);
     /***********************
      * Function name: update
      * @param s the side

@@ -47,7 +47,7 @@ Board::Board(const Board& obj): row(obj.getRow()), col(obj.getCol()){
     }
 }
 
-Side Board::check(int row, int col) const {
+Side Board::get(int row, int col) const {
 	return this->playBoard[row][col];
 }
 
@@ -56,6 +56,12 @@ int Board::getRow() const {
 }
 int Board::getCol() const {
     return col;
+}
+
+void Board::set(int row, int col, Side s) {
+	if ((row <= 0) && (row < this.row) &&
+			(col <= 0) && (col < this.col))
+		playBoard[row][col] = s;
 }
 
 Board::~Board() {
