@@ -177,6 +177,7 @@ CMakeFiles/ex3.dir/Player.cpp.o.provides: CMakeFiles/ex3.dir/Player.cpp.o.requir
 CMakeFiles/ex3.dir/Player.cpp.o.provides.build: CMakeFiles/ex3.dir/Player.cpp.o
 
 
+<<<<<<< HEAD
 CMakeFiles/ex3.dir/Point.cpp.o: CMakeFiles/ex3.dir/flags.make
 CMakeFiles/ex3.dir/Point.cpp.o: ../Point.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ex3.dir/Point.cpp.o"
@@ -339,6 +340,170 @@ CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/Human.cpp.o.requires
 CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/Logic.cpp.o.requires
 CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/Player.cpp.o.requires
 CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/Point.cpp.o.requires
+=======
+CMakeFiles/ex3.dir/Move.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/Move.cpp.o: ../Move.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ex3.dir/Move.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/Move.cpp.o -c /home/gotesu/CLionProjects/ex3/Move.cpp
+
+CMakeFiles/ex3.dir/Move.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/Move.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gotesu/CLionProjects/ex3/Move.cpp > CMakeFiles/ex3.dir/Move.cpp.i
+
+CMakeFiles/ex3.dir/Move.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/Move.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gotesu/CLionProjects/ex3/Move.cpp -o CMakeFiles/ex3.dir/Move.cpp.s
+
+CMakeFiles/ex3.dir/Move.cpp.o.requires:
+
+.PHONY : CMakeFiles/ex3.dir/Move.cpp.o.requires
+
+CMakeFiles/ex3.dir/Move.cpp.o.provides: CMakeFiles/ex3.dir/Move.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Move.cpp.o.provides.build
+.PHONY : CMakeFiles/ex3.dir/Move.cpp.o.provides
+
+CMakeFiles/ex3.dir/Move.cpp.o.provides.build: CMakeFiles/ex3.dir/Move.cpp.o
+
+
+CMakeFiles/ex3.dir/StdLogic.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/StdLogic.cpp.o: ../StdLogic.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ex3.dir/StdLogic.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/StdLogic.cpp.o -c /home/gotesu/CLionProjects/ex3/StdLogic.cpp
+
+CMakeFiles/ex3.dir/StdLogic.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/StdLogic.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gotesu/CLionProjects/ex3/StdLogic.cpp > CMakeFiles/ex3.dir/StdLogic.cpp.i
+
+CMakeFiles/ex3.dir/StdLogic.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/StdLogic.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gotesu/CLionProjects/ex3/StdLogic.cpp -o CMakeFiles/ex3.dir/StdLogic.cpp.s
+
+CMakeFiles/ex3.dir/StdLogic.cpp.o.requires:
+
+.PHONY : CMakeFiles/ex3.dir/StdLogic.cpp.o.requires
+
+CMakeFiles/ex3.dir/StdLogic.cpp.o.provides: CMakeFiles/ex3.dir/StdLogic.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/StdLogic.cpp.o.provides.build
+.PHONY : CMakeFiles/ex3.dir/StdLogic.cpp.o.provides
+
+CMakeFiles/ex3.dir/StdLogic.cpp.o.provides.build: CMakeFiles/ex3.dir/StdLogic.cpp.o
+
+
+CMakeFiles/ex3.dir/StdVisual.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/StdVisual.cpp.o: ../StdVisual.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ex3.dir/StdVisual.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/StdVisual.cpp.o -c /home/gotesu/CLionProjects/ex3/StdVisual.cpp
+
+CMakeFiles/ex3.dir/StdVisual.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/StdVisual.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gotesu/CLionProjects/ex3/StdVisual.cpp > CMakeFiles/ex3.dir/StdVisual.cpp.i
+
+CMakeFiles/ex3.dir/StdVisual.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/StdVisual.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gotesu/CLionProjects/ex3/StdVisual.cpp -o CMakeFiles/ex3.dir/StdVisual.cpp.s
+
+CMakeFiles/ex3.dir/StdVisual.cpp.o.requires:
+
+.PHONY : CMakeFiles/ex3.dir/StdVisual.cpp.o.requires
+
+CMakeFiles/ex3.dir/StdVisual.cpp.o.provides: CMakeFiles/ex3.dir/StdVisual.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/StdVisual.cpp.o.provides.build
+.PHONY : CMakeFiles/ex3.dir/StdVisual.cpp.o.provides
+
+CMakeFiles/ex3.dir/StdVisual.cpp.o.provides.build: CMakeFiles/ex3.dir/StdVisual.cpp.o
+
+
+CMakeFiles/ex3.dir/Visual.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/Visual.cpp.o: ../Visual.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ex3.dir/Visual.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/Visual.cpp.o -c /home/gotesu/CLionProjects/ex3/Visual.cpp
+
+CMakeFiles/ex3.dir/Visual.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/Visual.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gotesu/CLionProjects/ex3/Visual.cpp > CMakeFiles/ex3.dir/Visual.cpp.i
+
+CMakeFiles/ex3.dir/Visual.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/Visual.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gotesu/CLionProjects/ex3/Visual.cpp -o CMakeFiles/ex3.dir/Visual.cpp.s
+
+CMakeFiles/ex3.dir/Visual.cpp.o.requires:
+
+.PHONY : CMakeFiles/ex3.dir/Visual.cpp.o.requires
+
+CMakeFiles/ex3.dir/Visual.cpp.o.provides: CMakeFiles/ex3.dir/Visual.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Visual.cpp.o.provides.build
+.PHONY : CMakeFiles/ex3.dir/Visual.cpp.o.provides
+
+CMakeFiles/ex3.dir/Visual.cpp.o.provides.build: CMakeFiles/ex3.dir/Visual.cpp.o
+
+
+CMakeFiles/ex3.dir/main.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ex3.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/main.cpp.o -c /home/gotesu/CLionProjects/ex3/main.cpp
+
+CMakeFiles/ex3.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gotesu/CLionProjects/ex3/main.cpp > CMakeFiles/ex3.dir/main.cpp.i
+
+CMakeFiles/ex3.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gotesu/CLionProjects/ex3/main.cpp -o CMakeFiles/ex3.dir/main.cpp.s
+
+CMakeFiles/ex3.dir/main.cpp.o.requires:
+
+.PHONY : CMakeFiles/ex3.dir/main.cpp.o.requires
+
+CMakeFiles/ex3.dir/main.cpp.o.provides: CMakeFiles/ex3.dir/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/main.cpp.o.provides.build
+.PHONY : CMakeFiles/ex3.dir/main.cpp.o.provides
+
+CMakeFiles/ex3.dir/main.cpp.o.provides.build: CMakeFiles/ex3.dir/main.cpp.o
+
+
+# Object files for target ex3
+ex3_OBJECTS = \
+"CMakeFiles/ex3.dir/Board.cpp.o" \
+"CMakeFiles/ex3.dir/GameSession.cpp.o" \
+"CMakeFiles/ex3.dir/Human.cpp.o" \
+"CMakeFiles/ex3.dir/Logic.cpp.o" \
+"CMakeFiles/ex3.dir/Player.cpp.o" \
+"CMakeFiles/ex3.dir/Move.cpp.o" \
+"CMakeFiles/ex3.dir/StdLogic.cpp.o" \
+"CMakeFiles/ex3.dir/StdVisual.cpp.o" \
+"CMakeFiles/ex3.dir/Visual.cpp.o" \
+"CMakeFiles/ex3.dir/main.cpp.o"
+
+# External object files for target ex3
+ex3_EXTERNAL_OBJECTS =
+
+ex3: CMakeFiles/ex3.dir/Board.cpp.o
+ex3: CMakeFiles/ex3.dir/GameSession.cpp.o
+ex3: CMakeFiles/ex3.dir/Human.cpp.o
+ex3: CMakeFiles/ex3.dir/Logic.cpp.o
+ex3: CMakeFiles/ex3.dir/Player.cpp.o
+ex3: CMakeFiles/ex3.dir/Move.cpp.o
+ex3: CMakeFiles/ex3.dir/StdLogic.cpp.o
+ex3: CMakeFiles/ex3.dir/StdVisual.cpp.o
+ex3: CMakeFiles/ex3.dir/Visual.cpp.o
+ex3: CMakeFiles/ex3.dir/main.cpp.o
+ex3: CMakeFiles/ex3.dir/build.make
+ex3: CMakeFiles/ex3.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable ex3"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ex3.dir/link.txt --verbose=$(VERBOSE)
+
+# Rule to build all files generated by this target.
+CMakeFiles/ex3.dir/build: ex3
+
+.PHONY : CMakeFiles/ex3.dir/build
+
+CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/Board.cpp.o.requires
+CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/GameSession.cpp.o.requires
+CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/Human.cpp.o.requires
+CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/Logic.cpp.o.requires
+CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/Player.cpp.o.requires
+CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/Move.cpp.o.requires
+>>>>>>> refs/remotes/origin/master
 CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/StdLogic.cpp.o.requires
 CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/StdVisual.cpp.o.requires
 CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/Visual.cpp.o.requires

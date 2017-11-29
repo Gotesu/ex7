@@ -354,6 +354,7 @@ Logic.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Logic.cpp.s
 .PHONY : Logic.cpp.s
 
+<<<<<<< HEAD
 Player.o: Player.cpp.o
 
 .PHONY : Player.o
@@ -648,6 +649,302 @@ help:
 	@echo "... Point.o"
 	@echo "... Point.i"
 	@echo "... Point.s"
+=======
+Move.o: Move.cpp.o
+
+.PHONY : Move.o
+
+# target to build an object file
+Move.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/Move.cpp.o
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Move.cpp.o
+.PHONY : Move.cpp.o
+
+Move.i: Move.cpp.i
+
+.PHONY : Move.i
+
+# target to preprocess a source file
+Move.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/Move.cpp.i
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Move.cpp.i
+.PHONY : Move.cpp.i
+
+Move.s: Move.cpp.s
+
+.PHONY : Move.s
+
+# target to generate assembly for a file
+Move.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/Move.cpp.s
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Move.cpp.s
+.PHONY : Move.cpp.s
+
+Player.o: Player.cpp.o
+
+.PHONY : Player.o
+
+# target to build an object file
+Player.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/Player.cpp.o
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Player.cpp.o
+.PHONY : Player.cpp.o
+
+Player.i: Player.cpp.i
+
+.PHONY : Player.i
+
+# target to preprocess a source file
+Player.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/Player.cpp.i
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Player.cpp.i
+.PHONY : Player.cpp.i
+
+Player.s: Player.cpp.s
+
+.PHONY : Player.s
+
+# target to generate assembly for a file
+Player.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/Player.cpp.s
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Player.cpp.s
+.PHONY : Player.cpp.s
+
+StdLogic.o: StdLogic.cpp.o
+
+.PHONY : StdLogic.o
+
+# target to build an object file
+StdLogic.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/StdLogic.cpp.o
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/StdLogic.cpp.o
+.PHONY : StdLogic.cpp.o
+
+StdLogic.i: StdLogic.cpp.i
+
+.PHONY : StdLogic.i
+
+# target to preprocess a source file
+StdLogic.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/StdLogic.cpp.i
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/StdLogic.cpp.i
+.PHONY : StdLogic.cpp.i
+
+StdLogic.s: StdLogic.cpp.s
+
+.PHONY : StdLogic.s
+
+# target to generate assembly for a file
+StdLogic.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/StdLogic.cpp.s
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/StdLogic.cpp.s
+.PHONY : StdLogic.cpp.s
+
+StdVisual.o: StdVisual.cpp.o
+
+.PHONY : StdVisual.o
+
+# target to build an object file
+StdVisual.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/StdVisual.cpp.o
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/StdVisual.cpp.o
+.PHONY : StdVisual.cpp.o
+
+StdVisual.i: StdVisual.cpp.i
+
+.PHONY : StdVisual.i
+
+# target to preprocess a source file
+StdVisual.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/StdVisual.cpp.i
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/StdVisual.cpp.i
+.PHONY : StdVisual.cpp.i
+
+StdVisual.s: StdVisual.cpp.s
+
+.PHONY : StdVisual.s
+
+# target to generate assembly for a file
+StdVisual.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/StdVisual.cpp.s
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/StdVisual.cpp.s
+.PHONY : StdVisual.cpp.s
+
+Visual.o: Visual.cpp.o
+
+.PHONY : Visual.o
+
+# target to build an object file
+Visual.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/Visual.cpp.o
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Visual.cpp.o
+.PHONY : Visual.cpp.o
+
+Visual.i: Visual.cpp.i
+
+.PHONY : Visual.i
+
+# target to preprocess a source file
+Visual.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/Visual.cpp.i
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Visual.cpp.i
+.PHONY : Visual.cpp.i
+
+Visual.s: Visual.cpp.s
+
+.PHONY : Visual.s
+
+# target to generate assembly for a file
+Visual.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/Visual.cpp.s
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Visual.cpp.s
+.PHONY : Visual.cpp.s
+
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+test/gtest_main.o: test/gtest_main.cpp.o
+
+.PHONY : test/gtest_main.o
+
+# target to build an object file
+test/gtest_main.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/test/gtest_main.cpp.o
+.PHONY : test/gtest_main.cpp.o
+
+test/gtest_main.i: test/gtest_main.cpp.i
+
+.PHONY : test/gtest_main.i
+
+# target to preprocess a source file
+test/gtest_main.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/test/gtest_main.cpp.i
+.PHONY : test/gtest_main.cpp.i
+
+test/gtest_main.s: test/gtest_main.cpp.s
+
+.PHONY : test/gtest_main.s
+
+# target to generate assembly for a file
+test/gtest_main.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/test/gtest_main.cpp.s
+.PHONY : test/gtest_main.cpp.s
+
+test/test_Board.o: test/test_Board.cpp.o
+
+.PHONY : test/test_Board.o
+
+# target to build an object file
+test/test_Board.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/test/test_Board.cpp.o
+.PHONY : test/test_Board.cpp.o
+
+test/test_Board.i: test/test_Board.cpp.i
+
+.PHONY : test/test_Board.i
+
+# target to preprocess a source file
+test/test_Board.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/test/test_Board.cpp.i
+.PHONY : test/test_Board.cpp.i
+
+test/test_Board.s: test/test_Board.cpp.s
+
+.PHONY : test/test_Board.s
+
+# target to generate assembly for a file
+test/test_Board.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/test/test_Board.cpp.s
+.PHONY : test/test_Board.cpp.s
+
+test/test_StdLogic.o: test/test_StdLogic.cpp.o
+
+.PHONY : test/test_StdLogic.o
+
+# target to build an object file
+test/test_StdLogic.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/test/test_StdLogic.cpp.o
+.PHONY : test/test_StdLogic.cpp.o
+
+test/test_StdLogic.i: test/test_StdLogic.cpp.i
+
+.PHONY : test/test_StdLogic.i
+
+# target to preprocess a source file
+test/test_StdLogic.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/test/test_StdLogic.cpp.i
+.PHONY : test/test_StdLogic.cpp.i
+
+test/test_StdLogic.s: test/test_StdLogic.cpp.s
+
+.PHONY : test/test_StdLogic.s
+
+# target to generate assembly for a file
+test/test_StdLogic.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/test/test_StdLogic.cpp.s
+.PHONY : test/test_StdLogic.cpp.s
+
+# Help Target
+help:
+	@echo "The following are some of the valid targets for this Makefile:"
+	@echo "... all (the default if no target is provided)"
+	@echo "... clean"
+	@echo "... depend"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... ex3_test"
+	@echo "... ex3"
+	@echo "... gmock_main"
+	@echo "... gmock"
+	@echo "... gtest_main"
+	@echo "... gtest"
+	@echo "... Board.o"
+	@echo "... Board.i"
+	@echo "... Board.s"
+	@echo "... GameSession.o"
+	@echo "... GameSession.i"
+	@echo "... GameSession.s"
+	@echo "... Human.o"
+	@echo "... Human.i"
+	@echo "... Human.s"
+	@echo "... Logic.o"
+	@echo "... Logic.i"
+	@echo "... Logic.s"
+	@echo "... Move.o"
+	@echo "... Move.i"
+	@echo "... Move.s"
+	@echo "... Player.o"
+	@echo "... Player.i"
+	@echo "... Player.s"
+>>>>>>> refs/remotes/origin/master
 	@echo "... StdLogic.o"
 	@echo "... StdLogic.i"
 	@echo "... StdLogic.s"

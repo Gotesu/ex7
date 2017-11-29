@@ -422,6 +422,7 @@
 			<Option target="ex3_test"/>
 			<Option target="ex3"/>
 		</Unit>
+<<<<<<< HEAD
 		<Unit filename="/home/gotesu/CLionProjects/ex3/Player.cpp">
 			<Option target="ex3_test"/>
 			<Option target="ex3"/>
@@ -435,6 +436,21 @@
 			<Option target="ex3"/>
 		</Unit>
 		<Unit filename="/home/gotesu/CLionProjects/ex3/Point.h">
+=======
+		<Unit filename="/home/gotesu/CLionProjects/ex3/Move.cpp">
+			<Option target="ex3_test"/>
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/gotesu/CLionProjects/ex3/Move.h">
+			<Option target="ex3_test"/>
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/gotesu/CLionProjects/ex3/Player.cpp">
+			<Option target="ex3_test"/>
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/gotesu/CLionProjects/ex3/Player.h">
+>>>>>>> refs/remotes/origin/master
 			<Option target="ex3_test"/>
 			<Option target="ex3"/>
 		</Unit>

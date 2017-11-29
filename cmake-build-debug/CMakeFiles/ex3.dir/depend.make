@@ -8,6 +8,7 @@ CMakeFiles/ex3.dir/GameSession.cpp.o: ../Board.h
 CMakeFiles/ex3.dir/GameSession.cpp.o: ../GameSession.cpp
 CMakeFiles/ex3.dir/GameSession.cpp.o: ../GameSession.h
 CMakeFiles/ex3.dir/GameSession.cpp.o: ../Logic.h
+<<<<<<< HEAD
 CMakeFiles/ex3.dir/GameSession.cpp.o: ../Player.h
 CMakeFiles/ex3.dir/GameSession.cpp.o: ../Point.h
 CMakeFiles/ex3.dir/GameSession.cpp.o: ../StdLogic.h
@@ -53,6 +54,53 @@ CMakeFiles/ex3.dir/main.cpp.o: ../Human.h
 CMakeFiles/ex3.dir/main.cpp.o: ../Logic.h
 CMakeFiles/ex3.dir/main.cpp.o: ../Player.h
 CMakeFiles/ex3.dir/main.cpp.o: ../Point.h
+=======
+CMakeFiles/ex3.dir/GameSession.cpp.o: ../Move.h
+CMakeFiles/ex3.dir/GameSession.cpp.o: ../Player.h
+CMakeFiles/ex3.dir/GameSession.cpp.o: ../StdLogic.h
+CMakeFiles/ex3.dir/GameSession.cpp.o: ../Visual.h
+
+CMakeFiles/ex3.dir/Human.cpp.o: ../Board.h
+CMakeFiles/ex3.dir/Human.cpp.o: ../Human.cpp
+CMakeFiles/ex3.dir/Human.cpp.o: ../Human.h
+CMakeFiles/ex3.dir/Human.cpp.o: ../Move.h
+CMakeFiles/ex3.dir/Human.cpp.o: ../Player.h
+
+CMakeFiles/ex3.dir/Logic.cpp.o: ../Board.h
+CMakeFiles/ex3.dir/Logic.cpp.o: ../Logic.cpp
+CMakeFiles/ex3.dir/Logic.cpp.o: ../Logic.h
+CMakeFiles/ex3.dir/Logic.cpp.o: ../Move.h
+
+CMakeFiles/ex3.dir/Move.cpp.o: ../Move.cpp
+CMakeFiles/ex3.dir/Move.cpp.o: ../Move.h
+
+CMakeFiles/ex3.dir/Player.cpp.o: ../Board.h
+CMakeFiles/ex3.dir/Player.cpp.o: ../Move.h
+CMakeFiles/ex3.dir/Player.cpp.o: ../Player.cpp
+CMakeFiles/ex3.dir/Player.cpp.o: ../Player.h
+
+CMakeFiles/ex3.dir/StdLogic.cpp.o: ../Board.h
+CMakeFiles/ex3.dir/StdLogic.cpp.o: ../Logic.h
+CMakeFiles/ex3.dir/StdLogic.cpp.o: ../Move.h
+CMakeFiles/ex3.dir/StdLogic.cpp.o: ../StdLogic.cpp
+CMakeFiles/ex3.dir/StdLogic.cpp.o: ../StdLogic.h
+
+CMakeFiles/ex3.dir/StdVisual.cpp.o: ../Board.h
+CMakeFiles/ex3.dir/StdVisual.cpp.o: ../StdVisual.cpp
+CMakeFiles/ex3.dir/StdVisual.cpp.o: ../StdVisual.h
+CMakeFiles/ex3.dir/StdVisual.cpp.o: ../Visual.h
+
+CMakeFiles/ex3.dir/Visual.cpp.o: ../Board.h
+CMakeFiles/ex3.dir/Visual.cpp.o: ../Visual.cpp
+CMakeFiles/ex3.dir/Visual.cpp.o: ../Visual.h
+
+CMakeFiles/ex3.dir/main.cpp.o: ../Board.h
+CMakeFiles/ex3.dir/main.cpp.o: ../GameSession.h
+CMakeFiles/ex3.dir/main.cpp.o: ../Human.h
+CMakeFiles/ex3.dir/main.cpp.o: ../Logic.h
+CMakeFiles/ex3.dir/main.cpp.o: ../Move.h
+CMakeFiles/ex3.dir/main.cpp.o: ../Player.h
+>>>>>>> refs/remotes/origin/master
 CMakeFiles/ex3.dir/main.cpp.o: ../StdLogic.h
 CMakeFiles/ex3.dir/main.cpp.o: ../StdVisual.h
 CMakeFiles/ex3.dir/main.cpp.o: ../Visual.h
