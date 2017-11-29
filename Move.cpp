@@ -7,7 +7,7 @@ int Move::getR() const {return r;}
 int Move::getC() const {return c;}
 
 int Move::getDir(int i) {
-	if (i < dir.size())
+	if ((i < dir.size()) && (i >= 0))
 		return dir[i];
 	return -1;
 };
