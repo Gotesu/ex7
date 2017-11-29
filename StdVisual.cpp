@@ -8,7 +8,7 @@ char StdVisual::sideRepresentation(Side s) {
         case EMPTY : return ' ';
         case WHITE : return 'O';
         case BLACK : return 'X';
-        default: ;
+        default: return 'E';
     }
 }
 
@@ -37,7 +37,7 @@ void StdVisual::printBoard() {
                 cout << i + 1 << "|";
             }//slot information
             else {
-                cout << " " << sideRepresentation(b->getBoard()[i][j - 1]) << " " << "|" ;
+                cout << " " << sideRepresentation(b->check(i, j - 1)) << " " << "|" ;
             }
         }
         cout << endl;

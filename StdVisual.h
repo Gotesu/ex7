@@ -1,5 +1,5 @@
-#ifndef EX2_STDVISUAL_H
-#define EX2_STDVISUAL_H
+#ifndef STDVISUAL_H
+#define STDVISUAL_H
 
 #include "Visual.h"
 #include <iostream>
@@ -30,4 +30,4 @@ private:
 };
 
 
-#endif //EX2_STDVISUAL_H
+#endif //STDVISUAL_H
