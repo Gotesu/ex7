@@ -1,5 +1,4 @@
 #include "Board.h"
-#include <iostream>
 #include <cstdlib>
 
 using namespace std;
@@ -59,8 +58,8 @@ int Board::getCol() const {
 }
 
 void Board::set(int row, int col, Side s) {
-	if ((row <= 0) && (row < this->row) &&
-			(col <= 0) && (col < this->col))
+	if ((row >= 0) && (row < this->row) &&
+			(col >= 0) && (col < this->col))
 		playBoard[row][col] = s;
 }
 
