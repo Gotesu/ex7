@@ -7,12 +7,12 @@
 #include "../StdLogic.h"
 
 /**********************
- * checkMinMaxBehavoirDown
+ * checkMinMaxBehaviorDown
  * this test checks the ai make a minmax move with a specialy designed scenraio
  * of the last row almost filled with a chance to fill it before the opponent can
  * convert the whole line.
  */
-TEST(AI, checkMinMaxBehavoirDown) {
+TEST(AI, checkMinMaxBehaviorDown) {
     Board *b = new Board();
     StdLogic *logic = new StdLogic();
     Computer *ai = new Computer(*logic, *b, WHITE);
@@ -39,12 +39,12 @@ TEST(AI, checkMinMaxBehavoirDown) {
 }
 
 /**********************
- * checkMinMaxBehavoirUp
+ * checkMinMaxBehaviorUp
  * this test checks the ai make a minmax move with a specialy designed scenraio
  * of the last row almost filled with a chance to fill it before the opponent can
  * convert the whole line.
  */
-TEST(AI, checkMinMaxBehavoirUp) {
+TEST(AI, checkMinMaxBehaviorUp) {
     Board *b = new Board();
     StdLogic *logic = new StdLogic();
     Computer *ai = new Computer(*logic, *b, WHITE);
@@ -71,12 +71,12 @@ TEST(AI, checkMinMaxBehavoirUp) {
 }
 
 /**********************
- * checkMinMaxBehavoirLeft
+ * checkMinMaxBehaviorLeft
  * this test checks the ai make a minmax move with a specialy designed scenraio
  * of the left col almost filled with a chance to fill it before the opponent can
  * convert the whole line.
  */
-TEST(AI, checkMinMaxBehavoirLeft) {
+TEST(AI, checkMinMaxBehaviorLeft) {
     Board *b = new Board();
     StdLogic *logic = new StdLogic();
     Computer *ai = new Computer(*logic, *b, WHITE);
@@ -103,12 +103,12 @@ TEST(AI, checkMinMaxBehavoirLeft) {
 }
 
 /**********************
- * checkMinMaxBehavoirRight
+ * checkMinMaxBehaviorRight
  * this test checks the ai make a minmax move with a specialy designed scenraio
  * of the right col almost filled with a chance to fill it before the opponent can
  * convert the whole line.
  */
-TEST(AI, checkMinMaxBehavoirRight) {
+TEST(AI, checkMinMaxBehaviorRight) {
     Board *b = new Board();
     StdLogic *logic = new StdLogic();
     Computer *ai = new Computer(*logic, *b, WHITE);
