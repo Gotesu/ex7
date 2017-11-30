@@ -3,7 +3,7 @@
 
 #include "Move.h"
 
-enum Side {WHITE, BLACK, EMPTY};
+enum Side {WHITE = -1, EMPTY = 0, BLACK = 1};
 
 /*****************************
  * class name : Board.

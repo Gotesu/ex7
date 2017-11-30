@@ -16,21 +16,17 @@ int Computer::moveValue(Move * move) const {
 int Computer::checkNext(Move * move) const {
 	Board bnext(b);
 	vector<Move*> enmopts;
-	// check the enemy side, then update the copied board and check for enemy moves
-	if (s == BLACK) {
-		bnext.update(BLACK, move);
-		enmopts = l.allowedActions(bnext, WHITE);
-	} else {
-		bnext.update(WHITE, move);
-		enmopts = l.allowedActions(bnext, BLACK);
-	}
+	//update the copied board
+	bnext.update(s, move);
+	// check for enemy moves
+	enmopts = l.allowedActions(bnext, (Side) -s);
 	// if no possible move was found - return 0
 	if (enmopts.size() == 0) {
 		return 0;
 	}
-	int max = 0, current = 0, i, j;
+	int max = 0, current = 0;
 	// go over every possible enemy move
-	for (i = 0; i < enmopts.size(); i++) {
+	for (int i = 0; i < enmopts.size(); i++) {
 		// check how many blocks will change
 		current = moveValue(enmopts[i]);
 		// check if the value is bigger than max value
