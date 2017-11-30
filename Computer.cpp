@@ -18,10 +18,10 @@ int Computer::checkNext(Move * move) const {
 	vector<Move*> enmopts;
 	// check the enemy side, then update the copied board and check for enemy moves
 	if (s == BLACK) {
-		bnext.update(WHITE, move);
+		bnext.update(BLACK, move);
 		enmopts = l.allowedActions(bnext, WHITE);
 	} else {
-		bnext.update(BLACK, move);
+		bnext.update(WHITE, move);
 		enmopts = l.allowedActions(bnext, BLACK);
 	}
 	// if no possible move was found - return 0
