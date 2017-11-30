@@ -42,7 +42,7 @@ TEST(AI, checkMinMaxBehavoirDown) {
 }
 
 /**********************
- * checkMinMaxBehavoir
+ * checkMinMaxBehavoirUp
  * this test checks the ai make a minmax move with a specialy designed scenraio
  * of the last row almost filled with a chance to fill it before the opponent can
  * convert the whole line.
@@ -74,9 +74,9 @@ TEST(AI, checkMinMaxBehavoirUp) {
 }
 
 /**********************
- * checkMinMaxBehavoir
+ * checkMinMaxBehavoirLeft
  * this test checks the ai make a minmax move with a specialy designed scenraio
- * of the last row almost filled with a chance to fill it before the opponent can
+ * of the left col almost filled with a chance to fill it before the opponent can
  * convert the whole line.
  */
 TEST(AI, checkMinMaxBehavoirLeft) {
@@ -106,9 +106,9 @@ TEST(AI, checkMinMaxBehavoirLeft) {
 }
 
 /**********************
- * checkMinMaxBehavoir
+ * checkMinMaxBehavoirRight
  * this test checks the ai make a minmax move with a specialy designed scenraio
- * of the last row almost filled with a chance to fill it before the opponent can
+ * of the right col almost filled with a chance to fill it before the opponent can
  * convert the whole line.
  */
 TEST(AI, checkMinMaxBehavoirRight) {
