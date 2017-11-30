@@ -15,100 +15,60 @@ cstdlib
 -
 
 /home/gotesu/CLionProjects/ex3/Board.h
+Move.h
+/home/gotesu/CLionProjects/ex3/Move.h
+
+/home/gotesu/CLionProjects/ex3/Computer.cpp
+Computer.h
+/home/gotesu/CLionProjects/ex3/Computer.h
+stdio.h
+-
+vector
+-
+
+/home/gotesu/CLionProjects/ex3/Computer.h
+iostream
+-
+limits
+-
+Player.h
+/home/gotesu/CLionProjects/ex3/Player.h
+Logic.h
+/home/gotesu/CLionProjects/ex3/Logic.h
+Board.h
+/home/gotesu/CLionProjects/ex3/Board.h
 
 /home/gotesu/CLionProjects/ex3/GameSession.cpp
 GameSession.h
 /home/gotesu/CLionProjects/ex3/GameSession.h
 
 /home/gotesu/CLionProjects/ex3/GameSession.h
-Board.h
-/home/gotesu/CLionProjects/ex3/Board.h
-StdLogic.h
-/home/gotesu/CLionProjects/ex3/StdLogic.h
 Player.h
 /home/gotesu/CLionProjects/ex3/Player.h
 Visual.h
 /home/gotesu/CLionProjects/ex3/Visual.h
+Board.h
+/home/gotesu/CLionProjects/ex3/Board.h
 
 /home/gotesu/CLionProjects/ex3/Human.cpp
 Human.h
 /home/gotesu/CLionProjects/ex3/Human.h
 stdio.h
 -
+vector
+-
 
 /home/gotesu/CLionProjects/ex3/Human.h
 iostream
 -
-Board.h
-/home/gotesu/CLionProjects/ex3/Board.h
-<<<<<<< HEAD
-Point.h
-/home/gotesu/CLionProjects/ex3/Point.h
-vector
-/home/gotesu/CLionProjects/ex3/vector
-Player.h
-/home/gotesu/CLionProjects/ex3/Player.h
 limits
 -
-
-/home/gotesu/CLionProjects/ex3/Logic.cpp
-Logic.h
-/home/gotesu/CLionProjects/ex3/Logic.h
-
-/home/gotesu/CLionProjects/ex3/Logic.h
-Point.h
-/home/gotesu/CLionProjects/ex3/Point.h
-Board.h
-/home/gotesu/CLionProjects/ex3/Board.h
-vector
--
-
-/home/gotesu/CLionProjects/ex3/Player.cpp
 Player.h
 /home/gotesu/CLionProjects/ex3/Player.h
-
-/home/gotesu/CLionProjects/ex3/Player.h
-Board.h
-/home/gotesu/CLionProjects/ex3/Board.h
-Point.h
-/home/gotesu/CLionProjects/ex3/Point.h
-vector
--
-
-/home/gotesu/CLionProjects/ex3/Point.cpp
-Point.h
-/home/gotesu/CLionProjects/ex3/Point.h
-
-/home/gotesu/CLionProjects/ex3/Point.h
-iostream
--
-
-/home/gotesu/CLionProjects/ex3/StdLogic.cpp
-StdLogic.h
-/home/gotesu/CLionProjects/ex3/StdLogic.h
-
-/home/gotesu/CLionProjects/ex3/StdLogic.h
-vector
--
-Board.h
-/home/gotesu/CLionProjects/ex3/Board.h
-Point.h
-/home/gotesu/CLionProjects/ex3/Point.h
 Logic.h
 /home/gotesu/CLionProjects/ex3/Logic.h
-=======
-vector
-/home/gotesu/CLionProjects/ex3/vector
-Player.h
-/home/gotesu/CLionProjects/ex3/Player.h
-limits
--
-Move.h
-/home/gotesu/CLionProjects/ex3/Move.h
-
-/home/gotesu/CLionProjects/ex3/Logic.cpp
-Logic.h
-/home/gotesu/CLionProjects/ex3/Logic.h
+Board.h
+/home/gotesu/CLionProjects/ex3/Board.h
 
 /home/gotesu/CLionProjects/ex3/Logic.h
 Board.h
@@ -128,17 +88,13 @@ iostream
 vector
 -
 
-/home/gotesu/CLionProjects/ex3/Player.cpp
-Player.h
 /home/gotesu/CLionProjects/ex3/Player.h
-
-/home/gotesu/CLionProjects/ex3/Player.h
-Board.h
-/home/gotesu/CLionProjects/ex3/Board.h
 vector
 -
-Move.h
-/home/gotesu/CLionProjects/ex3/Move.h
+Logic.h
+/home/gotesu/CLionProjects/ex3/Logic.h
+Board.h
+/home/gotesu/CLionProjects/ex3/Board.h
 
 /home/gotesu/CLionProjects/ex3/StdLogic.cpp
 StdLogic.h
@@ -153,7 +109,6 @@ Logic.h
 /home/gotesu/CLionProjects/ex3/Logic.h
 Move.h
 /home/gotesu/CLionProjects/ex3/Move.h
->>>>>>> refs/remotes/origin/master
 
 /home/gotesu/CLionProjects/ex3/StdVisual.cpp
 StdVisual.h
@@ -164,10 +119,6 @@ Visual.h
 /home/gotesu/CLionProjects/ex3/Visual.h
 iostream
 -
-
-/home/gotesu/CLionProjects/ex3/Visual.cpp
-Visual.h
-/home/gotesu/CLionProjects/ex3/Visual.h
 
 /home/gotesu/CLionProjects/ex3/Visual.h
 Board.h
@@ -180,6 +131,10 @@ GameSession.h
 /home/gotesu/CLionProjects/ex3/GameSession.h
 Human.h
 /home/gotesu/CLionProjects/ex3/Human.h
+Computer.h
+/home/gotesu/CLionProjects/ex3/Computer.h
+StdLogic.h
+/home/gotesu/CLionProjects/ex3/StdLogic.h
 StdVisual.h
 /home/gotesu/CLionProjects/ex3/StdVisual.h
 

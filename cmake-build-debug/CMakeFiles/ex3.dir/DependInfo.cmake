@@ -5,19 +5,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/gotesu/CLionProjects/ex3/Board.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Board.cpp.o"
+  "/home/gotesu/CLionProjects/ex3/Computer.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Computer.cpp.o"
   "/home/gotesu/CLionProjects/ex3/GameSession.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/GameSession.cpp.o"
   "/home/gotesu/CLionProjects/ex3/Human.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Human.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/Logic.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Logic.cpp.o"
-<<<<<<< HEAD
-  "/home/gotesu/CLionProjects/ex3/Player.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Player.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/Point.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Point.cpp.o"
-=======
   "/home/gotesu/CLionProjects/ex3/Move.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Move.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/Player.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Player.cpp.o"
->>>>>>> refs/remotes/origin/master
   "/home/gotesu/CLionProjects/ex3/StdLogic.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/StdLogic.cpp.o"
   "/home/gotesu/CLionProjects/ex3/StdVisual.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/StdVisual.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/Visual.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Visual.cpp.o"
   "/home/gotesu/CLionProjects/ex3/main.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

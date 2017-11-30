@@ -5,21 +5,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/gotesu/CLionProjects/ex3/Board.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/Board.cpp.o"
+  "/home/gotesu/CLionProjects/ex3/Computer.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/Computer.cpp.o"
   "/home/gotesu/CLionProjects/ex3/GameSession.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/GameSession.cpp.o"
   "/home/gotesu/CLionProjects/ex3/Human.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/Human.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/Logic.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/Logic.cpp.o"
-<<<<<<< HEAD
-  "/home/gotesu/CLionProjects/ex3/Player.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/Player.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/Point.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/Point.cpp.o"
-=======
   "/home/gotesu/CLionProjects/ex3/Move.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/Move.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/Player.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/Player.cpp.o"
->>>>>>> refs/remotes/origin/master
   "/home/gotesu/CLionProjects/ex3/StdLogic.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/StdLogic.cpp.o"
   "/home/gotesu/CLionProjects/ex3/StdVisual.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/StdVisual.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/Visual.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/Visual.cpp.o"
   "/home/gotesu/CLionProjects/ex3/test/gtest_main.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/test/gtest_main.cpp.o"
   "/home/gotesu/CLionProjects/ex3/test/test_Board.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/test/test_Board.cpp.o"
+  "/home/gotesu/CLionProjects/ex3/test/test_Computer.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/test/test_Computer.cpp.o"
+  "/home/gotesu/CLionProjects/ex3/test/test_Human.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/test/test_Human.cpp.o"
   "/home/gotesu/CLionProjects/ex3/test/test_StdLogic.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3_test.dir/test/test_StdLogic.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
