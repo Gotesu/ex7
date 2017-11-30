@@ -5,9 +5,9 @@
 #include <gmock/gmock.h>
 #include "../Computer.h"
 #include "../StdLogic.h"
-#include "../StdVisual.h"
+
 /**********************
- * checkMinMaxBehavoir
+ * checkMinMaxBehavoirDown
  * this test checks the ai make a minmax move with a specialy designed scenraio
  * of the last row almost filled with a chance to fill it before the opponent can
  * convert the whole line.
@@ -31,10 +31,7 @@ TEST(AI, checkMinMaxBehavoirDown) {
     b->set(7, 1, WHITE);
     b->set(6, 6, BLACK);
     b->set(6, 5, BLACK);
-    StdVisual *v = new StdVisual(b);
-    v->printBoard();
     ai->doMove();
-    v->printBoard();
     EXPECT_EQ(b->get(7, 7), WHITE);
     delete b;
     delete logic;
@@ -130,10 +127,7 @@ TEST(AI, checkMinMaxBehavoirRight) {
     b->set(6, 7, WHITE);
     b->set(1, 6, BLACK);
     b->set(2, 6, BLACK);
-    StdVisual *v = new StdVisual(b);
-    v->printBoard();
     ai->doMove();
-    v->printBoard();
     EXPECT_EQ(b->get(0, 7), WHITE);
     delete b;
     delete logic;
