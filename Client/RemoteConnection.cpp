@@ -42,19 +42,34 @@ void RemoteConnection::connectToServer() {
         throw "Error connecting to server";
     }
     cout << "Connected to server" << endl;
+    setSide();
 }
 
-int RemoteConnection::sendExercise(int arg1) {
-// Write the exercise arguments to the socket
-    int n = write(clientSocket, &arg1, sizeof(arg1));
+void RemoteConnection::setSide() {
+    int side = 0;
+    int n = read(clientSocket, &side, sizeof(side));
     if (n == -1) {
-        throw "Error writing arg1 to socket";
+        throw "Error writing Move to socket";
     }
-// Read the result from the server
-    int result;
-    n = read(clientSocket, &result, sizeof(result));
+    this->side = side;
+    return;
+}
+
+int RemoteConnection::getSide() {
+    return this->side;
+}
+
+string RemoteConnection::getMove() {
+    string input;
+    int n = read(clientSocket, &input, sizeof(input));
+    return input;
+}
+
+void RemoteConnection::sendMove(string move) {
+// Write the Player's move to the socket
+    int n = write(clientSocket, &move, sizeof(move));
     if (n == -1) {
-        throw "Error reading result from socket";
+        throw "Error writing Move to socket";
     }
-    return result;
+    return;
 }

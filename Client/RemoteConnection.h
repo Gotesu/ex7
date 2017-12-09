@@ -12,13 +12,18 @@
 #include <netdb.h>
 #include <string.h>
 #include <unistd.h>
+#include "Move.h"
 class RemoteConnection {
 
 public:
     RemoteConnection(const char *serverIP, int serverPort);
     void connectToServer();
-    int sendExercise(int arg1);
+    int getSide();
+    void sendMove(string move);
+    string getMove();
 private:
+    void setSide();
+    int side;
     const char *serverIP;
     int serverPort;
     int clientSocket;
