@@ -4,8 +4,8 @@
 /home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/list_install_components.dir
 /home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex3_test.dir
-/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex3.dir
+/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4_test.dir
+/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir
 /home/gotesu/CLionProjects/ex4/cmake-build-debug/gtest_src/googletest-release-1.8.0/CMakeFiles/install/strip.dir
 /home/gotesu/CLionProjects/ex4/cmake-build-debug/gtest_src/googletest-release-1.8.0/CMakeFiles/install/local.dir
 /home/gotesu/CLionProjects/ex4/cmake-build-debug/gtest_src/googletest-release-1.8.0/CMakeFiles/install.dir

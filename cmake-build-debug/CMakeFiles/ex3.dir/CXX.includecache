@@ -21,8 +21,6 @@ Computer.h
 /home/gotesu/CLionProjects/ex4/Client/Computer.h
 stdio.h
 -
-vector
--
 
 /home/gotesu/CLionProjects/ex4/Client/Computer.h
 iostream
@@ -52,8 +50,6 @@ Board.h
 Human.h
 /home/gotesu/CLionProjects/ex4/Client/Human.h
 stdio.h
--
-vector
 -
 
 /home/gotesu/CLionProjects/ex4/Client/Human.h

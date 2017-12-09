@@ -146,7 +146,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=ex3
+CMAKE_PROJECT_NAME:STATIC=ex4
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -211,6 +211,12 @@ ex3_BINARY_DIR:STATIC=/home/gotesu/CLionProjects/ex4/cmake-build-debug
 
 //Value Computed by CMake
 ex3_SOURCE_DIR:STATIC=/home/gotesu/CLionProjects/ex4
+
+//Value Computed by CMake
+ex4_BINARY_DIR:STATIC=/home/gotesu/CLionProjects/ex4/cmake-build-debug
+
+//Value Computed by CMake
+ex4_SOURCE_DIR:STATIC=/home/gotesu/CLionProjects/ex4
 
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/gotesu/CLionProjects/ex4/cmake-build-debug/gtest_src/googletest-release-1.8.0/googlemock

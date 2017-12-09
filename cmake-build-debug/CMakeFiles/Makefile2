@@ -60,78 +60,78 @@ CMAKE_SOURCE_DIR = /home/gotesu/CLionProjects/ex4
 CMAKE_BINARY_DIR = /home/gotesu/CLionProjects/ex4/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/ex3_test.dir
+# Target rules for target CMakeFiles/ex4_test.dir
 
 # All Build rule for target.
-CMakeFiles/ex3_test.dir/all: gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock.dir/all
-CMakeFiles/ex3_test.dir/all: gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main.dir/all
-CMakeFiles/ex3_test.dir/all: gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/all
-	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/depend
-	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=10,11,12,13,14,15,16,17,18,19,20,21,22 "Built target ex3_test"
-.PHONY : CMakeFiles/ex3_test.dir/all
+CMakeFiles/ex4_test.dir/all: gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock.dir/all
+CMakeFiles/ex4_test.dir/all: gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main.dir/all
+CMakeFiles/ex4_test.dir/all: gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/depend
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=11,12,13,14,15,16,17,18,19,20,21,22,23 "Built target ex4_test"
+.PHONY : CMakeFiles/ex4_test.dir/all
 
 # Include target in all.
-all: CMakeFiles/ex3_test.dir/all
+all: CMakeFiles/ex4_test.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ex3_test.dir/rule: cmake_check_build_system
+CMakeFiles/ex4_test.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles 20
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex3_test.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/ex3_test.dir/rule
+.PHONY : CMakeFiles/ex4_test.dir/rule
 
 # Convenience name for target.
-ex3_test: CMakeFiles/ex3_test.dir/rule
+ex4_test: CMakeFiles/ex4_test.dir/rule
 
-.PHONY : ex3_test
-
-# clean rule for target.
-CMakeFiles/ex3_test.dir/clean:
-	$(MAKE) -f CMakeFiles/ex3_test.dir/build.make CMakeFiles/ex3_test.dir/clean
-.PHONY : CMakeFiles/ex3_test.dir/clean
+.PHONY : ex4_test
 
 # clean rule for target.
-clean: CMakeFiles/ex3_test.dir/clean
+CMakeFiles/ex4_test.dir/clean:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/clean
+.PHONY : CMakeFiles/ex4_test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex4_test.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ex3.dir
+# Target rules for target CMakeFiles/ex4.dir
 
 # All Build rule for target.
-CMakeFiles/ex3.dir/all:
-	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/depend
-	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target ex3"
-.PHONY : CMakeFiles/ex3.dir/all
+CMakeFiles/ex4.dir/all:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/depend
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target ex4"
+.PHONY : CMakeFiles/ex4.dir/all
 
 # Include target in all.
-all: CMakeFiles/ex3.dir/all
+all: CMakeFiles/ex4.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ex3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles 9
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex3.dir/all
+CMakeFiles/ex4.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles 10
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex4.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/ex3.dir/rule
+.PHONY : CMakeFiles/ex4.dir/rule
 
 # Convenience name for target.
-ex3: CMakeFiles/ex3.dir/rule
+ex4: CMakeFiles/ex4.dir/rule
 
-.PHONY : ex3
-
-# clean rule for target.
-CMakeFiles/ex3.dir/clean:
-	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/clean
-.PHONY : CMakeFiles/ex3.dir/clean
+.PHONY : ex4
 
 # clean rule for target.
-clean: CMakeFiles/ex3.dir/clean
+CMakeFiles/ex4.dir/clean:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/clean
+.PHONY : CMakeFiles/ex4.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ex4.dir/clean
 
 .PHONY : clean
 
@@ -182,7 +182,7 @@ gtest_src/googletest-release-1.8.0/googlemock/preinstall: gtest_src/googletest-r
 gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock_main.dir/build.make gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock_main.dir/build.make gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=26,27,28,29 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=27,28,29,30 "Built target gmock_main"
 .PHONY : gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Include target in all.
@@ -219,7 +219,7 @@ clean: gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock_main.dir/c
 gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock.dir/build.make gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock.dir/build.make gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=23,24,25 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=24,25,26 "Built target gmock"
 .PHONY : gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock.dir/all
 
 # Include target in all.
@@ -276,7 +276,7 @@ gtest_src/googletest-release-1.8.0/googlemock/gtest/preinstall:
 gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main.dir/all: gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=32,33 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=33,34 "Built target gtest_main"
 .PHONY : gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 
 # Include target in all.
@@ -313,7 +313,7 @@ clean: gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main
 gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=30,31 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=31,32 "Built target gtest"
 .PHONY : gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/all
 
 # Include target in all.
