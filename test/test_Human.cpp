@@ -4,8 +4,8 @@
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "../Human.h"
-#include "../StdLogic.h"
+#include "../Client/Human.h"
+#include "../Client/StdLogic.h"
 /******************8
  * noChoice
  * this check verifies that a player passes his turn if he has no move to do.

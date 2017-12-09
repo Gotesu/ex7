@@ -1,4 +1,4 @@
-# Install script for directory: /home/gotesu/CLionProjects/ex3/gtest_src/googletest-release-1.8.0
+# Install script for directory: /home/gotesu/CLionProjects/ex4/gtest_src/googletest-release-1.8.0
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/gotesu/CLionProjects/ex3/cmake-build-debug/gtest_src/googletest-release-1.8.0/googlemock/cmake_install.cmake")
+  include("/home/gotesu/CLionProjects/ex4/cmake-build-debug/gtest_src/googletest-release-1.8.0/googlemock/cmake_install.cmake")
 
 endif()
 

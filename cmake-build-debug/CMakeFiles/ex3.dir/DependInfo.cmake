@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/gotesu/CLionProjects/ex3/Board.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Board.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/Computer.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Computer.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/GameSession.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/GameSession.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/Human.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Human.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/Move.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Move.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/StdLogic.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/StdLogic.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/StdVisual.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/StdVisual.cpp.o"
-  "/home/gotesu/CLionProjects/ex3/main.cpp" "/home/gotesu/CLionProjects/ex3/cmake-build-debug/CMakeFiles/ex3.dir/main.cpp.o"
+  "/home/gotesu/CLionProjects/ex4/Client/Board.cpp" "/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex3.dir/Client/Board.cpp.o"
+  "/home/gotesu/CLionProjects/ex4/Client/Computer.cpp" "/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex3.dir/Client/Computer.cpp.o"
+  "/home/gotesu/CLionProjects/ex4/Client/GameSession.cpp" "/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex3.dir/Client/GameSession.cpp.o"
+  "/home/gotesu/CLionProjects/ex4/Client/Human.cpp" "/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex3.dir/Client/Human.cpp.o"
+  "/home/gotesu/CLionProjects/ex4/Client/Move.cpp" "/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex3.dir/Client/Move.cpp.o"
+  "/home/gotesu/CLionProjects/ex4/Client/StdLogic.cpp" "/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex3.dir/Client/StdLogic.cpp.o"
+  "/home/gotesu/CLionProjects/ex4/Client/StdVisual.cpp" "/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex3.dir/Client/StdVisual.cpp.o"
+  "/home/gotesu/CLionProjects/ex4/Client/main.cpp" "/home/gotesu/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex3.dir/Client/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

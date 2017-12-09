@@ -11,29 +11,29 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 
 set(SOURCE_FILES
-        Board.cpp
-        Board.h
-        GameSession.cpp
-        GameSession.h
-        Human.cpp
-        Human.h
-        Logic.h
-        Player.h
-        Move.cpp
-        Move.h
-        StdLogic.cpp
-        StdLogic.h
-        StdVisual.cpp
-        StdVisual.h
-        Visual.h
-        Computer.h
-        Computer.cpp
+        Client/Board.cpp
+        Client/Board.h
+        Client/GameSession.cpp
+        Client/GameSession.h
+        Client/Human.cpp
+        Client/Human.h
+        Client/Logic.h
+        Client/Player.h
+        Client/Move.cpp
+        Client/Move.h
+        Client/StdLogic.cpp
+        Client/StdLogic.h
+        Client/StdVisual.cpp
+        Client/StdVisual.h
+        Client/Visual.h
+        Client/Computer.h
+        Client/Computer.cpp
         )
 
 set(TEST_FILES
         test/gtest_main.cpp test/test_Board.cpp test/test_StdLogic.cpp test/test_Human.cpp test/test_Computer.cpp)
 
-add_executable(ex3 ${SOURCE_FILES} main.cpp)
+add_executable(ex3 ${SOURCE_FILES} Client/main.cpp)
 
 add_executable(ex3_test ${SOURCE_FILES} ${TEST_FILES} test/gtest_main.cpp)
 target_link_libraries(ex3_test gtest gmock gtest_main)

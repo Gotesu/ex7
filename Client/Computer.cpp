@@ -1,6 +1,5 @@
 #include "Computer.h"
 #include <stdio.h>
-#include <vector>
 
 Computer::Computer(Logic& l, Board& b, Side s):Player(l, b, s) {}
 
@@ -19,7 +18,7 @@ int Computer::checkNext(Move * move) const {
 	//update the copied board
 	bnext.update(s, move);
 	// check for enemy moves
-	enmopts = l.allowedActions(bnext, (Side) -s);
+	enmopts = l.allowedActions(bnext, -s);
 	// if no possible move was found - return 0
 	if (enmopts.size() == 0) {
 		return 0;

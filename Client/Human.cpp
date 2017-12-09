@@ -1,6 +1,5 @@
 #include "Human.h"
 #include <stdio.h>
-#include <vector>
 
 Human::Human(Logic& l, Board& b, Side s):Player(l, b, s) {}
 

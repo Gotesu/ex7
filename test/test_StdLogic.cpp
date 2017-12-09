@@ -4,7 +4,7 @@
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "../StdLogic.h"
+#include "../Client/StdLogic.h"
 
 using namespace testing;
 /*****************************

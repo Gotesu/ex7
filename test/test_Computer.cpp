@@ -3,8 +3,8 @@
 //
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "../Computer.h"
-#include "../StdLogic.h"
+#include "../Client/Computer.h"
+#include "../Client/StdLogic.h"
 
 /**********************
  * checkMinMaxBehaviorDown
