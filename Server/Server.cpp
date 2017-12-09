@@ -10,6 +10,9 @@ Server::Server(int port): port(port), serverSocket(0) {
     cout << "Server" << endl;
 }
 void Server::start() {
+    int n;
+    int first = 1;
+    int second = 2;
 // Create a socket point
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (serverSocket == -1) {
@@ -43,6 +46,12 @@ void Server::start() {
         cout << "Second Client connected" << endl;
         if (clientSocket == -1 || clientSocket2 == -1)
             throw "Error on accept";
+        n = write(clientSocket, first, sizeof(first));
+        if (n == -1)
+            throw "Client 1 connection error";
+        n = write(clientSocket, second, sizeof(second));
+        if (n == -1)
+            throw "Client 2 connection error";
         handleClient(clientSocket, clientSocket2);
         // Close communication with the client
         close(clientSocket);
@@ -50,70 +59,64 @@ void Server::start() {
     }
 }
 
-void Server::handleClient(int clientSocket, int clientSocket2) {
-    int arg1, arg2;
-    char op = '*';
-
+void Server::handleClients(int clientSocket, int clientSocket2) {
+    string client1Input;
+    string client2Input;
     while(true) {
-        //read new exercise arguments
-        int n = read(clientSocket, &arg1, sizeof(arg1));
+        //read new move of first player.
+        int n = read(clientSocket, &client1Input, sizeof(client1Input));
         if (n == -1) {
-            cout << "Error reading arg1" << endl;
+            cout << "Error reading client 1 input" << endl;
             return;
         }
         if (n == 0) {
-            cout << "Client disconnected" << endl;
+            cout << "Client 1 disconnected" << endl;
             return;
         }
-        n = read(clientSocket2, &arg2, sizeof(arg2));
+        //case game ended
+        if (endGame(client1Input)) {
+            cout << "Game ended" << endl;
+            return;
+        }
+        //send the move to client 2
+        n = write(clientSocket2, &client1Input, sizeof(client1Input));
         if (n == -1) {
-            cout << "Error reading arg2" << endl;
+            cout << "Error writing to client 2" << endl;
             return;
         }
-        if (arg1 == -1) {
-            cout << "client 1 disconnected, ending session" << endl;
-            int result = -1;
-            write(clientSocket2, &result, sizeof(result));
-            return;
-        }
-        if (arg2 == -1) {
-            cout << "client 2 disconnected, ending session" << endl;
-            int result = -1;
-            write(clientSocket, &result, sizeof(result));
-            return;
-        }
-        cout << "Got exercise: " << arg1 << op << arg2 <<
-             endl;
-        int result = calc(arg1, op, arg2);
-        // Write the result back to the client
-        n = write(clientSocket, &result, sizeof(result));
+        //read client 2 new move
+        n = read(clientSocket2, &client2Input, sizeof(client2Input));
         if (n == -1) {
-            cout << "Error writing to socket" << endl;
+            cout << "Error reading client 2 input" << endl;
             return;
         }
-        n = write(clientSocket2, &result, sizeof(result));
+        if (n == 0) {
+            cout << "Client 1 disconnected" << endl;
+            return;
+        }
+        //case game ended.
+        if (endGame(client2Input)) {
+            cout << "Game ended" << endl;
+            return;
+        }
+        //send to client 1
+        n = write(clientSocket1, &client2Input, sizeof(client2Input));
         if (n == -1) {
-            cout << "Error writing to socket" << endl;
+            cout << "Error writing to client 1" << endl;
             return;
         }
+
     }
 }
 
-int Server::calc(int arg1, const char op, int arg2) const {
-    switch (op) {
-        case '+':
-            return arg1 + arg2;
-        case '-':
-            return arg1 - arg2;
-        case '*':
-            return arg1 * arg2;
-        case '/':
-            return arg1 / arg2;
-        default:
-            cout << "Invalid operator" << endl;
-            return 0;
-    }
-}
 void Server::stop() {
     close(serverSocket);
+}
+
+bool Server::endGame(string input) {
+    string check = "End";
+    if (strcmp(input, check) == 0)
+        return 1;
+    return 0;
+
 }

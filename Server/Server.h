@@ -21,8 +21,8 @@ public:
 private:
     int port;
     int serverSocket; // the socket's file descriptor
-    void handleClient(int clientSocket, int clientSocket2);
-    int calc(int arg1, const char op, int arg2) const;
+    void handleClients(int clientSocket, int clientSocket2);
+    bool endGame(string input);
 };
 
 
