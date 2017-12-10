@@ -37,12 +37,24 @@ int Computer::checkNext(Move * move) const {
 	return max;
 }
 
+char Computer::sign() const {
+    switch(s) {
+        case WHITE : return 'O';
+        case BLACK : return 'X';
+        default: return 'E';
+    }
+}
+
 bool Computer::doMove() {
+	// free last move
+	delete last;
+	cout << "Its " << sign() << " move." << endl;
 	vector<Move*> options;
 	// check possible moves
 	options = l.allowedActions(b, s);
 	if (options.size() == 0) {
 		cout << "No possible moves, turn pass" << endl;
+		last = NULL;
 		return false;
 	}
 	int i, min, current;
@@ -61,11 +73,14 @@ bool Computer::doMove() {
 	// change the board whith the chosen move
 	b.update(s, best);
 	// print the chosen move
-	cout << "Enemy played ";
+	cout << sign() << " played ";
 	best->pMove();
 	cout << endl;
-	// free memory
+	// free memory - delete all the other moves
 	for (i = 0; i < options.size(); i++)
-		delete options[i];
+		if (!options[i]->isEqual(best))
+			delete options[i];
+	// save the chosen move
+	last = best;
 	return true;
 }

@@ -2,7 +2,6 @@
 #define COMPUTER_H
 
 #include <iostream>
-#include <limits>
 #include "Player.h"
 #include "Logic.h"
 #include "Board.h"
@@ -19,12 +18,17 @@ public:
      * @param s side
      */
     Computer(Logic& l, Board& b, Side s);
-    /*****************
- * Function name: doMove
- * @param options , vector holding optional moves.
- * @return a Move of the chosen move.
-     ******************/
-    virtual bool doMove();
+    /***********************
+ * function name: doMove
+ * @return true if the player had a possible move, false otherwise.
+     */
+    bool doMove();
+	/******************************************
+	* function name: sign()
+	* The Output: the player sign.
+	* The function operation: the function checks the player side, and return the right sign.
+	******************************************/
+   char sign() const;
 private:
     /*****************
  * Function name: checkNext

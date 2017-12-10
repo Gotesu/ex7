@@ -11,15 +11,26 @@ Move* Human::checkMove(int i, int j, vector<Move*> options) {
 	return NULL;
 }
 
+char Human::sign() const {
+    switch(s) {
+        case WHITE : return 'O';
+        case BLACK : return 'X';
+        default: return 'E';
+    }
+}
+
 bool Human::doMove() {
-	vector<Move*> options;
-	options = l.allowedActions(b, s);
-	if (options.size() == 0) {
-		cout << "You have no possible moves, turn pass" << endl;
-		return false;
-	}
+	// free last move
+	delete last;
 	int i, j;
 	unsigned int k;
+	cout << sign() << " it's your move." << endl;
+	vector<Move*> options = l.allowedActions(b, s);
+	if (options.size() == 0) {
+		cout << "You have no possible moves, turn pass" << endl;
+		last = NULL;
+		return false;
+	}
 	cout << "Your Possible Moves are :";
 	for (k = 0; k < options.size(); k++) {
 		if (k > 0)
@@ -41,8 +52,12 @@ bool Human::doMove() {
 			// check if the move is possible (in the vector)
 			if (choice != NULL) {
 				b.update(s, choice);
+				// free memory - delete all the other moves
 				for (k = 0; k < options.size(); k++)
-					delete options[k];
+					if (!options[k]->isEqual(choice))
+						delete options[k];
+				// save the chosen move
+				last = choice;
 				return true;
 			}
 			else

@@ -1,24 +1,22 @@
-#include "GameSession.h"
+#include "StdGame.h"
 
-GameSession::GameSession(Board* board, Visual* vis, Player* p1, Player* p2):
-        board(board), vis(vis) ,player1(p1), player2(p2) {}
+StdGame::StdGame(Board* board, Visual* vis, Player* p1, Player* p2):
+	GameSession(board, vis, p1, p2) {}
 
-GameSession::~GameSession() {
-};
-void GameSession::playRound() {
-	bool xplayed;
+StdGame::~StdGame() {}
+
+void StdGame::playRound() {
 	//  the loop continue when x or o had a turn
 	do {
 		vis->printBoard();
-		cout << "X its your move." << endl;
-		xplayed = player1->doMove();
+		player1->doMove();
 		vis->printBoard();
-		cout << "O its your move." << endl;
-	} while ((player2->doMove()) || (xplayed));
+		player2->doMove();
+	} while ((player1->lastMove() != NULL) || (player2->lastMove() != NULL));
 	finalCountdown(board);
 }
 
-void GameSession::finalCountdown(Board* b) {
+void StdGame::finalCountdown(Board* b) {
     int white = 0;
     int black = 0;
     for (int i = 0; i < b->getRow(); i++) {

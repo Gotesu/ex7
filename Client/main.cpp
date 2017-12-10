@@ -1,38 +1,71 @@
 #include <iostream>
-#include "GameSession.h"
+#include "Board.h"
+#include "StdGame.h"
+#include "RemoteGame.h"
+#include "RemoteConnection.h"
 #include "Human.h"
 #include "Computer.h"
+#include "RemotePlayer.h"
 #include "StdLogic.h"
 #include "StdVisual.h"
 
 int main() {
-    Board* b1;
+    Board* board;
     Visual* vis;
     Logic* log;
-    Player* p1;
-    Player* p2;
+    Player * p1, * p2;
     GameSession* game;
-		char c;
-		do{
-			cout << "Player X is Human. What about Player O?" << endl << "Enter 'H' for Human, or 'C' for Computer: ";
-			cin >> c;
-		} while ((c != 'C') && (c != 'H'));
+		int c;
+		cout << "Welcome to Reversi!" << endl;
+		cout << "Choose an opponent type:" << endl;
+		cout << "1. a human local player" << endl;
+		cout << "2. an AI player" << endl;
+		cout << "3. a remote player" << endl;
+		cin >> c;
     try {
-        b1 = new Board();
-        vis = new StdVisual(b1);
+    	board = new Board();
+        vis = new StdVisual(board);
         log = new StdLogic();
-        p1 = new Human(*log, *b1, BLACK);
-        if (c == 'C')
-        	p2 = new Computer(*log, *b1, WHITE);
-        else
-        	p2 = new Human(*log, *b1, WHITE);
-        game = new GameSession(b1, vis, p1, p2);
-    } catch(exception e1) {
-        cout << "Error :Cannot allocate memory";
+        if (c == 1) {
+						p1 = new Human(*log, *board, BLACK);
+			      p2 = new Human(*log, *board, WHITE);
+			      game = new StdGame(board, vis, p1, p2);
+        } else if (c == 2) {
+						Player * p1, * p2;
+						p1 = new Human(*log, *board, BLACK);
+			      p2 = new Computer(*log, *board, WHITE);
+			      game = new StdGame(board, vis, p1, p2);
+        } else if (c == 3) {
+						RemoteConnection rc = RemoteConnection();
+						rc.connectToServer();
+						// check Player1 side, and create the Players
+						switch (rc.getSide()) {
+							case 1:
+								p1 = new Human(*log, *board, BLACK);
+								p2 = new RemotePlayer(*log, *board, WHITE, rc);
+								break;
+							case 2:
+								p1 = new Human(*log, *board, WHITE);
+								p2 = new RemotePlayer(*log, *board, BLACK, rc);
+								break;
+							default:
+								cout << "Error: Illegal input from server";
+								return 0;
+						}
+						game = new RemoteGame(board, vis, p1, (RemotePlayer*) p2);
+        } else {
+						cout << "Error: Illegal choice";
+						return 0;
+        		}
+        game->playRound();
+    } catch(bad_alloc& ba) {
+        cout << "Error: Cannot allocate memory";
         return 0;
-    }
-    game->playRound();
-    delete b1;
+    } catch(exception& e) {
+		cout << "Error";
+		return 0;
+		}
+    delete board;
     delete vis;
     delete log;
     delete p1;

@@ -10,7 +10,7 @@ Board::Board(int row, int col): row(row), col(col){
         for (i = 0; i < row; i++) {
             playBoard[i] = new Side[col];
         }
-    }catch(exception e1) {
+    }catch(exception& e1) {
         cout << "Failed allocating memory"<<endl;
         exit;
     }
@@ -34,7 +34,7 @@ Board::Board(const Board& obj): row(obj.getRow()), col(obj.getCol()){
         for (i = 0; i < row; i++) {
             playBoard[i] = new Side[col];
         }
-    }catch(exception e1) {
+    }catch(exception& e1) {
         cout << "Failed allocating memory"<<endl;
         exit;
     }
