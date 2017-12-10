@@ -12,7 +12,9 @@
 #include <netdb.h>
 #include <string.h>
 #include <unistd.h>
+#include <math.h>
 #include "Move.h"
+#include <fstream>
 class RemoteConnection {
 
 public:
@@ -27,6 +29,7 @@ private:
     const char *serverIP;
     int serverPort;
     int clientSocket;
+    int stringToInt(string input);
 };
 
 

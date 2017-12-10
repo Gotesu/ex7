@@ -4,9 +4,19 @@
 
 #include "RemoteConnection.h"
 using namespace std;
-RemoteConnection::RemoteConnection(const char *serverIP, int serverPort):
-        serverIP(serverIP), serverPort(serverPort),
-        clientSocket(0) {
+RemoteConnection::RemoteConnection(const char *serverIP, int serverPort): clientSocket(0) {
+    fstream data;
+    string input;
+    string input2;
+    try {
+        data.open("Client_Settings.txt");
+    } catch(exception) {
+        throw "Cannot open settings file";
+    }
+    getline(data,input);
+    getline(data,input2);
+    this->serverIP = input.c_str();
+    this->serverPort = stringToInt(input2);
     cout << "Client" << endl;
 }
 void RemoteConnection::connectToServer() {
@@ -72,4 +82,14 @@ void RemoteConnection::sendMove(string move) {
         throw "Error writing Move to socket";
     }
     return;
+}
+
+int RemoteConnection::stringToInt(string input) {
+        int number = 0;
+        int dig;
+        for (int i = 0; i < input.size(); i ++) {
+            dig = (int) (input.at(i) - '0');
+            number += (pow(10, input.size() - 1 - i) * dig);
+        }
+        return number;
 }
