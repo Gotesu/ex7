@@ -18,7 +18,7 @@
 class RemoteConnection {
 
 public:
-    RemoteConnection(const char *serverIP, int serverPort);
+    RemoteConnection();
     void connectToServer();
     int getSide();
     void sendMove(string move);

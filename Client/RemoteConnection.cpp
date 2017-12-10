@@ -4,7 +4,7 @@
 
 #include "RemoteConnection.h"
 using namespace std;
-RemoteConnection::RemoteConnection(const char *serverIP, int serverPort): clientSocket(0) {
+RemoteConnection::RemoteConnection(): clientSocket(0) {
     fstream data;
     string input;
     string input2;
