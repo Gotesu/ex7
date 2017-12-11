@@ -20,11 +20,9 @@ void RemotePlayer::upload(Move* choice) {
 	}
 	char send[10] = {0};
 	send[0] = (char)(choice->getR() + '0');
-    cout << send[0] << endl;
 	send[1] = ',';
 	send[2] = ' ';
 	send[3] = (char)(choice->getC() + '0');
-    cout << send[3] << endl;
 	rc.sendMove(send);
 }
 

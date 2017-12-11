@@ -79,7 +79,6 @@ void Server::handleClients(int clientSocket, int clientSocket2) {
             return;
         }
         //send the move to client 2
-        cout << " this is the first client input" << client2Input << endl;
         n = write(clientSocket2, client1Input, sizeof(client1Input));
         if (n == -1) {
             cout << "Error writing to client 2" << endl;
