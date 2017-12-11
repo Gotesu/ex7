@@ -13,7 +13,12 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 set(SOURCE_FILES
         Client/Board.cpp
         Client/Board.h
-        Client/GameSession.cpp
+        Client/StdGame.cpp
+        Client/StdGame.h
+        Client/RemoteGame.cpp
+        Client/RemoteGame.h
+        Client/RemotePlayer.cpp
+        Client/RemotePlayer.h
         Client/GameSession.h
         Client/Human.cpp
         Client/Human.h

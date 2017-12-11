@@ -294,36 +294,6 @@ Client/Computer.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Computer.cpp.s
 .PHONY : Client/Computer.cpp.s
 
-Client/GameSession.o: Client/GameSession.cpp.o
-
-.PHONY : Client/GameSession.o
-
-# target to build an object file
-Client/GameSession.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/GameSession.cpp.o
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/GameSession.cpp.o
-.PHONY : Client/GameSession.cpp.o
-
-Client/GameSession.i: Client/GameSession.cpp.i
-
-.PHONY : Client/GameSession.i
-
-# target to preprocess a source file
-Client/GameSession.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/GameSession.cpp.i
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/GameSession.cpp.i
-.PHONY : Client/GameSession.cpp.i
-
-Client/GameSession.s: Client/GameSession.cpp.s
-
-.PHONY : Client/GameSession.s
-
-# target to generate assembly for a file
-Client/GameSession.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/GameSession.cpp.s
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/GameSession.cpp.s
-.PHONY : Client/GameSession.cpp.s
-
 Client/Human.o: Client/Human.cpp.o
 
 .PHONY : Client/Human.o
@@ -410,6 +380,96 @@ Client/RemoteConnection.s: Client/RemoteConnection.cpp.s
 Client/RemoteConnection.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemoteConnection.cpp.s
 .PHONY : Client/RemoteConnection.cpp.s
+
+Client/RemoteGame.o: Client/RemoteGame.cpp.o
+
+.PHONY : Client/RemoteGame.o
+
+# target to build an object file
+Client/RemoteGame.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/RemoteGame.cpp.o
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemoteGame.cpp.o
+.PHONY : Client/RemoteGame.cpp.o
+
+Client/RemoteGame.i: Client/RemoteGame.cpp.i
+
+.PHONY : Client/RemoteGame.i
+
+# target to preprocess a source file
+Client/RemoteGame.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/RemoteGame.cpp.i
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemoteGame.cpp.i
+.PHONY : Client/RemoteGame.cpp.i
+
+Client/RemoteGame.s: Client/RemoteGame.cpp.s
+
+.PHONY : Client/RemoteGame.s
+
+# target to generate assembly for a file
+Client/RemoteGame.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/RemoteGame.cpp.s
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemoteGame.cpp.s
+.PHONY : Client/RemoteGame.cpp.s
+
+Client/RemotePlayer.o: Client/RemotePlayer.cpp.o
+
+.PHONY : Client/RemotePlayer.o
+
+# target to build an object file
+Client/RemotePlayer.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/RemotePlayer.cpp.o
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemotePlayer.cpp.o
+.PHONY : Client/RemotePlayer.cpp.o
+
+Client/RemotePlayer.i: Client/RemotePlayer.cpp.i
+
+.PHONY : Client/RemotePlayer.i
+
+# target to preprocess a source file
+Client/RemotePlayer.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/RemotePlayer.cpp.i
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemotePlayer.cpp.i
+.PHONY : Client/RemotePlayer.cpp.i
+
+Client/RemotePlayer.s: Client/RemotePlayer.cpp.s
+
+.PHONY : Client/RemotePlayer.s
+
+# target to generate assembly for a file
+Client/RemotePlayer.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/RemotePlayer.cpp.s
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemotePlayer.cpp.s
+.PHONY : Client/RemotePlayer.cpp.s
+
+Client/StdGame.o: Client/StdGame.cpp.o
+
+.PHONY : Client/StdGame.o
+
+# target to build an object file
+Client/StdGame.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/StdGame.cpp.o
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/StdGame.cpp.o
+.PHONY : Client/StdGame.cpp.o
+
+Client/StdGame.i: Client/StdGame.cpp.i
+
+.PHONY : Client/StdGame.i
+
+# target to preprocess a source file
+Client/StdGame.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/StdGame.cpp.i
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/StdGame.cpp.i
+.PHONY : Client/StdGame.cpp.i
+
+Client/StdGame.s: Client/StdGame.cpp.s
+
+.PHONY : Client/StdGame.s
+
+# target to generate assembly for a file
+Client/StdGame.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/StdGame.cpp.s
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/StdGame.cpp.s
+.PHONY : Client/StdGame.cpp.s
 
 Client/StdLogic.o: Client/StdLogic.cpp.o
 
@@ -657,9 +717,6 @@ help:
 	@echo "... Client/Computer.o"
 	@echo "... Client/Computer.i"
 	@echo "... Client/Computer.s"
-	@echo "... Client/GameSession.o"
-	@echo "... Client/GameSession.i"
-	@echo "... Client/GameSession.s"
 	@echo "... Client/Human.o"
 	@echo "... Client/Human.i"
 	@echo "... Client/Human.s"
@@ -669,6 +726,15 @@ help:
 	@echo "... Client/RemoteConnection.o"
 	@echo "... Client/RemoteConnection.i"
 	@echo "... Client/RemoteConnection.s"
+	@echo "... Client/RemoteGame.o"
+	@echo "... Client/RemoteGame.i"
+	@echo "... Client/RemoteGame.s"
+	@echo "... Client/RemotePlayer.o"
+	@echo "... Client/RemotePlayer.i"
+	@echo "... Client/RemotePlayer.s"
+	@echo "... Client/StdGame.o"
+	@echo "... Client/StdGame.i"
+	@echo "... Client/StdGame.s"
 	@echo "... Client/StdLogic.o"
 	@echo "... Client/StdLogic.i"
 	@echo "... Client/StdLogic.s"
