@@ -58,10 +58,8 @@ void Server::handleClients(int clientSocket, int clientSocket2) {
     int n;
     int first = 1;
     n = write(clientSocket, &first, 4);
-    cout << "written to first"<<endl;
     first++;
     n = write(clientSocket2, &first, 4);
-    cout << "written to last" << first <<endl;
     char client1Input[10] = {0};
     char client2Input[10] = {0};
     while(true) {

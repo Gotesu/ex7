@@ -70,7 +70,6 @@ int RemoteConnection::getSide() {
 }
 
 void RemoteConnection::getMove(char * input) {
-    cout << "got to get move" << endl;
     int n = read(clientSocket, input, sizeof(input));
     if (n == -1) {
         throw "Error writing Move to socket";
@@ -78,7 +77,6 @@ void RemoteConnection::getMove(char * input) {
     if (n == 0) {
         throw "client disconnected";
     }
-    cout << input << endl;
     return;
 }
 
