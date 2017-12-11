@@ -39,7 +39,8 @@ int main() {
 						RemoteConnection rc = RemoteConnection();
 						rc.connectToServer();
 						// check Player1 side, and create the Players
-						switch (rc.getSide()) {
+                        int side = rc.getSide();
+						switch (side) {
 							case 1:
 								p1 = new Human(*log, *board, BLACK);
 								p2 = new RemotePlayer(*log, *board, WHITE, rc);
