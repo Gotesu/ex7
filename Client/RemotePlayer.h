@@ -24,6 +24,8 @@ public:
 	 * @param rc RemoteConnection
 	 ***********************/
     RemotePlayer(Logic& l, Board& b, Side s, RemoteConnection& rc);
+	//destructor
+    ~RemotePlayer();
     /***********************
   * function name: doMove
   * @return true if the player had a possible move, false otherwise.
