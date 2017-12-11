@@ -8,8 +8,16 @@ RemotePlayer::~RemotePlayer() {
 }
 
 void RemotePlayer::upload(Move* choice) {
-	if (choice == NULL)
-		rc.sendMove("NoMove");
+	if (choice == NULL) {
+		char move[10] = {0};
+		move[0] = 'N';
+		move[1] = 'o';
+		move[2] = 'M';
+		move[3] = 'o';
+		move[4] = 'v';
+		move[5] = 'e';
+		rc.sendMove(move);
+	}
 	char send[10] = {0};
 	send[0] = (char)(choice->getR() + '0');
     cout << send[0] << endl;
@@ -21,7 +29,7 @@ void RemotePlayer::upload(Move* choice) {
 }
 
 Move* RemotePlayer::download() {
-	char move[10] ={0};
+	char move[10] = {0};
 	rc.getMove(move);
 	if ((strcmp(move, "NoMove") == 0) || (strcmp(move, "End") == 0))
 		return NULL;
