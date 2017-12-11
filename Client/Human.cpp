@@ -3,6 +3,10 @@
 
 Human::Human(Logic& l, Board& b, Side s):Player(l, b, s) {}
 
+Human::~Human() {
+	delete last;
+}
+
 Move* Human::checkMove(int i, int j, vector<Move*> options) {
 	unsigned int k;
 	for (k = 0; k < options.size(); k++)

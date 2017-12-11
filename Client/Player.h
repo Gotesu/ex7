@@ -16,6 +16,8 @@ public:
 	 * @param s side
 	 ***********************/
     Player(Logic& l, Board& b, Side s): s(s), l(l), b(b), last(NULL) {};
+	//destructor
+    virtual ~Player() {};
     /***********************
   * function name: doMove
   * @return true if the player had a possible move, false otherwise.
@@ -34,8 +36,6 @@ public:
 	* This is a getter function for last.
 	***********************/
     Move* lastMove();
-	//destructor
-    virtual ~Player() {};
 protected:
     Side s;
     Logic& l;

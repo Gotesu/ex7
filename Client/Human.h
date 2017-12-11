@@ -21,6 +21,8 @@ public:
 	 * @param s side
 	 ***********************/
     Human(Logic& l, Board& b, Side s);
+	//destructor
+    ~Human();
     /***********************
   * function name: doMove
   * @return true if the player had a possible move, false otherwise.

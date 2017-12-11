@@ -3,6 +3,10 @@
 
 Computer::Computer(Logic& l, Board& b, Side s):Player(l, b, s) {}
 
+Computer::~Computer() {
+	delete last;
+}
+
 int Computer::moveValue(Move * move) const {
 	int i, cunt = 1;
 	// go-over every direction, and sum the number of blocks that will change

@@ -20,6 +20,8 @@ public:
 	 * @param s side
 	 ***********************/
     Computer(Logic& l, Board& b, Side s);
+	//destructor
+    ~Computer();
     /***********************
   * function name: doMove
   * @return true if the player had a possible move, false otherwise.
