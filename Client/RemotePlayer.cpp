@@ -31,14 +31,6 @@ void RemotePlayer::disconnect() {
 	rc.sendMove(send);
 }
 
-char RemotePlayer::sign() const {
-    switch(s) {
-        case WHITE : return 'O';
-        case BLACK : return 'X';
-        default: return 'E';
-    }
-}
-
 bool RemotePlayer::doMove() {
 	// free last move
 	delete last;

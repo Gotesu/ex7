@@ -16,38 +16,37 @@ using namespace std;
  */
 class RemotePlayer: public Player {
 public:
-    /*******************
-  * constructor
-     */
+	  /*******************
+	 * constructor
+	 * @param l Logic
+	 * @param b Board
+	 * @param s side
+	 * @param rc RemoteConnection
+	 ***********************/
     RemotePlayer(Logic& l, Board& b, Side s, RemoteConnection& rc);
     /***********************
- * function name: doMove
- * @return true if the player had a possible move, false otherwise.
-     */
+  * function name: doMove
+  * @return true if the player had a possible move, false otherwise.
+  * Note: the function change this->last value, to the current Move.
+     ***********************/
     bool doMove();
     /***********************
  * Function name: upload
  * @param choice the last moves values.
  * Operation: this function send the last move to the server.
-     */
+     ***********************/
     void upload(Move* choice);
   /***********************
  * Function name: download
  * @return a Move from the server.
  * Operation: this function get the last move from the server.
-  */
+     ***********************/
     Move* download();
   /***********************
  * Function name: disconnect
  * Operation: the function send "End" to the server.
-  */
+     ***********************/
     void disconnect();
-	/******************************************
-	* function name: sign()
-	* The Output: the player sign.
-	* The function operation: the function checks the player side, and return the right sign.
-	******************************************/
-    char sign() const;
 private:
     RemoteConnection rc;
 };
