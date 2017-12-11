@@ -33,12 +33,18 @@ set(SOURCE_FILES
         Client/Visual.h
         Client/Computer.h
         Client/Computer.cpp
+        Client/RemoteConnection.cpp
+        Client/RemoteConnection.h
         )
 
 set(TEST_FILES
         test/gtest_main.cpp test/test_Board.cpp test/test_StdLogic.cpp test/test_Human.cpp test/test_Computer.cpp)
 
-add_executable(ex4 ${SOURCE_FILES} Client/main.cpp Client/RemoteConnection.cpp Client/RemoteConnection.h)
+add_executable(ex4 ${SOURCE_FILES} Client/main.cpp )
+
+set (SOURCE_FILES
+        Server/Server.cpp Server/Server.h)
+add_executable(server ${SOURCE_FILES} Server/main.cpp)
 
 add_executable(ex4_test ${SOURCE_FILES} ${TEST_FILES} test/gtest_main.cpp)
 target_link_libraries(ex4_test gtest gmock gtest_main)

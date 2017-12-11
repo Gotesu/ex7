@@ -170,6 +170,19 @@ ex4_test/fast:
 .PHONY : ex4_test/fast
 
 #=============================================================================
+# Target rules for targets named server
+
+# Build rule for target.
+server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 server
+.PHONY : server
+
+# fast build rule for target.
+server/fast:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+.PHONY : server/fast
+
+#=============================================================================
 # Target rules for targets named ex4
 
 # Build rule for target.
@@ -240,7 +253,6 @@ Client/Board.o: Client/Board.cpp.o
 
 # target to build an object file
 Client/Board.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/Board.cpp.o
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Board.cpp.o
 .PHONY : Client/Board.cpp.o
 
@@ -250,7 +262,6 @@ Client/Board.i: Client/Board.cpp.i
 
 # target to preprocess a source file
 Client/Board.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/Board.cpp.i
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Board.cpp.i
 .PHONY : Client/Board.cpp.i
 
@@ -260,7 +271,6 @@ Client/Board.s: Client/Board.cpp.s
 
 # target to generate assembly for a file
 Client/Board.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/Board.cpp.s
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Board.cpp.s
 .PHONY : Client/Board.cpp.s
 
@@ -270,7 +280,6 @@ Client/Computer.o: Client/Computer.cpp.o
 
 # target to build an object file
 Client/Computer.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/Computer.cpp.o
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Computer.cpp.o
 .PHONY : Client/Computer.cpp.o
 
@@ -280,7 +289,6 @@ Client/Computer.i: Client/Computer.cpp.i
 
 # target to preprocess a source file
 Client/Computer.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/Computer.cpp.i
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Computer.cpp.i
 .PHONY : Client/Computer.cpp.i
 
@@ -290,7 +298,6 @@ Client/Computer.s: Client/Computer.cpp.s
 
 # target to generate assembly for a file
 Client/Computer.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/Computer.cpp.s
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Computer.cpp.s
 .PHONY : Client/Computer.cpp.s
 
@@ -300,7 +307,6 @@ Client/Human.o: Client/Human.cpp.o
 
 # target to build an object file
 Client/Human.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/Human.cpp.o
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Human.cpp.o
 .PHONY : Client/Human.cpp.o
 
@@ -310,7 +316,6 @@ Client/Human.i: Client/Human.cpp.i
 
 # target to preprocess a source file
 Client/Human.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/Human.cpp.i
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Human.cpp.i
 .PHONY : Client/Human.cpp.i
 
@@ -320,7 +325,6 @@ Client/Human.s: Client/Human.cpp.s
 
 # target to generate assembly for a file
 Client/Human.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/Human.cpp.s
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Human.cpp.s
 .PHONY : Client/Human.cpp.s
 
@@ -330,7 +334,6 @@ Client/Move.o: Client/Move.cpp.o
 
 # target to build an object file
 Client/Move.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/Move.cpp.o
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Move.cpp.o
 .PHONY : Client/Move.cpp.o
 
@@ -340,7 +343,6 @@ Client/Move.i: Client/Move.cpp.i
 
 # target to preprocess a source file
 Client/Move.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/Move.cpp.i
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Move.cpp.i
 .PHONY : Client/Move.cpp.i
 
@@ -350,7 +352,6 @@ Client/Move.s: Client/Move.cpp.s
 
 # target to generate assembly for a file
 Client/Move.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/Move.cpp.s
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Move.cpp.s
 .PHONY : Client/Move.cpp.s
 
@@ -387,7 +388,6 @@ Client/RemoteGame.o: Client/RemoteGame.cpp.o
 
 # target to build an object file
 Client/RemoteGame.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/RemoteGame.cpp.o
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemoteGame.cpp.o
 .PHONY : Client/RemoteGame.cpp.o
 
@@ -397,7 +397,6 @@ Client/RemoteGame.i: Client/RemoteGame.cpp.i
 
 # target to preprocess a source file
 Client/RemoteGame.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/RemoteGame.cpp.i
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemoteGame.cpp.i
 .PHONY : Client/RemoteGame.cpp.i
 
@@ -407,7 +406,6 @@ Client/RemoteGame.s: Client/RemoteGame.cpp.s
 
 # target to generate assembly for a file
 Client/RemoteGame.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/RemoteGame.cpp.s
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemoteGame.cpp.s
 .PHONY : Client/RemoteGame.cpp.s
 
@@ -417,7 +415,6 @@ Client/RemotePlayer.o: Client/RemotePlayer.cpp.o
 
 # target to build an object file
 Client/RemotePlayer.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/RemotePlayer.cpp.o
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemotePlayer.cpp.o
 .PHONY : Client/RemotePlayer.cpp.o
 
@@ -427,7 +424,6 @@ Client/RemotePlayer.i: Client/RemotePlayer.cpp.i
 
 # target to preprocess a source file
 Client/RemotePlayer.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/RemotePlayer.cpp.i
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemotePlayer.cpp.i
 .PHONY : Client/RemotePlayer.cpp.i
 
@@ -437,7 +433,6 @@ Client/RemotePlayer.s: Client/RemotePlayer.cpp.s
 
 # target to generate assembly for a file
 Client/RemotePlayer.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/RemotePlayer.cpp.s
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/RemotePlayer.cpp.s
 .PHONY : Client/RemotePlayer.cpp.s
 
@@ -447,7 +442,6 @@ Client/StdGame.o: Client/StdGame.cpp.o
 
 # target to build an object file
 Client/StdGame.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/StdGame.cpp.o
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/StdGame.cpp.o
 .PHONY : Client/StdGame.cpp.o
 
@@ -457,7 +451,6 @@ Client/StdGame.i: Client/StdGame.cpp.i
 
 # target to preprocess a source file
 Client/StdGame.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/StdGame.cpp.i
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/StdGame.cpp.i
 .PHONY : Client/StdGame.cpp.i
 
@@ -467,7 +460,6 @@ Client/StdGame.s: Client/StdGame.cpp.s
 
 # target to generate assembly for a file
 Client/StdGame.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/StdGame.cpp.s
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/StdGame.cpp.s
 .PHONY : Client/StdGame.cpp.s
 
@@ -477,7 +469,6 @@ Client/StdLogic.o: Client/StdLogic.cpp.o
 
 # target to build an object file
 Client/StdLogic.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/StdLogic.cpp.o
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/StdLogic.cpp.o
 .PHONY : Client/StdLogic.cpp.o
 
@@ -487,7 +478,6 @@ Client/StdLogic.i: Client/StdLogic.cpp.i
 
 # target to preprocess a source file
 Client/StdLogic.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/StdLogic.cpp.i
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/StdLogic.cpp.i
 .PHONY : Client/StdLogic.cpp.i
 
@@ -497,7 +487,6 @@ Client/StdLogic.s: Client/StdLogic.cpp.s
 
 # target to generate assembly for a file
 Client/StdLogic.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/StdLogic.cpp.s
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/StdLogic.cpp.s
 .PHONY : Client/StdLogic.cpp.s
 
@@ -507,7 +496,6 @@ Client/StdVisual.o: Client/StdVisual.cpp.o
 
 # target to build an object file
 Client/StdVisual.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/StdVisual.cpp.o
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/StdVisual.cpp.o
 .PHONY : Client/StdVisual.cpp.o
 
@@ -517,7 +505,6 @@ Client/StdVisual.i: Client/StdVisual.cpp.i
 
 # target to preprocess a source file
 Client/StdVisual.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/StdVisual.cpp.i
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/StdVisual.cpp.i
 .PHONY : Client/StdVisual.cpp.i
 
@@ -527,7 +514,6 @@ Client/StdVisual.s: Client/StdVisual.cpp.s
 
 # target to generate assembly for a file
 Client/StdVisual.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Client/StdVisual.cpp.s
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/StdVisual.cpp.s
 .PHONY : Client/StdVisual.cpp.s
 
@@ -557,6 +543,63 @@ Client/main.s: Client/main.cpp.s
 Client/main.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/main.cpp.s
 .PHONY : Client/main.cpp.s
+
+Server/Server.o: Server/Server.cpp.o
+
+.PHONY : Server/Server.o
+
+# target to build an object file
+Server/Server.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Server/Server.cpp.o
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server/Server.cpp.o
+.PHONY : Server/Server.cpp.o
+
+Server/Server.i: Server/Server.cpp.i
+
+.PHONY : Server/Server.i
+
+# target to preprocess a source file
+Server/Server.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Server/Server.cpp.i
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server/Server.cpp.i
+.PHONY : Server/Server.cpp.i
+
+Server/Server.s: Server/Server.cpp.s
+
+.PHONY : Server/Server.s
+
+# target to generate assembly for a file
+Server/Server.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/Server/Server.cpp.s
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server/Server.cpp.s
+.PHONY : Server/Server.cpp.s
+
+Server/main.o: Server/main.cpp.o
+
+.PHONY : Server/main.o
+
+# target to build an object file
+Server/main.cpp.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server/main.cpp.o
+.PHONY : Server/main.cpp.o
+
+Server/main.i: Server/main.cpp.i
+
+.PHONY : Server/main.i
+
+# target to preprocess a source file
+Server/main.cpp.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server/main.cpp.i
+.PHONY : Server/main.cpp.i
+
+Server/main.s: Server/main.cpp.s
+
+.PHONY : Server/main.s
+
+# target to generate assembly for a file
+Server/main.cpp.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server/main.cpp.s
+.PHONY : Server/main.cpp.s
 
 test/gtest_main.o: test/gtest_main.cpp.o
 
@@ -706,6 +749,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ex4_test"
+	@echo "... server"
 	@echo "... ex4"
 	@echo "... gmock_main"
 	@echo "... gmock"
@@ -744,6 +788,12 @@ help:
 	@echo "... Client/main.o"
 	@echo "... Client/main.i"
 	@echo "... Client/main.s"
+	@echo "... Server/Server.o"
+	@echo "... Server/Server.i"
+	@echo "... Server/Server.s"
+	@echo "... Server/main.o"
+	@echo "... Server/main.i"
+	@echo "... Server/main.s"
 	@echo "... test/gtest_main.o"
 	@echo "... test/gtest_main.i"
 	@echo "... test/gtest_main.s"

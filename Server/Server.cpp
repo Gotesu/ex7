@@ -10,14 +10,13 @@ Server::Server(int port): port(port), serverSocket(0) {
     cout << "Server" << endl;
 }
 void Server::start() {
-    int n;
-    int first = 1;
-    int second = 2;
 // Create a socket point
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (serverSocket == -1) {
         throw "Error opening socket";
     }
+    int clientSocket;
+    int clientSocket2;
     // Assign a local address to the socket
     struct sockaddr_in serverAddress;
     bzero((void *)&serverAddress,
@@ -38,22 +37,16 @@ void Server::start() {
     while (true) {
         cout << "Waiting for client connections..." << endl;
         // Accept a new client connection
-        int clientSocket = accept(serverSocket, (struct
+        clientSocket = accept(serverSocket, (struct
                 sockaddr *)&clientAddress, &clientAddressLen);
-        cout << "First Client connected" << endl;
-        int clientSocket2 = accept(serverSocket, (struct
-                sockaddr *)&clientAddress2, &clientAddressLen2);
         if (clientSocket == -1)
             throw "Error on accept of 1";
-        cout << "Second Client connected" << endl;
-        n = write(clientSocket, &first, sizeof(&first));
-        if (n == -1)
-            throw "Client 1 connection error";
-        n = write(clientSocket2, &second, sizeof(&second));
-        if (n == -1)
-            throw "Client 2 connection error";
+        cout << "First Client connected" << endl;
+        clientSocket2 = accept(serverSocket, (struct
+                sockaddr *)&clientAddress2, &clientAddressLen2);
         if (clientSocket2 == -1)
             throw "Error on accept on 2";
+        cout << "Second Client connected" << endl;
         handleClients(clientSocket, clientSocket2);
         // Close communication with the client
         close(clientSocket);
@@ -62,11 +55,18 @@ void Server::start() {
 }
 
 void Server::handleClients(int clientSocket, int clientSocket2) {
+    int n;
+    int first = 1;
+    n = write(clientSocket, &first, 4);
+    cout << "written to first"<<endl;
+    first++;
+    n = write(clientSocket2, &first, 4);
+    cout << "written to last" << first <<endl;
     char client1Input[10] = {0};
     char client2Input[10] = {0};
     while(true) {
         //read new move of first player.
-        int n = read(clientSocket, client1Input, strlen(client1Input));
+        n = read(clientSocket, client1Input, strlen(client1Input));
         if (n == -1) {
             cout << "Error reading client 1 input" << endl;
             return;
