@@ -18,12 +18,30 @@
 class RemoteConnection {
 
 public:
+    //c'tor
     RemoteConnection();
+    /***************
+     * connecting to server func.
+     */
     void connectToServer();
+    /********************
+     * get side by who connected first.
+     */
     int getSide();
+    /****************
+     * send move to server
+     * @param move
+     */
     void sendMove(char* move);
+    /***************
+     * get move from server
+     * @param input
+     */
     void getMove(char * input);
 private:
+    /************
+     * set the side by who connected first
+     */
     void setSide();
     int side;
     const char *serverIP;
