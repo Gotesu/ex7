@@ -4,7 +4,10 @@
 RemotePlayer::RemotePlayer(Logic& l, Board& b, Side s, RemoteConnection& rc):rc(rc) ,Player(l, b, s) {}
 
 void RemotePlayer::upload(Move* choice) {
-	string move = choice->getR() + " " + choice->getC();
+	stringstream ssr, ssc;
+	ssr << choice->getR();
+	ssc << choice->getC();
+	string move = ssr.str() + " " + ssc.str();
 	rc.sendMove(move);
 }
 
