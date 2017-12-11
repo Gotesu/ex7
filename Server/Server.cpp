@@ -1,5 +1,5 @@
 //
-// Created by gotesu on 09/12/17.
+// Created by gotesu on 11/12/17.
 //
 
 #include "Server.h"
@@ -46,13 +46,13 @@ void Server::start() {
         cout << "Second Client connected" << endl;
         if (clientSocket == -1 || clientSocket2 == -1)
             throw "Error on accept";
-        n = write(clientSocket, first, sizeof(first));
+        n = write(clientSocket, &first, sizeof(&first));
         if (n == -1)
             throw "Client 1 connection error";
-        n = write(clientSocket, second, sizeof(second));
+        n = write(clientSocket, &second, sizeof(&first));
         if (n == -1)
             throw "Client 2 connection error";
-        handleClient(clientSocket, clientSocket2);
+        handleClients(clientSocket, clientSocket2);
         // Close communication with the client
         close(clientSocket);
         close(clientSocket2);
@@ -74,7 +74,7 @@ void Server::handleClients(int clientSocket, int clientSocket2) {
             return;
         }
         //case game ended
-        if (endGame(client1Input)) {
+        if (Server::endGame(client1Input)) {
             cout << "Game ended" << endl;
             return;
         }
@@ -95,12 +95,12 @@ void Server::handleClients(int clientSocket, int clientSocket2) {
             return;
         }
         //case game ended.
-        if (endGame(client2Input)) {
+        if (Server::endGame(client2Input)) {
             cout << "Game ended" << endl;
             return;
         }
         //send to client 1
-        n = write(clientSocket1, &client2Input, sizeof(client2Input));
+        n = write(clientSocket, &client2Input, sizeof(client2Input));
         if (n == -1) {
             cout << "Error writing to client 1" << endl;
             return;
@@ -115,7 +115,7 @@ void Server::stop() {
 
 bool Server::endGame(string input) {
     string check = "End";
-    if (strcmp(input, check) == 0)
+    if (strcmp(input.c_str(), check.c_str()) == 0)
         return 1;
     return 0;
 

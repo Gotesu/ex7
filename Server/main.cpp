@@ -1,17 +1,16 @@
-//
-// Created by gotesu on 09/12/17.
-//
+#include <iostream>
 
 #include "Server.h"
-#include <iostream>
+#include <fstream>
 #include <stdlib.h>
+#include <math.h>
 using namespace std;
 
 int stringToInt(string input) {
     int number = 0;
     int dig;
     for (int i = 0; i < input.size(); i ++) {
-        dig = (int) (input.at(i) - '0');
+        dig = (int) (input.at((unsigned long) i) - '0');
         number += (pow(10, input.size() - 1 - i) * dig);
     }
     return number;
