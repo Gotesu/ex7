@@ -19,8 +19,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ab440842-786f-4057-865f-ae72407c5725" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change beforePath="$PROJECT_DIR$/Client/RemotePlayer.cpp" afterPath="$PROJECT_DIR$/Client/RemotePlayer.cpp" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
@@ -348,7 +346,7 @@
       <workItem from="1513015353988" duration="4717000" />
       <workItem from="1513023687404" duration="1070000" />
       <workItem from="1513024901306" duration="394000" />
-      <workItem from="1513025388122" duration="3672000" />
+      <workItem from="1513025388122" duration="3703000" />
     </task>
     <task id="LOCAL-00001" summary="i need to see it working">
       <created>1511473954854</created>
@@ -490,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513027100458</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="done!">
+      <created>1513029073201</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1513029073201</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -505,7 +510,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53903000" />
+    <option name="totallyTimeSpent" value="53934000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -558,7 +563,8 @@
     <MESSAGE value="clion admin update" />
     <MESSAGE value="client server connection establishment" />
     <MESSAGE value="more server client" />
-    <option name="LAST_COMMIT_MESSAGE" value="more server client" />
+    <MESSAGE value="done!" />
+    <option name="LAST_COMMIT_MESSAGE" value="done!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
