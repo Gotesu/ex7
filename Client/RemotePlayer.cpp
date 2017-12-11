@@ -8,17 +8,16 @@ RemotePlayer::~RemotePlayer() {
 }
 
 void RemotePlayer::upload(Move* choice) {
-	if (choice == NULL) {
-		char move[10] = {0};
-		move[0] = 'N';
-		move[1] = 'o';
-		move[2] = 'M';
-		move[3] = 'o';
-		move[4] = 'v';
-		move[5] = 'e';
-		rc.sendMove(move);
-	}
 	char send[10] = {0};
+	if (choice == NULL) {
+		send[0] = 'N';
+		send[1] = 'o';
+		send[2] = 'M';
+		send[3] = 'o';
+		send[4] = 'v';
+		send[5] = 'e';
+		rc.sendMove(send);
+	}
 	send[0] = (char)(choice->getR() + '0');
 	send[1] = ',';
 	send[2] = ' ';
