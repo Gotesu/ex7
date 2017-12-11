@@ -8,6 +8,8 @@ RemotePlayer::~RemotePlayer() {
 }
 
 void RemotePlayer::upload(Move* choice) {
+	if (choice == NULL)
+		rc.sendMove("NoMove");
 	char send[10] = {0};
 	send[0] = (char)(choice->getR() + '0');
     cout << send[0] << endl;
