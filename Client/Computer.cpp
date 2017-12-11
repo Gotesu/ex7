@@ -3,6 +3,10 @@
 
 Computer::Computer(Logic& l, Board& b, Side s):Player(l, b, s) {}
 
+Computer::~Computer() {
+	delete last;
+}
+
 int Computer::moveValue(Move * move) const {
 	int i, cunt = 1;
 	// go-over every direction, and sum the number of blocks that will change
@@ -35,14 +39,6 @@ int Computer::checkNext(Move * move) const {
 		delete enmopts[i];
 	}
 	return max;
-}
-
-char Computer::sign() const {
-    switch(s) {
-        case WHITE : return 'O';
-        case BLACK : return 'X';
-        default: return 'E';
-    }
 }
 
 bool Computer::doMove() {

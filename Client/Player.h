@@ -9,32 +9,38 @@
  ************************/
 class Player {
 public:
-    //constructor.
-    Player(Logic& l, Board& b, Side s): s(s), l(l), b(b) {};
+	  /*******************
+	 * constructor
+	 * @param l Logic
+	 * @param b Board
+	 * @param s side
+	 ***********************/
+    Player(Logic& l, Board& b, Side s): s(s), l(l), b(b), last(NULL) {};
+	//destructor
+    virtual ~Player() {};
     /***********************
- * function name: doMove
- * @return true if the player had a possible move, false otherwise.
-     */
+  * function name: doMove
+  * @return true if the player had a possible move, false otherwise.
+  * Note: the function change this->last value, to the current Move.
+     ***********************/
     virtual bool doMove() = 0;
-    //destroyer
-    ~Player() {delete last;};
 	/******************************************
 	* function name: sign()
 	* The Output: the player sign.
 	* The function operation: the function checks the player side, and return the right sign.
 	******************************************/
-    virtual char sign() const = 0;
-    /***********************
- * function name: lastMove
- * @return the last move.
- * This is a getter function for last.
-     */
-    Move* lastMove() {return last;};
+    char sign() const;
+	/***********************
+	* function name: lastMove
+	* @return the last move.
+	* This is a getter function for last.
+	***********************/
+    Move* lastMove();
 protected:
     Side s;
     Logic& l;
     Board& b;
-    Move* last = NULL;
+    Move* last;
 };
 
 

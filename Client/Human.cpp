@@ -3,20 +3,16 @@
 
 Human::Human(Logic& l, Board& b, Side s):Player(l, b, s) {}
 
+Human::~Human() {
+	delete last;
+}
+
 Move* Human::checkMove(int i, int j, vector<Move*> options) {
 	unsigned int k;
 	for (k = 0; k < options.size(); k++)
 		if (options[k]->isEqual(i, j))
 			return (options[k]);
 	return NULL;
-}
-
-char Human::sign() const {
-    switch(s) {
-        case WHITE : return 'O';
-        case BLACK : return 'X';
-        default: return 'E';
-    }
 }
 
 bool Human::doMove() {
