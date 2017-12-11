@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <iostream>
 #include "Board.h"
 #include "StdGame.h"
@@ -13,7 +14,8 @@ int main() {
     Board* board;
     Visual* vis;
     Logic* log;
-    Player * p1, * p2;
+    Player * p1;
+    Player * p2;
     GameSession* game;
 		int c;
 		cout << "Welcome to Reversi!" << endl;
@@ -23,7 +25,7 @@ int main() {
 		cout << "3. a remote player" << endl;
 		cin >> c;
     try {
-    	board = new Board();
+    		board = new Board();
         vis = new StdVisual(board);
         log = new StdLogic();
         if (c == 1) {
@@ -31,7 +33,6 @@ int main() {
 			      p2 = new Human(*log, *board, WHITE);
 			      game = new StdGame(board, vis, p1, p2);
         } else if (c == 2) {
-						Player * p1, * p2;
 						p1 = new Human(*log, *board, BLACK);
 			      p2 = new Computer(*log, *board, WHITE);
 			      game = new StdGame(board, vis, p1, p2);
@@ -58,12 +59,9 @@ int main() {
 						return 0;
         		}
         game->playRound();
-    } catch(bad_alloc& ba) {
-        cout << "Error: Cannot allocate memory";
-        return 0;
     } catch(exception& e) {
 		cout << "Error";
-		return 0;
+		return 1;
 		}
     delete board;
     delete vis;

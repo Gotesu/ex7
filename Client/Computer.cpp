@@ -37,14 +37,6 @@ int Computer::checkNext(Move * move) const {
 	return max;
 }
 
-char Computer::sign() const {
-    switch(s) {
-        case WHITE : return 'O';
-        case BLACK : return 'X';
-        default: return 'E';
-    }
-}
-
 bool Computer::doMove() {
 	// free last move
 	delete last;

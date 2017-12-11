@@ -11,14 +11,6 @@ Move* Human::checkMove(int i, int j, vector<Move*> options) {
 	return NULL;
 }
 
-char Human::sign() const {
-    switch(s) {
-        case WHITE : return 'O';
-        case BLACK : return 'X';
-        default: return 'E';
-    }
-}
-
 bool Human::doMove() {
 	// free last move
 	delete last;
