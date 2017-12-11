@@ -5,10 +5,12 @@ RemotePlayer::RemotePlayer(Logic& l, Board& b, Side s, RemoteConnection& rc):rc(
 
 void RemotePlayer::upload(Move* choice) {
 	char send[10] = {0};
-	send[0] = static_cast<char>(choice->getR());
+	send[0] = (char)(choice->getR() + '0');
+    cout << send[0] << endl;
 	send[1] = ',';
 	send[2] = ' ';
-	send[3] = static_cast<char>(choice->getR());
+	send[3] = (char)(choice->getC() + '0');
+    cout << send[3] << endl;
 	rc.sendMove(send);
 }
 
@@ -18,8 +20,8 @@ Move* RemotePlayer::download() {
 	if ((strcmp(move, "NoMove") == 0) || (strcmp(move, "End") == 0))
 		return NULL;
 	int row, col;
-	row = move[0];
-	col = move[3];
+	row = (int) (move[0] - '0');
+	col = (int) (move[3] - '0');
   return l.checkAction(b, s, row, col);
 }
 

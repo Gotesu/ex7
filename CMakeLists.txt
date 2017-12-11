@@ -24,6 +24,7 @@ set(SOURCE_FILES
         Client/Human.h
         Client/Logic.h
         Client/Player.h
+        Client/Player.cpp
         Client/Move.cpp
         Client/Move.h
         Client/StdLogic.cpp

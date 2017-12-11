@@ -355,6 +355,33 @@ Client/Move.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Move.cpp.s
 .PHONY : Client/Move.cpp.s
 
+Client/Player.o: Client/Player.cpp.o
+
+.PHONY : Client/Player.o
+
+# target to build an object file
+Client/Player.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Player.cpp.o
+.PHONY : Client/Player.cpp.o
+
+Client/Player.i: Client/Player.cpp.i
+
+.PHONY : Client/Player.i
+
+# target to preprocess a source file
+Client/Player.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Player.cpp.i
+.PHONY : Client/Player.cpp.i
+
+Client/Player.s: Client/Player.cpp.s
+
+.PHONY : Client/Player.s
+
+# target to generate assembly for a file
+Client/Player.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Client/Player.cpp.s
+.PHONY : Client/Player.cpp.s
+
 Client/RemoteConnection.o: Client/RemoteConnection.cpp.o
 
 .PHONY : Client/RemoteConnection.o
@@ -767,6 +794,9 @@ help:
 	@echo "... Client/Move.o"
 	@echo "... Client/Move.i"
 	@echo "... Client/Move.s"
+	@echo "... Client/Player.o"
+	@echo "... Client/Player.i"
+	@echo "... Client/Player.s"
 	@echo "... Client/RemoteConnection.o"
 	@echo "... Client/RemoteConnection.i"
 	@echo "... Client/RemoteConnection.s"
