@@ -43,15 +43,17 @@ void Server::start() {
         cout << "First Client connected" << endl;
         int clientSocket2 = accept(serverSocket, (struct
                 sockaddr *)&clientAddress2, &clientAddressLen2);
+        if (clientSocket == -1)
+            throw "Error on accept of 1";
         cout << "Second Client connected" << endl;
-        if (clientSocket == -1 || clientSocket2 == -1)
-            throw "Error on accept";
         n = write(clientSocket, &first, sizeof(&first));
         if (n == -1)
             throw "Client 1 connection error";
-        n = write(clientSocket, &second, sizeof(&first));
+        n = write(clientSocket2, &second, sizeof(&second));
         if (n == -1)
             throw "Client 2 connection error";
+        if (clientSocket2 == -1)
+            throw "Error on accept on 2";
         handleClients(clientSocket, clientSocket2);
         // Close communication with the client
         close(clientSocket);
@@ -60,11 +62,11 @@ void Server::start() {
 }
 
 void Server::handleClients(int clientSocket, int clientSocket2) {
-    string client1Input;
-    string client2Input;
+    char client1Input[10] = {0};
+    char client2Input[10] = {0};
     while(true) {
         //read new move of first player.
-        int n = read(clientSocket, &client1Input, sizeof(client1Input));
+        int n = read(clientSocket, client1Input, strlen(client1Input));
         if (n == -1) {
             cout << "Error reading client 1 input" << endl;
             return;
@@ -79,13 +81,14 @@ void Server::handleClients(int clientSocket, int clientSocket2) {
             return;
         }
         //send the move to client 2
-        n = write(clientSocket2, &client1Input, sizeof(client1Input));
+        cout << " this is the first client input" << client2Input << endl;
+        n = write(clientSocket2, client1Input, strlen(client1Input));
         if (n == -1) {
             cout << "Error writing to client 2" << endl;
             return;
         }
         //read client 2 new move
-        n = read(clientSocket2, &client2Input, sizeof(client2Input));
+        n = read(clientSocket2, client2Input, strlen(client2Input));
         if (n == -1) {
             cout << "Error reading client 2 input" << endl;
             return;
@@ -100,7 +103,7 @@ void Server::handleClients(int clientSocket, int clientSocket2) {
             return;
         }
         //send to client 1
-        n = write(clientSocket, &client2Input, sizeof(client2Input));
+        n = write(clientSocket, client2Input, strlen(client2Input));
         if (n == -1) {
             cout << "Error writing to client 1" << endl;
             return;
@@ -113,9 +116,9 @@ void Server::stop() {
     close(serverSocket);
 }
 
-bool Server::endGame(string input) {
+bool Server::endGame(char* input) {
     string check = "End";
-    if (strcmp(input.c_str(), check.c_str()) == 0)
+    if (strcmp(input, check.c_str()) == 0)
         return 1;
     return 0;
 

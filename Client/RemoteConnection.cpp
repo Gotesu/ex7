@@ -57,9 +57,9 @@ void RemoteConnection::connectToServer() {
 
 void RemoteConnection::setSide() {
     int side = 0;
-    int n = read(clientSocket, &side, sizeof(side));
-    if (n == -1) {
-        throw "Error writing Move to socket";
+    int n = read(clientSocket, &side, sizeof(int));
+    if (n == -1 || n == 0) {
+        throw "Error writing Side to socket";
     }
     this->side = side;
     return;
@@ -69,17 +69,27 @@ int RemoteConnection::getSide() {
     return this->side;
 }
 
-string RemoteConnection::getMove() {
-    string input;
-    int n = read(clientSocket, &input, sizeof(input));
-    return input;
-}
-
-void RemoteConnection::sendMove(string move) {
-// Write the Player's move to the socket
-    int n = write(clientSocket, &move, sizeof(move));
+void RemoteConnection::getMove(char * input) {
+    cout << "got to get move" << endl;
+    int n = read(clientSocket, input, strlen(input));
     if (n == -1) {
         throw "Error writing Move to socket";
+    }
+    if (n == 0) {
+        throw "client disconnected";
+    }
+    cout << input << endl;
+    return;
+}
+
+void RemoteConnection::sendMove(char* move) {
+// Write the Player's move to the socket
+    int n = write(clientSocket, move, strlen(move));
+    if (n == -1) {
+        throw "Error writing Move to socket";
+    }
+    if (n == 0) {
+        throw "disconnected from server";
     }
     return;
 }

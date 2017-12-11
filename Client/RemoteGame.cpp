@@ -10,7 +10,7 @@ void RemoteGame::playRound() {
 	bool p1played, p2played;
 	// check if the RemotePlayer (Player2) is the first
 	if (player2->sign() == 'X') {
-			vis->printBoard();
+			//vis->printBoard();
 			// Player 2 play a turn
 			p2played = player2->doMove();
 	}
@@ -21,7 +21,7 @@ void RemoteGame::playRound() {
 		p1played = player1->doMove();
 		// RemotePlayer (Player2) get an update
 		((RemotePlayer*)player2)->upload(player1->lastMove());
-		vis->printBoard();
+		//vis->printBoard();
 		// Player 2 play a turn
 		p2played = player2->doMove();
 	} while ((player1->lastMove() != NULL) || (player2->lastMove() != NULL));

@@ -21,8 +21,8 @@ public:
     RemoteConnection();
     void connectToServer();
     int getSide();
-    void sendMove(string move);
-    string getMove();
+    void sendMove(char* move);
+    void getMove(char * input);
 private:
     void setSide();
     int side;

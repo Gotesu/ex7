@@ -22,7 +22,7 @@ private:
     int port;
     int serverSocket; // the socket's file descriptor
     void handleClients(int clientSocket, int clientSocket2);
-    bool endGame(std::string input);
+    bool endGame(char* input);
 };
 
 

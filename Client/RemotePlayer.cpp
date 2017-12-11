@@ -4,25 +4,31 @@
 RemotePlayer::RemotePlayer(Logic& l, Board& b, Side s, RemoteConnection& rc):rc(rc) ,Player(l, b, s) {}
 
 void RemotePlayer::upload(Move* choice) {
-	stringstream ssr, ssc;
-	ssr << choice->getR();
-	ssc << choice->getC();
-	string move = ssr.str() + " " + ssc.str();
-	rc.sendMove(move);
+	char send[10] = {0};
+	send[0] = static_cast<char>(choice->getR());
+	send[1] = ',';
+	send[2] = ' ';
+	send[3] = static_cast<char>(choice->getR());
+	rc.sendMove(send);
 }
 
 Move* RemotePlayer::download() {
-	string move = rc.getMove();
-	if ((strcmp(move.c_str(), "NoMove") == 0) || (strcmp(move.c_str(), "End") == 0))
+	char move[10] ={0};
+	rc.getMove(move);
+	if ((strcmp(move, "NoMove") == 0) || (strcmp(move, "End") == 0))
 		return NULL;
 	int row, col;
-  istringstream iss(move);
-  iss >> row >> col;
+	row = move[0];
+	col = move[3];
   return l.checkAction(b, s, row, col);
 }
 
 void RemotePlayer::disconnect() {
-	rc.sendMove("End");
+	char send[10] = {0};
+	send[0] = 'E';
+	send[1] = 'n';
+	send[2] = 'd';
+	rc.sendMove(send);
 }
 
 char RemotePlayer::sign() const {
