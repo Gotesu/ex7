@@ -3,6 +3,10 @@
 
 RemotePlayer::RemotePlayer(Logic& l, Board& b, Side s, RemoteConnection& rc):rc(rc) ,Player(l, b, s) {}
 
+RemotePlayer::~RemotePlayer() {
+	delete last;
+}
+
 void RemotePlayer::upload(Move* choice) {
 	char send[10] = {0};
 	send[0] = (char)(choice->getR() + '0');
