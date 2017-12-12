@@ -39,7 +39,7 @@ set(SOURCE_FILES
         )
 
 set(TEST_FILES
-        test/gtest_main.cpp test/test_Board.cpp test/test_StdLogic.cpp test/test_Human.cpp test/test_Computer.cpp)
+        test/gtest_main.cpp test/test_Board.cpp test/test_StdLogic.cpp test/test_Human.cpp test/test_Computer.cpp test/test_Server&RC.cpp)
 
 add_executable(ex4 ${SOURCE_FILES} Client/main.cpp )
 

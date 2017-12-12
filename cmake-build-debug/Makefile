@@ -736,6 +736,33 @@ test/test_Human.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make CMakeFiles/ex4_test.dir/test/test_Human.cpp.s
 .PHONY : test/test_Human.cpp.s
 
+test/test_Server&RC.o: test/test_Server&RC.cpp.o
+
+.PHONY : test/test_Server&RC.o
+
+# target to build an object file
+test/test_Server&RC.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make "CMakeFiles/ex4_test.dir/test/test_Server&RC.cpp.o"
+.PHONY : test/test_Server&RC.cpp.o
+
+test/test_Server&RC.i: test/test_Server&RC.cpp.i
+
+.PHONY : test/test_Server&RC.i
+
+# target to preprocess a source file
+test/test_Server&RC.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make "CMakeFiles/ex4_test.dir/test/test_Server&RC.cpp.i"
+.PHONY : test/test_Server&RC.cpp.i
+
+test/test_Server&RC.s: test/test_Server&RC.cpp.s
+
+.PHONY : test/test_Server&RC.s
+
+# target to generate assembly for a file
+test/test_Server&RC.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4_test.dir/build.make "CMakeFiles/ex4_test.dir/test/test_Server&RC.cpp.s"
+.PHONY : test/test_Server&RC.cpp.s
+
 test/test_StdLogic.o: test/test_StdLogic.cpp.o
 
 .PHONY : test/test_StdLogic.o
@@ -836,6 +863,9 @@ help:
 	@echo "... test/test_Human.o"
 	@echo "... test/test_Human.i"
 	@echo "... test/test_Human.s"
+	@echo "... test/test_Server&RC.o"
+	@echo "... test/test_Server&RC.i"
+	@echo "... test/test_Server&RC.s"
 	@echo "... test/test_StdLogic.o"
 	@echo "... test/test_StdLogic.i"
 	@echo "... test/test_StdLogic.s"
