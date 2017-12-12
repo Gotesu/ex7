@@ -70,7 +70,7 @@ int RemoteConnection::getSide() {
 }
 
 void RemoteConnection::getMove(char * input) {
-    int n = read(clientSocket, input, sizeof(input));
+    int n = read(clientSocket, input, sizeof(char[10]));
     if (n == -1) {
         throw "Error writing Move to socket";
     }
@@ -82,7 +82,7 @@ void RemoteConnection::getMove(char * input) {
 
 void RemoteConnection::sendMove(char* move) {
 // Write the Player's move to the socket
-    int n = write(clientSocket, move, sizeof(move));
+    int n = write(clientSocket, move, sizeof(char[10]));
     if (n == -1) {
         throw "Error writing Move to socket";
     }
