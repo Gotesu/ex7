@@ -17,6 +17,7 @@ void RemotePlayer::upload(Move* choice) {
 		send[4] = 'v';
 		send[5] = 'e';
 		rc.sendMove(send);
+		return;
 	}
 	send[0] = (char)(choice->getR() + '0');
 	send[1] = ',';
