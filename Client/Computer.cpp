@@ -44,7 +44,7 @@ int Computer::checkNext(Move * move) const {
 bool Computer::doMove() {
 	// free last move
 	delete last;
-	cout << "Its " << sign() << " move." << endl;
+	cout << "It's " << sign() << " turn." << endl;
 	vector<Move*> options;
 	// check possible moves
 	options = l.allowedActions(b, s);

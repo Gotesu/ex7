@@ -52,6 +52,7 @@ void RemoteConnection::connectToServer() {
         throw "Error connecting to server";
     }
     cout << "Connected to server" << endl;
+    cout << "Waiting for the game to start..." << endl;
     setSide();
 }
 

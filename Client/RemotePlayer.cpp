@@ -48,7 +48,8 @@ void RemotePlayer::disconnect() {
 bool RemotePlayer::doMove() {
 	// free last move
 	delete last;
-	cout << "Its " << sign() << " move." << endl;
+	cout << "Its " << sign() << " turn." << endl;
+  cout << "Waiting for " << sign() << "'s move..." << endl;
 	Move *choice = download();
 	// check if had a possible move
 	if (choice == NULL)

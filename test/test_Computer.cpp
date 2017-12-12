@@ -5,6 +5,7 @@
 #include <gmock/gmock.h>
 #include "../Client/Computer.h"
 #include "../Client/StdLogic.h"
+#include "../Client/Move.h"
 
 /**********************
  * checkMinMaxBehaviorDown
@@ -129,6 +130,29 @@ TEST(AI, checkMinMaxBehaviorRight) {
     b->set(2, 6, BLACK);
     ai->doMove();
     EXPECT_EQ(b->get(0, 7), WHITE);
+    delete b;
+    delete logic;
+    delete ai;
+}
+
+/**********************
+ * lastMove
+ * this test checks that Player lastMove function works
+ */
+TEST(Player, lastMove) {
+    Board *b = new Board(3,3);
+    StdLogic *logic = new StdLogic();
+    Computer *ai = new Computer(*logic, *b, WHITE);
+    bool check = (ai->lastMove() == NULL);
+    EXPECT_EQ(check, true);
+    //emptying board.
+    b->set(0, 2, WHITE);
+    b->set(1, 2, BLACK);
+    b->set(2, 0, WHITE);
+    b->set(2, 1, BLACK);
+    ai->doMove();
+    check = ai->lastMove()->isEqual(2,2);
+    EXPECT_EQ(check, true);
     delete b;
     delete logic;
     delete ai;

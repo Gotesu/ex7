@@ -7,23 +7,22 @@ RemoteGame::RemoteGame(Board* board, Visual* vis, Player* p1, RemotePlayer* p2):
 RemoteGame::~RemoteGame() {}
 
 void RemoteGame::playRound() {
-	bool p1played, p2played;
 	// check if the RemotePlayer (Player2) is the first
 	if (player2->sign() == 'X') {
 			vis->printBoard();
 			// Player 2 play a turn
-			p2played = player2->doMove();
+			player2->doMove();
 	}
 	//  the loop continue when x or o had a turn
 	do {
 		vis->printBoard();
 		// Player 1 play a turn
-		p1played = player1->doMove();
+		player1->doMove();
 		// RemotePlayer (Player2) get an update
 		((RemotePlayer*)player2)->upload(player1->lastMove());
 		vis->printBoard();
 		// Player 2 play a turn
-		p2played = player2->doMove();
+		player2->doMove();
 	} while ((player1->lastMove() != NULL) || (player2->lastMove() != NULL));
 	// RemotePlayer (Player2) disconnect from the server
 	((RemotePlayer*)player2)->disconnect();

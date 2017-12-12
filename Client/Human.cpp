@@ -20,7 +20,7 @@ bool Human::doMove() {
 	delete last;
 	int i, j;
 	unsigned int k;
-	cout << sign() << " it's your move." << endl;
+	cout << sign() << " it's your turn." << endl;
 	vector<Move*> options = l.allowedActions(b, s);
 	if (options.size() == 0) {
 		cout << "You have no possible moves, turn pass" << endl;
