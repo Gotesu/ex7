@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/ex3.dir/Client/Board.cpp.o CMakeFiles/ex3.dir/Client/GameSession.cpp.o CMakeFiles/ex3.dir/Client/Human.cpp.o CMakeFiles/ex3.dir/Client/Move.cpp.o CMakeFiles/ex3.dir/Client/StdLogic.cpp.o CMakeFiles/ex3.dir/Client/StdVisual.cpp.o CMakeFiles/ex3.dir/Client/Computer.cpp.o CMakeFiles/ex3.dir/Client/main.cpp.o  -o ex3 

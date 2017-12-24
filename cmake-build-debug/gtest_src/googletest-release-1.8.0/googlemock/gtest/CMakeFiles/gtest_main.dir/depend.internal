@@ -24,4 +24,4 @@ gtest_src/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main.dir/sr
  ../gtest_src/googletest-release-1.8.0/googletest/include/gtest/internal/gtest-string.h
  ../gtest_src/googletest-release-1.8.0/googletest/include/gtest/internal/gtest-tuple.h
  ../gtest_src/googletest-release-1.8.0/googletest/include/gtest/internal/gtest-type-util.h
- /home/gotesu/CLionProjects/ex4/gtest_src/googletest-release-1.8.0/googletest/src/gtest_main.cc
+ /home/gotesu/CLionProjects/ex5/gtest_src/googletest-release-1.8.0/googletest/src/gtest_main.cc
