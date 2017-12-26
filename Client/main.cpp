@@ -25,7 +25,7 @@ int main() {
 		cout << "3. a remote player" << endl;
 		cin >> c;
     try {
-    		board = new Board();
+    		board = new Board(2,2);
         vis = new StdVisual(board);
         log = new StdLogic();
         if (c == 1) {

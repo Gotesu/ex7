@@ -3,6 +3,7 @@
 //
 
 #include "RemoteConnection.h"
+#define INSIZE 255
 using namespace std;
 RemoteConnection::RemoteConnection(): clientSocket(0) {
     fstream data;
@@ -71,7 +72,7 @@ int RemoteConnection::getSide() {
 }
 
 void RemoteConnection::getMove(char * input) {
-    int n = read(clientSocket, input, sizeof(char[10]));
+    int n = read(clientSocket, input, sizeof(char[INSIZE]));
     if (n == -1) {
         throw "Error writing Move to socket";
     }
@@ -83,7 +84,7 @@ void RemoteConnection::getMove(char * input) {
 
 void RemoteConnection::sendMove(char* move) {
 // Write the Player's move to the socket
-    int n = write(clientSocket, move, sizeof(char[10]));
+    int n = write(clientSocket, move, sizeof(char[INSIZE]));
     if (n == -1) {
         throw "Error writing Move to socket";
     }

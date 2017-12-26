@@ -5,6 +5,7 @@
 #include "Server.h"
 using namespace std;
 #define MAX_CONNECTED_CLIENTS 2
+#define INSIZE 255
 
 Server::Server(int port): port(port), serverSocket(0) {
     cout << "Server" << endl;
@@ -60,8 +61,9 @@ void Server::handleClients(int clientSocket, int clientSocket2) {
     n = write(clientSocket, &first, 4);
     first++;
     n = write(clientSocket2, &first, 4);
-    char client1Input[10] = {0};
-    char client2Input[10] = {0};
+    char client1Input[INSIZE] = {0};
+    char client2Input[INSIZE] = {0};
+    char endMessage[INSIZE] = "End";
     while(true) {
         //read new move of first player.
         n = read(clientSocket, client1Input, sizeof(client1Input));
@@ -76,6 +78,7 @@ void Server::handleClients(int clientSocket, int clientSocket2) {
         //case game ended
         if (Server::endGame(client1Input)) {
             cout << "Game ended" << endl;
+            write(clientSocket2, endMessage, sizeof(endMessage));
             return;
         }
         //send the move to client 2
@@ -97,6 +100,7 @@ void Server::handleClients(int clientSocket, int clientSocket2) {
         //case game ended.
         if (Server::endGame(client2Input)) {
             cout << "Game ended" << endl;
+            write(clientSocket, endMessage, sizeof(endMessage));
             return;
         }
         //send to client 1

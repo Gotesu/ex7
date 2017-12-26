@@ -1,5 +1,4 @@
 #include "RemoteGame.h"
-#include "Human.h"
 
 RemoteGame::RemoteGame(Board* board, Visual* vis, Player* p1, RemotePlayer* p2):
 	GameSession(board, vis, p1, p2) {};

@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include "RemotePlayer.h"
 
+#include "RemotePlayer.h"
+#define INSIZE 255
 RemotePlayer::RemotePlayer(Logic& l, Board& b, Side s, RemoteConnection& rc):rc(rc) ,Player(l, b, s) {}
 
 RemotePlayer::~RemotePlayer() {
@@ -8,7 +8,7 @@ RemotePlayer::~RemotePlayer() {
 }
 
 void RemotePlayer::upload(Move* choice) {
-	char send[10] = {0};
+	char send[INSIZE] = {0};
 	if (choice == NULL) {
 		send[0] = 'N';
 		send[1] = 'o';
@@ -27,7 +27,7 @@ void RemotePlayer::upload(Move* choice) {
 }
 
 Move* RemotePlayer::download() {
-	char move[10] = {0};
+	char move[INSIZE] = {0};
 	rc.getMove(move);
 	if ((strcmp(move, "NoMove") == 0) || (strcmp(move, "End") == 0))
 		return NULL;
@@ -38,7 +38,7 @@ Move* RemotePlayer::download() {
 }
 
 void RemotePlayer::disconnect() {
-	char send[10] = {0};
+	char send[INSIZE] = {0};
 	send[0] = 'E';
 	send[1] = 'n';
 	send[2] = 'd';
