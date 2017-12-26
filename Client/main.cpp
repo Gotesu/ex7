@@ -1,12 +1,9 @@
-#include <stdio.h>
 #include <iostream>
 #include "Board.h"
 #include "StdGame.h"
 #include "RemoteGame.h"
-#include "RemoteConnection.h"
 #include "Human.h"
 #include "Computer.h"
-#include "RemotePlayer.h"
 #include "StdLogic.h"
 #include "StdVisual.h"
 
