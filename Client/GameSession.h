@@ -21,10 +21,15 @@ public:
 	GameSession(Board* board, Visual* vis, Player* p1, Player* p2):
 	        board(board), vis(vis) ,player1(p1), player2(p2) {};
     /********************
-     * destroyer is needed because we have object Moveer members which
+     * destroyer is needed because we have object  members which
      * GameSession is composed of.
      ***********************/
-	virtual ~GameSession() {};
+	virtual ~GameSession() {
+		delete board;
+		delete vis;
+		delete player1;
+		delete player2;
+	};
     /*******************
      * Function name: playRound
      * function Operation: this function is the function that actually

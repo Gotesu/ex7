@@ -37,7 +37,7 @@ GameSession* Remote(Player *p1, RemotePlayer *p2, Board *board, Logic *log, Visu
  * using Remote function to handle a Remote game choice.
  *******************************************/
 GameSession* GameCreator(int c) {
-    Board *b = new Board();
+    Board *b = new Board(2,2);
     StdLogic *log = new StdLogic();
     StdVisual *vis = new StdVisual(b);
     Player *p1;
