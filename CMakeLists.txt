@@ -42,11 +42,11 @@ set(TEST_FILES
 
 add_executable(ex5 ${Client_FILES} Client/main.cpp )
 
-set (Server_FILES
-        Server/Server.cpp Server/Server.h)
-add_executable(server ${Server_FILES} Server/main.cpp)
+set (SeqServer_FILES
+        SeqServer/Server.cpp SeqServer/Server.h)
+add_executable(SeqServer ${SeqServer_FILES} SeqServer/main.cpp)
 
-add_executable(ex5_test ${Client_FILES} ${Server_Files} ${TEST_FILES} test/gtest_main.cpp)
+add_executable(ex5_test ${Client_FILES} ${SeqServer_Files} ${TEST_FILES} test/gtest_main.cpp)
 
 target_link_libraries(ex5_test gtest gmock gtest_main)
 add_test(ex5_test ex5_test)

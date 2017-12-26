@@ -60,7 +60,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ex5_test.dir/DependInfo.cmake"
-  "CMakeFiles/server.dir/DependInfo.cmake"
+  "CMakeFiles/SeqServer.dir/DependInfo.cmake"
   "CMakeFiles/ex5.dir/DependInfo.cmake"
   "gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"

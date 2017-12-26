@@ -8,7 +8,7 @@ using namespace std;
 #define INSIZE 255
 
 Server::Server(int port): port(port), serverSocket(0) {
-    cout << "Server" << endl;
+    cout << "SeqServer" << endl;
 }
 void Server::start() {
 // Create a socket point

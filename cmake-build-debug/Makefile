@@ -170,17 +170,17 @@ ex5_test/fast:
 .PHONY : ex5_test/fast
 
 #=============================================================================
-# Target rules for targets named server
+# Target rules for targets named SeqServer
 
 # Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 server
-.PHONY : server
+SeqServer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 SeqServer
+.PHONY : SeqServer
 
 # fast build rule for target.
-server/fast:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-.PHONY : server/fast
+SeqServer/fast:
+	$(MAKE) -f CMakeFiles/SeqServer.dir/build.make CMakeFiles/SeqServer.dir/build
+.PHONY : SeqServer/fast
 
 #=============================================================================
 # Target rules for targets named ex5
@@ -604,59 +604,59 @@ Client/main.cpp.s:
 	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/main.cpp.s
 .PHONY : Client/main.cpp.s
 
-Server/Server.o: Server/Server.cpp.o
+SeqServer/Server.o: SeqServer/Server.cpp.o
 
-.PHONY : Server/Server.o
-
-# target to build an object file
-Server/Server.cpp.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server/Server.cpp.o
-.PHONY : Server/Server.cpp.o
-
-Server/Server.i: Server/Server.cpp.i
-
-.PHONY : Server/Server.i
-
-# target to preprocess a source file
-Server/Server.cpp.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server/Server.cpp.i
-.PHONY : Server/Server.cpp.i
-
-Server/Server.s: Server/Server.cpp.s
-
-.PHONY : Server/Server.s
-
-# target to generate assembly for a file
-Server/Server.cpp.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server/Server.cpp.s
-.PHONY : Server/Server.cpp.s
-
-Server/main.o: Server/main.cpp.o
-
-.PHONY : Server/main.o
+.PHONY : SeqServer/Server.o
 
 # target to build an object file
-Server/main.cpp.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server/main.cpp.o
-.PHONY : Server/main.cpp.o
+SeqServer/Server.cpp.o:
+	$(MAKE) -f CMakeFiles/SeqServer.dir/build.make CMakeFiles/SeqServer.dir/SeqServer/Server.cpp.o
+.PHONY : SeqServer/Server.cpp.o
 
-Server/main.i: Server/main.cpp.i
+SeqServer/Server.i: SeqServer/Server.cpp.i
 
-.PHONY : Server/main.i
+.PHONY : SeqServer/Server.i
 
 # target to preprocess a source file
-Server/main.cpp.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server/main.cpp.i
-.PHONY : Server/main.cpp.i
+SeqServer/Server.cpp.i:
+	$(MAKE) -f CMakeFiles/SeqServer.dir/build.make CMakeFiles/SeqServer.dir/SeqServer/Server.cpp.i
+.PHONY : SeqServer/Server.cpp.i
 
-Server/main.s: Server/main.cpp.s
+SeqServer/Server.s: SeqServer/Server.cpp.s
 
-.PHONY : Server/main.s
+.PHONY : SeqServer/Server.s
 
 # target to generate assembly for a file
-Server/main.cpp.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Server/main.cpp.s
-.PHONY : Server/main.cpp.s
+SeqServer/Server.cpp.s:
+	$(MAKE) -f CMakeFiles/SeqServer.dir/build.make CMakeFiles/SeqServer.dir/SeqServer/Server.cpp.s
+.PHONY : SeqServer/Server.cpp.s
+
+SeqServer/main.o: SeqServer/main.cpp.o
+
+.PHONY : SeqServer/main.o
+
+# target to build an object file
+SeqServer/main.cpp.o:
+	$(MAKE) -f CMakeFiles/SeqServer.dir/build.make CMakeFiles/SeqServer.dir/SeqServer/main.cpp.o
+.PHONY : SeqServer/main.cpp.o
+
+SeqServer/main.i: SeqServer/main.cpp.i
+
+.PHONY : SeqServer/main.i
+
+# target to preprocess a source file
+SeqServer/main.cpp.i:
+	$(MAKE) -f CMakeFiles/SeqServer.dir/build.make CMakeFiles/SeqServer.dir/SeqServer/main.cpp.i
+.PHONY : SeqServer/main.cpp.i
+
+SeqServer/main.s: SeqServer/main.cpp.s
+
+.PHONY : SeqServer/main.s
+
+# target to generate assembly for a file
+SeqServer/main.cpp.s:
+	$(MAKE) -f CMakeFiles/SeqServer.dir/build.make CMakeFiles/SeqServer.dir/SeqServer/main.cpp.s
+.PHONY : SeqServer/main.cpp.s
 
 test/gtest_main.o: test/gtest_main.cpp.o
 
@@ -806,7 +806,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ex5_test"
-	@echo "... server"
+	@echo "... SeqServer"
 	@echo "... ex5"
 	@echo "... gmock_main"
 	@echo "... gmock"
@@ -848,12 +848,12 @@ help:
 	@echo "... Client/main.o"
 	@echo "... Client/main.i"
 	@echo "... Client/main.s"
-	@echo "... Server/Server.o"
-	@echo "... Server/Server.i"
-	@echo "... Server/Server.s"
-	@echo "... Server/main.o"
-	@echo "... Server/main.i"
-	@echo "... Server/main.s"
+	@echo "... SeqServer/Server.o"
+	@echo "... SeqServer/Server.i"
+	@echo "... SeqServer/Server.s"
+	@echo "... SeqServer/main.o"
+	@echo "... SeqServer/main.i"
+	@echo "... SeqServer/main.s"
 	@echo "... test/gtest_main.o"
 	@echo "... test/gtest_main.i"
 	@echo "... test/gtest_main.s"
