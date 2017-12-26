@@ -28,7 +28,11 @@ void RemotePlayer::upload(Move* choice) {
 
 Move* RemotePlayer::download() {
 	char move[INSIZE] = {0};
-	rc.getMove(move);
+	try {
+		rc.getMove(move);
+	} catch(exception e) {
+		throw "Download failed";
+	}
 	if ((strcmp(move, "NoMove") == 0) || (strcmp(move, "End") == 0))
 		return NULL;
 	int row, col;

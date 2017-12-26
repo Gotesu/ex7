@@ -60,8 +60,8 @@ int main() {
 						return 0;
         		}
         game->playRound();
-    } catch(exception& e) {
-		cout << "Error";
+    } catch(char const* e) {
+		cout << e << endl;
 		return 1;
 		}
     delete board;

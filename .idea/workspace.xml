@@ -19,11 +19,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ab440842-786f-4057-865f-ae72407c5725" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Client/RemoteConnection.cpp" afterPath="$PROJECT_DIR$/Client/RemoteConnection.cpp" />
-      <change beforePath="$PROJECT_DIR$/Client/RemoteGame.cpp" afterPath="$PROJECT_DIR$/Client/RemoteGame.cpp" />
       <change beforePath="$PROJECT_DIR$/Client/RemotePlayer.cpp" afterPath="$PROJECT_DIR$/Client/RemotePlayer.cpp" />
       <change beforePath="$PROJECT_DIR$/Client/main.cpp" afterPath="$PROJECT_DIR$/Client/main.cpp" />
-      <change beforePath="$PROJECT_DIR$/Server/Server.cpp" afterPath="$PROJECT_DIR$/Server/Server.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +32,58 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Client/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="518">
+              <caret line="62" column="28" lean-forward="true" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RemotePlayer.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/RemotePlayer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="726">
+              <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RemoteGame.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/RemoteGame.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RemoteConnection.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/RemoteConnection.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="42" column="40" lean-forward="false" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RemoteConnection.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/RemoteConnection.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -85,10 +133,10 @@
         <option value="$PROJECT_DIR$/Client/RemoteGame.cpp" />
         <option value="$PROJECT_DIR$/cmake-build-debug/Server_Settings.txt" />
         <option value="$PROJECT_DIR$/cmake-build-debug/Client_Settings.txt" />
-        <option value="$PROJECT_DIR$/Client/RemotePlayer.cpp" />
         <option value="$PROJECT_DIR$/Client/RemoteConnection.cpp" />
-        <option value="$PROJECT_DIR$/Client/main.cpp" />
         <option value="$PROJECT_DIR$/Server/Server.cpp" />
+        <option value="$PROJECT_DIR$/Client/RemotePlayer.cpp" />
+        <option value="$PROJECT_DIR$/Client/main.cpp" />
       </list>
     </option>
   </component>
@@ -242,7 +290,9 @@
       <workItem from="1513066862821" duration="3128000" />
       <workItem from="1513097647232" duration="799000" />
       <workItem from="1514143126190" duration="5136000" />
-      <workItem from="1514279292522" duration="2477000" />
+      <workItem from="1514279292522" duration="2848000" />
+      <workItem from="1514323918228" duration="95000" />
+      <workItem from="1514316824326" duration="299000" />
     </task>
     <task id="LOCAL-00001" summary="i need to see it working">
       <created>1511473954854</created>
@@ -440,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514148375960</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="small utility fixes">
+      <created>1514281796060</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1514281796060</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -464,22 +521,22 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69456000" />
+    <option name="totallyTimeSpent" value="70221000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="24" width="1857" height="1092" extended-state="6" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17196766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23653643" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40654698" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="65" y="591" width="1855" height="222" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17529039" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="65" y="591" width="1855" height="222" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40337908" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="88" y="721" width="1855" height="382" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40337908" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="88" y="721" width="1855" height="382" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="SFDX" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -519,7 +576,8 @@
     <MESSAGE value="more server client" />
     <MESSAGE value="done!" />
     <MESSAGE value="game functionality works" />
-    <option name="LAST_COMMIT_MESSAGE" value="game functionality works" />
+    <MESSAGE value="small utility fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small utility fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -598,13 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-89">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/RemoteConnection.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="35" column="2" lean-forward="false" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -699,7 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -707,7 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -715,9 +764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding>
-            <element signature="e#41#65#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -725,7 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1056">
           <caret line="48" column="55" lean-forward="false" selection-start-line="48" selection-start-column="55" selection-end-line="48" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -733,7 +778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -741,9 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="e#41#65#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -751,7 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -767,7 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -775,7 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,7 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,9 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#64#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -801,31 +835,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Server_Settings">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Client_Settings">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Server_Settings" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Client_Settings" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/Server_Settings.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,7 +851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -845,42 +862,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/RemotePlayer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-351">
-          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/RemoteGame.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/RemoteGame.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-131">
+        <state relative-caret-position="0">
           <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/RemoteConnection.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="42" column="40" lean-forward="false" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/RemoteConnection.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        <state relative-caret-position="506">
+          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/RemotePlayer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="62" column="28" lean-forward="true" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
           <folding />
         </state>
       </provider>
