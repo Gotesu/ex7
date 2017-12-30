@@ -5,6 +5,7 @@
 /home/gotesu/CLionProjects/ex5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/gotesu/CLionProjects/ex5/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/gotesu/CLionProjects/ex5/cmake-build-debug/CMakeFiles/ex5_test.dir
+/home/gotesu/CLionProjects/ex5/cmake-build-debug/CMakeFiles/Server.dir
 /home/gotesu/CLionProjects/ex5/cmake-build-debug/CMakeFiles/SeqServer.dir
 /home/gotesu/CLionProjects/ex5/cmake-build-debug/CMakeFiles/ex5.dir
 /home/gotesu/CLionProjects/ex5/cmake-build-debug/gtest_src/googletest-release-1.8.0/CMakeFiles/install/strip.dir

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 project(ex5)
 
 set(CMAKE_CXX_STANDARD 98)
-
+set(CMAKE_CXX_FLAGS -pthread)
 
 add_subdirectory(gtest_src/googletest-release-1.8.0)
 include_directories(gtest_src/googletest-release-1.8.0/googletest/include)
@@ -45,6 +45,10 @@ add_executable(ex5 ${Client_FILES} Client/main.cpp )
 set (SeqServer_FILES
         SeqServer/Server.cpp SeqServer/Server.h)
 add_executable(SeqServer ${SeqServer_FILES} SeqServer/main.cpp)
+
+set (Server_FILES
+        Server/Server.cpp Server/Server.h)
+add_executable(Server ${Server_FILES} Server/main.cpp)
 
 add_executable(ex5_test ${Client_FILES} ${SeqServer_Files} ${TEST_FILES} test/gtest_main.cpp)
 

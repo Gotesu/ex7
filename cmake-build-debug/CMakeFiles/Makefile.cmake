@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
-  "CMakeFiles/3.9.4/CMakeCCompiler.cmake"
-  "CMakeFiles/3.9.4/CMakeCXXCompiler.cmake"
-  "CMakeFiles/3.9.4/CMakeSystem.cmake"
+  "CMakeFiles/3.9.6/CMakeCCompiler.cmake"
+  "CMakeFiles/3.9.6/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.9.6/CMakeSystem.cmake"
   "../gtest_src/googletest-release-1.8.0/CMakeLists.txt"
   "../gtest_src/googletest-release-1.8.0/googlemock/CMakeLists.txt"
   "../gtest_src/googletest-release-1.8.0/googletest/CMakeLists.txt"
@@ -60,6 +60,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ex5_test.dir/DependInfo.cmake"
+  "CMakeFiles/Server.dir/DependInfo.cmake"
   "CMakeFiles/SeqServer.dir/DependInfo.cmake"
   "CMakeFiles/ex5.dir/DependInfo.cmake"
   "gtest_src/googletest-release-1.8.0/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"

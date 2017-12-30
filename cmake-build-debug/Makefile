@@ -170,6 +170,19 @@ ex5_test/fast:
 .PHONY : ex5_test/fast
 
 #=============================================================================
+# Target rules for targets named Server
+
+# Build rule for target.
+Server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Server
+.PHONY : Server
+
+# fast build rule for target.
+Server/fast:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/build
+.PHONY : Server/fast
+
+#=============================================================================
 # Target rules for targets named SeqServer
 
 # Build rule for target.
@@ -658,6 +671,60 @@ SeqServer/main.cpp.s:
 	$(MAKE) -f CMakeFiles/SeqServer.dir/build.make CMakeFiles/SeqServer.dir/SeqServer/main.cpp.s
 .PHONY : SeqServer/main.cpp.s
 
+Server/Server.o: Server/Server.cpp.o
+
+.PHONY : Server/Server.o
+
+# target to build an object file
+Server/Server.cpp.o:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/Server.cpp.o
+.PHONY : Server/Server.cpp.o
+
+Server/Server.i: Server/Server.cpp.i
+
+.PHONY : Server/Server.i
+
+# target to preprocess a source file
+Server/Server.cpp.i:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/Server.cpp.i
+.PHONY : Server/Server.cpp.i
+
+Server/Server.s: Server/Server.cpp.s
+
+.PHONY : Server/Server.s
+
+# target to generate assembly for a file
+Server/Server.cpp.s:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/Server.cpp.s
+.PHONY : Server/Server.cpp.s
+
+Server/main.o: Server/main.cpp.o
+
+.PHONY : Server/main.o
+
+# target to build an object file
+Server/main.cpp.o:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/main.cpp.o
+.PHONY : Server/main.cpp.o
+
+Server/main.i: Server/main.cpp.i
+
+.PHONY : Server/main.i
+
+# target to preprocess a source file
+Server/main.cpp.i:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/main.cpp.i
+.PHONY : Server/main.cpp.i
+
+Server/main.s: Server/main.cpp.s
+
+.PHONY : Server/main.s
+
+# target to generate assembly for a file
+Server/main.cpp.s:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/main.cpp.s
+.PHONY : Server/main.cpp.s
+
 test/gtest_main.o: test/gtest_main.cpp.o
 
 .PHONY : test/gtest_main.o
@@ -806,6 +873,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ex5_test"
+	@echo "... Server"
 	@echo "... SeqServer"
 	@echo "... ex5"
 	@echo "... gmock_main"
@@ -854,6 +922,12 @@ help:
 	@echo "... SeqServer/main.o"
 	@echo "... SeqServer/main.i"
 	@echo "... SeqServer/main.s"
+	@echo "... Server/Server.o"
+	@echo "... Server/Server.i"
+	@echo "... Server/Server.s"
+	@echo "... Server/main.o"
+	@echo "... Server/main.i"
+	@echo "... Server/main.s"
 	@echo "... test/gtest_main.o"
 	@echo "... test/gtest_main.i"
 	@echo "... test/gtest_main.s"

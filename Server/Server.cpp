@@ -1,23 +1,31 @@
 //
 // Created by gotesu on 11/12/17.
 //
-
 #include "Server.h"
+#include <vector>
+#include <pthread.h>
 using namespace std;
 #define MAX_CONNECTED_CLIENTS 2
 #define INSIZE 255
 
+struct mainThreadsArgs{
+    int serverSocket;
+    struct sockaddr_in clientAddress;
+    socklen_t clientAddressLen;
+};
+
+
 Server::Server(int port): port(port), serverSocket(0) {
-    cout << "SeqServer" << endl;
+    cout << "Server" << endl;
 }
 void Server::start() {
+    vector<pthread_t> threads;
+    mainThreadsArgs *args = new mainThreadsArgs;
 // Create a socket point
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (serverSocket == -1) {
         throw "Error opening socket";
     }
-    int clientSocket;
-    int clientSocket2;
     // Assign a local address to the socket
     struct sockaddr_in serverAddress;
     bzero((void *)&serverAddress,
@@ -30,34 +38,20 @@ void Server::start() {
         throw "Error on binding";
     }// Start listening to incoming connections
     listen(serverSocket, MAX_CONNECTED_CLIENTS);
-    // Define the client socket's structures
-    struct sockaddr_in clientAddress;
-    socklen_t clientAddressLen;
-    struct sockaddr_in clientAddress2;
-    socklen_t clientAddressLen2;
-    while (true) {
-        cout << "Waiting for client connections..." << endl;
-        // Accept a new client connection
-        clientSocket = accept(serverSocket, (struct
-                sockaddr *)&clientAddress, &clientAddressLen);
-        if (clientSocket == -1)
-            throw "Error on accept of 1";
-        cout << "First Client connected" << endl;
-        clientSocket2 = accept(serverSocket, (struct
-                sockaddr *)&clientAddress2, &clientAddressLen2);
-        if (clientSocket2 == -1)
-            throw "Error on accept on 2";
-        cout << "Second Client connected" << endl;
-        handleClients(clientSocket, clientSocket2);
-        // Close communication with the client
-        close(clientSocket);
-        close(clientSocket2);
-    }
+    args->serverSocket = serverSocket;
+    threads.push_back((pthread_t)new pthread_t());
+    pthread_create(&threads.at(0),NULL,handleClient,(void*)args);
+    pthread_join(threads.at(0), NULL);
+    delete args;
 }
 
-void Server::handleClients(int clientSocket, int clientSocket2) {
+void* Server::playGame(void* twoClients) {
     int n;
     int first = 1;
+    int *sockets = (int*) twoClients;
+    int clientSocket = *sockets;
+    sockets++;
+    int clientSocket2 = *sockets;
     n = write(clientSocket, &first, 4);
     first++;
     n = write(clientSocket2, &first, 4);
@@ -69,48 +63,49 @@ void Server::handleClients(int clientSocket, int clientSocket2) {
         n = read(clientSocket, client1Input, sizeof(client1Input));
         if (n == -1) {
             cout << "Error reading client 1 input" << endl;
-            return;
+            break;
         }
         if (n == 0) {
             cout << "Client 1 disconnected" << endl;
-            return;
+            break;
         }
         //case game ended
         if (Server::endGame(client1Input)) {
             cout << "Game ended" << endl;
             write(clientSocket2, endMessage, sizeof(endMessage));
-            return;
+            break;
         }
         //send the move to client 2
         n = write(clientSocket2, client1Input, sizeof(client1Input));
         if (n == -1) {
             cout << "Error writing to client 2" << endl;
-            return;
+            break;
         }
         //read client 2 new move
         n = read(clientSocket2, client2Input, sizeof(client2Input));
         if (n == -1) {
             cout << "Error reading client 2 input" << endl;
-            return;
+            break;
         }
         if (n == 0) {
             cout << "Client 1 disconnected" << endl;
-            return;
+            break;
         }
         //case game ended.
         if (Server::endGame(client2Input)) {
             cout << "Game ended" << endl;
             write(clientSocket, endMessage, sizeof(endMessage));
-            return;
+            break;
         }
         //send to client 1
         n = write(clientSocket, client2Input, sizeof(client2Input));
         if (n == -1) {
             cout << "Error writing to client 1" << endl;
-            return;
+            break;
         }
-
     }
+    close(clientSocket);
+    close(clientSocket2);
 }
 
 void Server::stop() {
@@ -122,6 +117,17 @@ bool Server::endGame(char* input) {
     if (strcmp(input, check.c_str()) == 0)
         return 1;
     return 0;
-
 }
 
+void *Server::handleClient(void* args) {
+    mainThreadsArgs arg = *(mainThreadsArgs*) args;
+    while (true) {
+        cout << "Waiting for client connections..." << endl;
+        // Accept a new client connection
+        int clientSocket = accept(arg.serverSocket, (struct
+                sockaddr *) &arg.clientAddress, &arg.clientAddressLen);
+        if (clientSocket == -1)
+            throw "Error on accept of 1";
+        cout << "First Client connected" << endl;
+    }
+}
