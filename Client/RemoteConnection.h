@@ -42,11 +42,12 @@ public:
      * send info sends a command to the server.
      * @param info
      ********************/
-private:
     /************
      * set the side by who connected first
      */
     void setSide();
+private:
+
     int side;
     const char *serverIP;
     int serverPort;

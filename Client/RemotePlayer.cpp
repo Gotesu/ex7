@@ -1,5 +1,7 @@
 
 #include "RemotePlayer.h"
+#include <stdio.h>
+#include <stdlib.h>
 #define INSIZE 255
 RemotePlayer::RemotePlayer(Logic& l, Board& b, Side s, RemoteConnection& rc):rc(rc) ,Player(l, b, s) {}
 
@@ -19,10 +21,7 @@ void RemotePlayer::upload(Move* choice) {
 		rc.sendInfo(send);
 		return;
 	}
-	send[0] = (char)(choice->getR() + '0');
-	send[1] = ',';
-	send[2] = ' ';
-	send[3] = (char)(choice->getC() + '0');
+	strcpy(send,moveToChar(choice, send));
 	rc.sendInfo(send);
 }
 
@@ -36,9 +35,11 @@ Move* RemotePlayer::download() {
 	if ((strcmp(move, "NoMove") == 0) || (strcmp(move, "End") == 0))
 		return NULL;
 	int row, col;
-	row = (int) (move[0] - '0');
-	col = (int) (move[3] - '0');
-  return l.checkAction(b, s, row, col);
+    string first,second;
+    istringstream iss(move);
+    iss >> first;
+    iss >> second;
+  return l.checkAction(b, s, atoi(first.c_str()), atoi(second.c_str()));
 }
 
 void RemotePlayer::disconnect() {
@@ -62,7 +63,7 @@ bool RemotePlayer::doMove() {
 		last = choice;
 		return false;
 	} else {
-		// change the board whith the given move
+		// change the board with the given move
 		b.update(s, choice);
 		// print the chosen move
 		cout << sign() << " played ";
@@ -71,4 +72,19 @@ bool RemotePlayer::doMove() {
 	}
 	last = choice;
 	return true;
+}
+
+char *RemotePlayer::moveToChar(Move* move, char* dst) {
+    ostringstream rowStr;
+    rowStr << move->getR();
+    ostringstream colStr;
+    colStr << move->getC();
+    strcat(dst,rowStr.str().c_str());
+    strcat (dst, ", ");
+    strcat (dst, colStr.str().c_str());
+	return dst;
+}
+
+int RemotePlayer::charToInt(char *info) {
+	return 0;
 }

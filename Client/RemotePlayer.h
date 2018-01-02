@@ -51,6 +51,8 @@ public:
     void disconnect();
 private:
     RemoteConnection rc;
+    char* moveToChar(Move* move, char* dst);
+    int charToInt (char* info);
 };
 
 #endif //REMOTEPLAYER_H
