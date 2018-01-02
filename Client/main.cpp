@@ -6,6 +6,7 @@
 #include "Computer.h"
 #include "StdLogic.h"
 #include "StdVisual.h"
+#include "RemoteGameRoom.h"
 
 /***********************************************
  * Remote
@@ -34,48 +35,65 @@ GameSession* Remote(Player *p1, RemotePlayer *p2, Board *board, Logic *log, Visu
  * GameCreator
  * this function creates the game according to our user's choice
  * directly creating a local game in case of choice  1 or 2 and
- * using Remote function to handle a Remote game choice.
+ * using Remote function to handle a Remote game room.
  *******************************************/
-GameSession* GameCreator(int c) {
-    Board *b = new Board();
-    StdLogic *log = new StdLogic();
-    StdVisual *vis = new StdVisual(b);
+void GameCreator(int c) {
+    GameSession *game;
+    Board *b;
+    StdLogic *log;
+    StdVisual *vis;
     Player *p1;
     Player *p2;
     switch(c) {
         case 1:
+            //case human vs human
+            b = new Board();
+            log = new StdLogic();
+            vis = new StdVisual(b);
             p1 = new Human(*log, *b, BLACK);
             p2 = new Human(*log, *b, WHITE);
-            return new StdGame(b, vis, p1, p2);
+            game = new StdGame(b, vis, p1, p2);
+            game->playRound();
+            delete game;
+            break;
         case 2:
+            //case human vs AI
+            b = new Board();
+            log = new StdLogic();
+            vis = new StdVisual(b);
             p1 = new Human(*log, *b, BLACK);
             p2 = new Computer(*log, *b, WHITE);
-            return new StdGame(b, vis, p1, p2);
+            game = new StdGame(b, vis, p1, p2);
+            game->playRound();
+            delete game;
+            break;
         case 3:
-            RemotePlayer* pr;
-            return Remote(p1, pr, b, log, vis);
+            //case remote game room
+            try {
+                RemoteGameRoom *gameRoom = new RemoteGameRoom();
+                delete gameRoom;
+                break;
+            } catch (char const* e) {
+                throw e;
+            }
         default:
             cout << "Error, Illegal Choice" << endl;
     }
 }
 
 int main() {
-    GameSession* game;
-		int c;
-		cout << "Welcome to Reversi!" << endl;
-		cout << "Choose an opponent type:" << endl;
-		cout << "1. a human local player" << endl;
-		cout << "2. an AI player" << endl;
-		cout << "3. a remote player" << endl;
-        cout << "3. Connect to remote GameRoom" << endl;
-		cin >> c;
+    int c;
+    cout << "Welcome to Reversi!" << endl;
+    cout << "Choose an opponent type:" << endl;
+    cout << "1. a human local player" << endl;
+    cout << "2. an AI player" << endl;
+    cout << "3. Connect to remote GameRoom" << endl;
+    cin >> c;
     try {
-    	game = GameCreator(c);
-        game->playRound();
+    	GameCreator(c);
     } catch(char const* e) {
 		cout << e << endl;
 		return 1;
 		}
-    delete game;
     return 0;
 }

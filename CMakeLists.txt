@@ -40,7 +40,7 @@ set(Client_FILES
 set(TEST_FILES
         test/gtest_main.cpp test/test_Board.cpp test/test_StdLogic.cpp test/test_Human.cpp test/test_Computer.cpp)
 
-add_executable(ex5 ${Client_FILES} Client/main.cpp )
+add_executable(ex5 ${Client_FILES} Client/main.cpp Client/RemoteGameRoom.cpp Client/RemoteGameRoom.h)
 
 set (SeqServer_FILES
         SeqServer/Server.cpp SeqServer/Server.h)

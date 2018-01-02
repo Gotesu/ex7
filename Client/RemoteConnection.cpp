@@ -11,7 +11,7 @@ RemoteConnection::RemoteConnection(): clientSocket(0) {
     string input2;
     try {
         data.open("Client_Settings.txt");
-    } catch(exception) {
+    } catch(exception e) {
         throw "Cannot open settings file";
     }
     getline(data,input);
@@ -53,8 +53,6 @@ void RemoteConnection::connectToServer() {
         throw "Error connecting to server";
     }
     cout << "Connected to server" << endl;
-    cout << "Waiting for the game to start..." << endl;
-    setSide();
 }
 
 void RemoteConnection::setSide() {
@@ -71,10 +69,10 @@ int RemoteConnection::getSide() {
     return this->side;
 }
 
-void RemoteConnection::getMove(char * input) {
+void RemoteConnection::getInfo(char *input) {
     int n = read(clientSocket, input, sizeof(char[INSIZE]));
     if (n == -1) {
-        throw "Error writing Move to socket";
+        throw "Error reading info from socket";
     }
     if (n == 0) {
         throw "client disconnected";
@@ -82,11 +80,11 @@ void RemoteConnection::getMove(char * input) {
     return;
 }
 
-void RemoteConnection::sendMove(char* move) {
+void RemoteConnection::sendInfo(char* info) {
 // Write the Player's move to the socket
-    int n = write(clientSocket, move, sizeof(char[INSIZE]));
+    int n = write(clientSocket, info, sizeof(char[INSIZE]));
     if (n == -1) {
-        throw "Error writing Move to socket";
+        throw "Error writing info to socket";
     }
     if (n == 0) {
         throw "disconnected from server";
@@ -103,3 +101,4 @@ int RemoteConnection::stringToInt(string input) {
         }
         return number;
 }
+

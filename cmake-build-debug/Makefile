@@ -470,6 +470,33 @@ Client/RemoteGame.cpp.s:
 	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteGame.cpp.s
 .PHONY : Client/RemoteGame.cpp.s
 
+Client/RemoteGameRoom.o: Client/RemoteGameRoom.cpp.o
+
+.PHONY : Client/RemoteGameRoom.o
+
+# target to build an object file
+Client/RemoteGameRoom.cpp.o:
+	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteGameRoom.cpp.o
+.PHONY : Client/RemoteGameRoom.cpp.o
+
+Client/RemoteGameRoom.i: Client/RemoteGameRoom.cpp.i
+
+.PHONY : Client/RemoteGameRoom.i
+
+# target to preprocess a source file
+Client/RemoteGameRoom.cpp.i:
+	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteGameRoom.cpp.i
+.PHONY : Client/RemoteGameRoom.cpp.i
+
+Client/RemoteGameRoom.s: Client/RemoteGameRoom.cpp.s
+
+.PHONY : Client/RemoteGameRoom.s
+
+# target to generate assembly for a file
+Client/RemoteGameRoom.cpp.s:
+	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteGameRoom.cpp.s
+.PHONY : Client/RemoteGameRoom.cpp.s
+
 Client/RemotePlayer.o: Client/RemotePlayer.cpp.o
 
 .PHONY : Client/RemotePlayer.o
@@ -901,6 +928,9 @@ help:
 	@echo "... Client/RemoteGame.o"
 	@echo "... Client/RemoteGame.i"
 	@echo "... Client/RemoteGame.s"
+	@echo "... Client/RemoteGameRoom.o"
+	@echo "... Client/RemoteGameRoom.i"
+	@echo "... Client/RemoteGameRoom.s"
 	@echo "... Client/RemotePlayer.o"
 	@echo "... Client/RemotePlayer.i"
 	@echo "... Client/RemotePlayer.s"

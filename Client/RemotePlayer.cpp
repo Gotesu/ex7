@@ -16,20 +16,20 @@ void RemotePlayer::upload(Move* choice) {
 		send[3] = 'o';
 		send[4] = 'v';
 		send[5] = 'e';
-		rc.sendMove(send);
+		rc.sendInfo(send);
 		return;
 	}
 	send[0] = (char)(choice->getR() + '0');
 	send[1] = ',';
 	send[2] = ' ';
 	send[3] = (char)(choice->getC() + '0');
-	rc.sendMove(send);
+	rc.sendInfo(send);
 }
 
 Move* RemotePlayer::download() {
 	char move[INSIZE] = {0};
 	try {
-		rc.getMove(move);
+        rc.getInfo(move);
 	} catch(exception e) {
 		throw "Download failed";
 	}
@@ -46,7 +46,7 @@ void RemotePlayer::disconnect() {
 	send[0] = 'E';
 	send[1] = 'n';
 	send[2] = 'd';
-	rc.sendMove(send);
+	rc.sendInfo(send);
 }
 
 bool RemotePlayer::doMove() {

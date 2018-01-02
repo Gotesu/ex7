@@ -29,15 +29,19 @@ public:
      */
     int getSide();
     /****************
-     * send move to server
+     * send command to server
      * @param move
      */
-    void sendMove(char* move);
+    void sendInfo(char* info);
     /***************
      * get move from server
      * @param input
      */
-    void getMove(char * input);
+    void getInfo(char *input);
+    /*************************
+     * send info sends a command to the server.
+     * @param info
+     ********************/
 private:
     /************
      * set the side by who connected first
