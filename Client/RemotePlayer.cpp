@@ -21,8 +21,10 @@ void RemotePlayer::upload(Move* choice) {
 		rc.sendInfo(send);
 		return;
 	}
+    char send1[255] = {'p','l','a','y',' '};
 	strcpy(send,moveToChar(choice, send));
-	rc.sendInfo(send);
+    strcat(send1, send);
+	rc.sendInfo(send1);
 }
 
 Move* RemotePlayer::download() {

@@ -3,6 +3,13 @@
 //
 
 #include "RemoteGameRoom.h"
+#include "Board.h"
+#include "Logic.h"
+#include "StdLogic.h"
+#include "StdVisual.h"
+#include "Human.h"
+#include "RemotePlayer.h"
+#include "RemoteGame.h"
 #include <sstream>
 #define INSIZE 255
 using namespace std;
@@ -57,9 +64,41 @@ void RemoteGameRoom::getList(const char *request) {
 }
 
 void RemoteGameRoom::startGame(const char *request) {
-    cout << "you're in start" << endl;
+    Board* board = new Board();
+    Logic* log = new StdLogic();
+    Visual *vis = new StdVisual(board);
+    rc->sendInfo(const_cast<char *>(request));
+    rc->setSide();
+    Side eSide;
+    int side = rc->getSide();
+    if (side == 1) {
+        eSide = BLACK;
+    }else if (side == 2){
+        eSide = WHITE;
+    }
+    RemoteGame* game;
+    Player* p1 = new Human(*log, *board, eSide);
+    RemotePlayer* p2 = new RemotePlayer(*log, *board, (Side) -eSide, *rc);
+    game = new RemoteGame(board, vis, p1, p2);
+    game->playRound();
 }
 
 void RemoteGameRoom::joinGame(const char *request) {
-    cout << "you're in join" << endl;
+    Board* board = new Board();
+    Logic* log = new StdLogic();
+    Visual *vis = new StdVisual(board);
+    rc->sendInfo(const_cast<char *>(request));
+    rc->setSide();
+    Side eSide;
+    int side = rc->getSide();
+    if (side == 1) {
+        eSide = BLACK;
+    }else if (side == 2){
+        eSide = WHITE;
+    };
+    RemoteGame* game;
+    Player* p1 = new Human(*log, *board, eSide);
+    RemotePlayer* p2 = new RemotePlayer(*log, *board, (Side) -eSide, *rc);
+    game = new RemoteGame(board, vis, p1, p2);
+    game->playRound();
 }

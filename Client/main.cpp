@@ -81,7 +81,7 @@ void GameCreator(int c) {
                 throw e;
             }
         case 4:
-            b = new Board(20,20);
+            b = new Board();
             log = new StdLogic();
             vis = new StdVisual(b);
             Player* p1;
