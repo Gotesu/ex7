@@ -37,25 +37,35 @@ RemoteGameRoom::RemoteGameRoom() {
         getline(cin, input);
         istringstream iss(input);
         iss >> command;
+        //sending the reqeust to server.
+        rc->sendInfo(const_cast<char *>(input.c_str()));
+        //making a validity check that our server confirms the request.
+        if (!validityCheck()) {
+            cout << "Please choose again\n";
+            continue;
+        }
+        //case getlist was chosen
         if (strcmp(command.c_str(), list) == 0)
-            getList(input.c_str());
+            getList();
+        //case join
         else if (strcmp(command.c_str(), join) == 0) {
-            joinGame(input.c_str());
+            joinGame();
             stopped = true;
         }
+        //case start was chosen
         else if (strcmp(command.c_str(), start) == 0) {
-            startGame(input.c_str());
+            startGame();
             stopped = true;
         }
+        //illegal choice.
         else
             cout << "invalid choice, please choose again" << endl;
     }
 }
 
-void RemoteGameRoom::getList(const char *request) {
+void RemoteGameRoom::getList() {
     char list[INSIZE];
     try {
-        rc->sendInfo(const_cast<char *>(request));
         rc->getInfo(list);
         cout << list << endl;
     } catch(const char* c) {
@@ -63,11 +73,10 @@ void RemoteGameRoom::getList(const char *request) {
     }
 }
 
-void RemoteGameRoom::startGame(const char *request) {
+void RemoteGameRoom::startGame() {
     Board* board = new Board();
     Logic* log = new StdLogic();
     Visual *vis = new StdVisual(board);
-    rc->sendInfo(const_cast<char *>(request));
     rc->setSide();
     Side eSide;
     int side = rc->getSide();
@@ -83,11 +92,10 @@ void RemoteGameRoom::startGame(const char *request) {
     game->playRound();
 }
 
-void RemoteGameRoom::joinGame(const char *request) {
+void RemoteGameRoom::joinGame() {
     Board* board = new Board();
     Logic* log = new StdLogic();
     Visual *vis = new StdVisual(board);
-    rc->sendInfo(const_cast<char *>(request));
     rc->setSide();
     Side eSide;
     int side = rc->getSide();
@@ -101,4 +109,19 @@ void RemoteGameRoom::joinGame(const char *request) {
     RemotePlayer* p2 = new RemotePlayer(*log, *board, (Side) -eSide, *rc);
     game = new RemoteGame(board, vis, p1, p2);
     game->playRound();
+}
+
+bool RemoteGameRoom::validityCheck() {
+    char input[INSIZE];
+    char* acc = "accept";
+    char* err = "error";
+    rc->getInfo(input);
+    if (!strcmp(input,acc)) {
+        cout << "request accepted by server\n";
+        return true;
+    }
+    if (!strcmp(input,err)) {
+        cout << "request denied by server\n";
+        return false;
+    }
 }

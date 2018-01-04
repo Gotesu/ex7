@@ -14,9 +14,10 @@ public:
 private:
     RemoteConnection *rc;
     bool stopped;
-    void getList(const char* request);
-    void startGame(const char* request);
-    void joinGame(const char* request);
+    void getList();
+    void startGame();
+    void joinGame();
+    bool validityCheck();
 
 };
 
