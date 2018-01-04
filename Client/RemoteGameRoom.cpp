@@ -48,7 +48,7 @@ RemoteGameRoom::RemoteGameRoom() {
             getList();
         //case join
         else if (strcmp(command.c_str(), join) == 0) {
-            joinGame();
+            startGame();
             stopped = true;
         }
         //case start was chosen
@@ -91,24 +91,6 @@ void RemoteGameRoom::startGame() {
     game->playRound();
 }
 
-void RemoteGameRoom::joinGame() {
-    Board* board = new Board();
-    Logic* log = new StdLogic();
-    Visual *vis = new StdVisual(board);
-    rc->setSide();
-    Side eSide;
-    int side = rc->getSide();
-    if (side == 1) {
-        eSide = BLACK;
-    }else if (side == 2){
-        eSide = WHITE;
-    };
-    RemoteGame* game;
-    Player* p1 = new Human(*log, *board, eSide);
-    RemotePlayer* p2 = new RemotePlayer(*log, *board, (Side) -eSide, *rc);
-    game = new RemoteGame(board, vis, p1, p2);
-    game->playRound();
-}
 
 bool RemoteGameRoom::validityCheck() {
     char input[INSIZE];
