@@ -22,6 +22,7 @@ public:
 			// send the client a massage that the command accepted
 			sendy.accept(socket);
 		}
+		pthread_exit (NULL);
 	}
 };
 
