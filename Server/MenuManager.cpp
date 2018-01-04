@@ -125,8 +125,7 @@ void MenuManager::executeCommand(string commandStr, int socket) {
 	// check that the command exist
 	if (commandObj != NULL) {
 		commandObj->execute(socket, gameName);
-	}
-
+	} else
 	// send error message
 	sendy.error(socket);
 }

@@ -21,7 +21,7 @@ public:
 		strcpy(output,list.str().c_str());
 		// write to the socket
 		int n = write(socket, output, sizeof(output));
-		if (n == -1)
+		if (n == -1 || n == 0)
 			cout << "Error writing to socket number " << socket << endl;
 	}
 };

@@ -68,9 +68,9 @@ void *Server::acceptClients(void* args) {
 }
 void *Server::handleClient(void *args) {
     char input[INSIZE] = {0};
-    long clientSocket = (long)args;
+    long clientSocket = (long) args;
     int check = read(clientSocket, input, sizeof(input));
-    if (check == -1)
+    if (check == -1 || check == 0)
         throw "Error on read";
     MenuManager::getInstance()->executeCommand(string(input), clientSocket);
 }
