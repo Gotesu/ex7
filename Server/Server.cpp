@@ -4,8 +4,6 @@
 #include "Server.h"
 #include "MenuManager.h"
 #include "GameManager.h"
-#include <vector>
-#include <pthread.h>
 
 using namespace std;
 
@@ -16,17 +14,19 @@ struct mainThreadsArgs{
     int serverSocket;
     struct sockaddr_in clientAddress;
     socklen_t clientAddressLen;
+    vector<pthread_t>* threadings;
 };
 
 
-Server::Server(int port): port(port), serverSocket(0) {
+Server::Server(int port): port(port), serverSocket(0), serverThreadId(0) {
     cout << "Server running" << endl;
+    threads = new vector<pthread_t>();
     running = true;
 }
 
 void Server::start() {
-    vector<pthread_t> threads;
     mainThreadsArgs *args = new mainThreadsArgs;
+    args->threadings = threads;
 // Create a socket point
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (serverSocket == -1) {
@@ -45,27 +45,34 @@ void Server::start() {
     }// Start listening to incoming connections
     listen(serverSocket, MAX_CONNECTED_CLIENTS);
     args->serverSocket = serverSocket;
-    threads.push_back((pthread_t)new pthread_t());
-    pthread_create(&threads.at(0),NULL,handleClient,(void*)args);
-    pthread_join(threads.at(0), NULL);
+    //opening the mainloop client acceptence thread.
+    pthread_create(&serverThreadId, NULL,acceptClients,(void*)args);
+    pthread_join(serverThreadId, NULL);
     delete args;
 }
 
-void *Server::handleClient(void* args) {
+void *Server::acceptClients(void* args) {
     mainThreadsArgs arg = *(mainThreadsArgs*) args;
     while (true) {
         // Accept a new client connection
         int clientSocket = accept(arg.serverSocket, (struct
                 sockaddr *) &arg.clientAddress, &arg.clientAddressLen);
         if (clientSocket == -1)
-            throw "Error on accept of 1";
+            throw "Error on accept";
         cout << "Client (" << clientSocket << ") connected" << endl;
-    char input[INSIZE] = {0};
-		int check = read(clientSocket, input, sizeof(input));
-    if (check == -1)
-    	throw "Error on read";
-		MenuManager::getInstance()->executeCommand(string(input), clientSocket);
+        pthread_t threadId;
+        pthread_create(&threadId, NULL, &handleClient, (void *)clientSocket);
+        arg.threadings->push_back(threadId);
     }
+
+}
+void *Server::handleClient(void *args) {
+    char input[INSIZE] = {0};
+    long clientSocket = (long)args;
+    int check = read(clientSocket, input, sizeof(input));
+    if (check == -1)
+        throw "Error on read";
+    MenuManager::getInstance()->executeCommand(string(input), clientSocket);
 }
 
 void Server::stop() {
