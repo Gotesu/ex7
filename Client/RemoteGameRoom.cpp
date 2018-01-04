@@ -41,7 +41,6 @@ RemoteGameRoom::RemoteGameRoom() {
         rc->sendInfo(const_cast<char *>(input.c_str()));
         //making a validity check that our server confirms the request.
         if (!validityCheck()) {
-            cout << "Please choose again\n";
             continue;
         }
         //case getlist was chosen
