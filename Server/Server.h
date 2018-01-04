@@ -5,7 +5,7 @@
 #ifndef SERVER_SERVER_H
 #define SERVER_SERVER_H
 
-#include <string.h>
+#include <string>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
@@ -33,19 +33,7 @@ public:
 private:
     int port;
     int serverSocket; // the socket's file descriptor
-    /*******************
-* Function name: playGame
-* @param clientSocket first client port
-* @param clientSocket2 second client port
-* function Operation: handles a game between clients.
- *******************/
-    static void* playGame(void* twoClients);
- /*******************
- * Function name: endGame
- * @param input the client input.
- * function Operation: check if client send "End", and if so end the connection with the clients.
-  *******************/
-    static bool endGame(char* input);
+    bool running;
 /**************************
  * handleClient
  * @param args

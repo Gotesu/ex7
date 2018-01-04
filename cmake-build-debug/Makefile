@@ -698,6 +698,114 @@ SeqServer/main.cpp.s:
 	$(MAKE) -f CMakeFiles/SeqServer.dir/build.make CMakeFiles/SeqServer.dir/SeqServer/main.cpp.s
 .PHONY : SeqServer/main.cpp.s
 
+Server/GameManager.o: Server/GameManager.cpp.o
+
+.PHONY : Server/GameManager.o
+
+# target to build an object file
+Server/GameManager.cpp.o:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/GameManager.cpp.o
+.PHONY : Server/GameManager.cpp.o
+
+Server/GameManager.i: Server/GameManager.cpp.i
+
+.PHONY : Server/GameManager.i
+
+# target to preprocess a source file
+Server/GameManager.cpp.i:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/GameManager.cpp.i
+.PHONY : Server/GameManager.cpp.i
+
+Server/GameManager.s: Server/GameManager.cpp.s
+
+.PHONY : Server/GameManager.s
+
+# target to generate assembly for a file
+Server/GameManager.cpp.s:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/GameManager.cpp.s
+.PHONY : Server/GameManager.cpp.s
+
+Server/JoinCommand.o: Server/JoinCommand.cpp.o
+
+.PHONY : Server/JoinCommand.o
+
+# target to build an object file
+Server/JoinCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/JoinCommand.cpp.o
+.PHONY : Server/JoinCommand.cpp.o
+
+Server/JoinCommand.i: Server/JoinCommand.cpp.i
+
+.PHONY : Server/JoinCommand.i
+
+# target to preprocess a source file
+Server/JoinCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/JoinCommand.cpp.i
+.PHONY : Server/JoinCommand.cpp.i
+
+Server/JoinCommand.s: Server/JoinCommand.cpp.s
+
+.PHONY : Server/JoinCommand.s
+
+# target to generate assembly for a file
+Server/JoinCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/JoinCommand.cpp.s
+.PHONY : Server/JoinCommand.cpp.s
+
+Server/MenuManager.o: Server/MenuManager.cpp.o
+
+.PHONY : Server/MenuManager.o
+
+# target to build an object file
+Server/MenuManager.cpp.o:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/MenuManager.cpp.o
+.PHONY : Server/MenuManager.cpp.o
+
+Server/MenuManager.i: Server/MenuManager.cpp.i
+
+.PHONY : Server/MenuManager.i
+
+# target to preprocess a source file
+Server/MenuManager.cpp.i:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/MenuManager.cpp.i
+.PHONY : Server/MenuManager.cpp.i
+
+Server/MenuManager.s: Server/MenuManager.cpp.s
+
+.PHONY : Server/MenuManager.s
+
+# target to generate assembly for a file
+Server/MenuManager.cpp.s:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/MenuManager.cpp.s
+.PHONY : Server/MenuManager.cpp.s
+
+Server/Message.o: Server/Message.cpp.o
+
+.PHONY : Server/Message.o
+
+# target to build an object file
+Server/Message.cpp.o:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/Message.cpp.o
+.PHONY : Server/Message.cpp.o
+
+Server/Message.i: Server/Message.cpp.i
+
+.PHONY : Server/Message.i
+
+# target to preprocess a source file
+Server/Message.cpp.i:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/Message.cpp.i
+.PHONY : Server/Message.cpp.i
+
+Server/Message.s: Server/Message.cpp.s
+
+.PHONY : Server/Message.s
+
+# target to generate assembly for a file
+Server/Message.cpp.s:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/Message.cpp.s
+.PHONY : Server/Message.cpp.s
+
 Server/Server.o: Server/Server.cpp.o
 
 .PHONY : Server/Server.o
@@ -952,6 +1060,18 @@ help:
 	@echo "... SeqServer/main.o"
 	@echo "... SeqServer/main.i"
 	@echo "... SeqServer/main.s"
+	@echo "... Server/GameManager.o"
+	@echo "... Server/GameManager.i"
+	@echo "... Server/GameManager.s"
+	@echo "... Server/JoinCommand.o"
+	@echo "... Server/JoinCommand.i"
+	@echo "... Server/JoinCommand.s"
+	@echo "... Server/MenuManager.o"
+	@echo "... Server/MenuManager.i"
+	@echo "... Server/MenuManager.s"
+	@echo "... Server/Message.o"
+	@echo "... Server/Message.i"
+	@echo "... Server/Message.s"
 	@echo "... Server/Server.o"
 	@echo "... Server/Server.i"
 	@echo "... Server/Server.s"

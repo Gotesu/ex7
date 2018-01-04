@@ -47,7 +47,23 @@ set (SeqServer_FILES
 add_executable(SeqServer ${SeqServer_FILES} SeqServer/main.cpp)
 
 set (Server_FILES
-        Server/Server.cpp Server/Server.h)
+        Server/Server.cpp
+        Server/Server.h
+        Server/GameManager.h
+        Server/GameManager.cpp
+        Server/MenuManager.h
+        Server/MenuManager.cpp
+        Server/MenuCommand.h
+        Server/GameCommand.h
+        Server/EndCommand.h
+        Server/Message.h
+        Server/Message.cpp
+        Server/JoinCommand.cpp
+        Server/JoinCommand.h
+        Server/PlayCommand.h
+        Server/NoMoveCommand.h
+        Server/ListCommand.h
+        Server/StartCommand.h)
 add_executable(Server ${Server_FILES} Server/main.cpp)
 
 add_executable(ex5_test ${Client_FILES} ${SeqServer_Files} ${TEST_FILES} test/gtest_main.cpp)
