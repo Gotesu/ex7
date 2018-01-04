@@ -32,8 +32,9 @@ RemoteGameRoom::RemoteGameRoom() {
     cin.ignore();
     while (!stopped) {
         cout << "your options are:" << endl
-             << "1. list_games" << endl << "2. start <name> game" << endl
-             << "3. join <name> game" << endl;
+             << "1. list_games" << endl << "2. start <game-name>" << endl
+             << "3. join <game-name>" << endl;
+        cout << "please enter a command string" << endl
         getline(cin, input);
         istringstream iss(input);
         iss >> command;
@@ -66,7 +67,7 @@ void RemoteGameRoom::getList() {
     char list[INSIZE];
     try {
         rc->getInfo(list);
-        cout << list << endl;
+        cout << "current games waiting:" << endl << list << endl;
     } catch(const char* c) {
         cout << c << endl;
     }
