@@ -2,6 +2,7 @@
 #include "MenuManager.h"
 #include "GameManager.h"
 #include "Message.h"
+
 void JoinCommand::execute(int socket2, string gameName) {
 	Message sendy;
 	// get the other client socket from map
@@ -15,16 +16,6 @@ void JoinCommand::execute(int socket2, string gameName) {
 	// send the client a massage that the command accepted
 	sendy.accept(socket2);
 	playGame(socket, socket2);
-	// if get here - mean the server is closing while game didn't end
-	// send an exit massage
-	sendy.exit(socket, socket2);
-	// close both sockets
-	  close(socket);
-	  cout << "Client (" << socket << ") disconnected" << endl;
-	  close(socket2);
-	  cout << "Client (" << socket2 << ") disconnected" << endl;
-	// end current pthread
-	pthread_exit(NULL);
 }
 
 void JoinCommand::playGame(int client1Socket, int client2Socket) {
@@ -46,7 +37,7 @@ void JoinCommand::playGame(int client1Socket, int client2Socket) {
 	char input[INSIZE] = {0};
 	int readen = client1Socket, writen = client2Socket;
 	// a loop to handle the game, continue until checkServer() = false
-	while (GameManager::getInstance()->checkServer()) {
+	while (true) {
 		// read readen-player command
 		check = read(readen, input, sizeof(input));
         if (check == 0 || check == -1) {

@@ -37,18 +37,6 @@ public:
  * if succeeds return the other player socket, else return -1.
      *******************/
 	int removeGame(string name);
-    /*******************
- * Function name: checkServer
- * The function return the serverRun parameter, that is false if the server got an exit command
- * 	and true otherwise.
-     *******************/
-	bool checkServer() {return serverRun;}
-    /*******************
- * Function name: exit
- * The function change serverRun to false, which mean the server got an exit command.
- * Then it's closes all the waiting games from the map.
-     *******************/
-	void exit();
 private:
     //this vector will hold the gameSets which holds info about player sockets
     //and their thread
@@ -61,7 +49,6 @@ private:
 	static MenuManager* instance;
 	static pthread_mutex_t lock;
 	static pthread_mutex_t mapLock;
-	bool serverRun;
 };
 
 #endif /* MENUMANAGER_H_ */

@@ -1,7 +1,6 @@
 //
 // Created by gotesu on 31/12/17.
 //
-
 #include "RemoteGameRoom.h"
 #include "Board.h"
 #include "Logic.h"
@@ -67,7 +66,7 @@ void RemoteGameRoom::getList() {
     char list[INSIZE];
     try {
         rc->getInfo(list);
-        cout << "current games waiting:" << endl << list << endl;
+        cout << "The current games waiting:" << endl << list << endl;
     } catch(const char* c) {
         cout << c << endl;
     }

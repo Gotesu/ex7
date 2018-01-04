@@ -22,7 +22,6 @@ MenuManager * MenuManager::getInstance() {
 }
 
 MenuManager::MenuManager() {
-	serverRun = true;
 	commandsMap["start"] = new StartCommand();
 	commandsMap["list_games"] = new ListCommand();
 	commandsMap["join"] = new JoinCommand();
@@ -85,35 +84,7 @@ int MenuManager::removeGame(string name) {
 	return socket;
 }
 
-void MenuManager::exit() {
-	serverRun = false;
-	pthread_mutex_lock(&mapLock);
-	// go-over the games map
-	map<string, int>::iterator it;
-	for (it = gamesMap.begin(); it != gamesMap.end(); it++) {
-		// write to socket
-		Message sendy;
-		sendy.exit(it->second);
-		// close the socket
-	  close(it->second);
-	  cout << "Client (" << it->second << ") disconnected" << endl;
-	}
-	// close current pthread
-	pthread_mutex_unlock(&mapLock);
-}
-
 void MenuManager::executeCommand(string commandStr, int socket) {
-	Message sendy;
-	// check if the server still running (didn't get a close command)
-	if (!serverRun) {
-		// send an exit massage
-			sendy.exit(socket);
-			// close both sockets
-		  close(socket);
-		  cout << "Client (" << socket << ") disconnected" << endl;
-			// end current pthread
-			pthread_exit(NULL);
-	}
 	stringstream iss(commandStr);
 	string command, gameName;
 	// get the command string
@@ -125,9 +96,11 @@ void MenuManager::executeCommand(string commandStr, int socket) {
 	// check that the command exist
 	if (commandObj != NULL) {
 		commandObj->execute(socket, gameName);
-	} else
-	// send error message
-	sendy.error(socket);
+	} else {
+		// send error message
+		Message sendy;
+		sendy.error(socket);
+	}
 }
 
 MenuManager::~MenuManager() {

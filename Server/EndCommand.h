@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <pthread.h>
 #include "GameCommand.h"
+#include "serverClients.h"
 
 class EndCommand: public GameCommand {
 public:
@@ -23,10 +24,9 @@ public:
 		if (check == -1)
 			cout << "Error writing to socket " << socket << endl;
 		// close both sockets
-	  close(socket);
-	  cout << "Client (" << socket << ") disconnected" << endl;
-	  close(socket2);
-	  cout << "Client (" << socket2 << ") disconnected" << endl;
+		serverClients::getInstance()->removeSocket(socket);
+		if (socket2 != -1)
+			serverClients::getInstance()->removeSocket(socket2);
 		// end current pthread
 		pthread_exit(NULL);
 	}

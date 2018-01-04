@@ -5,6 +5,7 @@
 #include "Server.h"
 #include "MenuManager.h"
 #include "GameManager.h"
+#include "serverClients.h"
 
 using namespace std;
 
@@ -15,9 +16,7 @@ struct mainThreadsArgs{
     int serverSocket;
     struct sockaddr_in clientAddress;
     socklen_t clientAddressLen;
-    vector<pthread_t>* threadings;
 };
-
 
 Server::Server(int port): port(port), serverSocket(0), serverThreadId(0) {
     cout << "Server running" << endl;
@@ -27,8 +26,7 @@ Server::Server(int port): port(port), serverSocket(0), serverThreadId(0) {
 
 void Server::start() {
     mainThreadsArgs *args = new mainThreadsArgs;
-    args->threadings = threads;
-// Create a socket point
+    // Create a socket point
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (serverSocket == -1) {
         throw "Error opening socket";
@@ -68,6 +66,7 @@ void *Server::acceptClients(void* args) {
                 sockaddr *) &arg.clientAddress, &arg.clientAddressLen);
         if (clientSocket == -1)
             throw "Error on accept";
+        serverClients::getInstance()->addSocket(clientSocket);
         cout << "Client (" << clientSocket << ") connected" << endl;
         pthread_t threadId;
         pthread_create(&threadId, NULL, &handleClient, (void *)clientSocket);
@@ -86,10 +85,9 @@ void *Server::handleClient(void *args) {
 
 void Server::stop() {
 	cout << "Server closing" << endl;
-	running = false;
-	// use GameManager.exit to close all the running games
-	GameManager::getInstance()->exit();
-	// use MenuManager.exit to close all the waiting games from the map
-	MenuManager::getInstance()->exit();
+	// terminate all threads
+	terminate();
+	// close all sockets
+  serverClients::getInstance()->exit();
 	close(serverSocket);
 }

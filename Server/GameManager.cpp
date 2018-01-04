@@ -25,7 +25,6 @@ GameManager * GameManager::getInstance() {
 }
 
 GameManager::GameManager() {
-	serverRun = true;
 	commandsMap["End"] = new EndCommand();
 	commandsMap["play"] = new PlayCommand();
 	commandsMap["NoMove"] = new NoMoveCommand();
