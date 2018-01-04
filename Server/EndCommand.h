@@ -11,6 +11,7 @@
 class EndCommand: public GameCommand {
 public:
 	virtual void execute(int socket, vector<string> args, int socket2 = -1) {
+		cout << "game has ended" << endl;
 		// create a output char[]
 		char output[INSIZE] = {0};
 		// copy the command arg to the output

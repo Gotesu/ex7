@@ -1,6 +1,7 @@
 //
 // Created by gotesu on 11/12/17.
 //
+#include <cstdlib>
 #include "Server.h"
 #include "MenuManager.h"
 #include "GameManager.h"
@@ -47,11 +48,19 @@ void Server::start() {
     args->serverSocket = serverSocket;
     //opening the mainloop client acceptence thread.
     pthread_create(&serverThreadId, NULL,acceptClients,(void*)args);
-    pthread_join(serverThreadId, NULL);
+    //this is our protocol for closing the server on "exit" command
+    char stop[10] = {0};
+    while (strcmp(stop,"exit")) {
+        cin >> stop;
+    }
+    cout << "server shut down" << endl;
+    pthread_cancel(serverThreadId);
+    Server::stop();
     delete args;
 }
 
 void *Server::acceptClients(void* args) {
+    //unpacking our argument struct
     mainThreadsArgs arg = *(mainThreadsArgs*) args;
     while (true) {
         // Accept a new client connection
@@ -62,9 +71,7 @@ void *Server::acceptClients(void* args) {
         cout << "Client (" << clientSocket << ") connected" << endl;
         pthread_t threadId;
         pthread_create(&threadId, NULL, &handleClient, (void *)clientSocket);
-        arg.threadings->push_back(threadId);
     }
-
 }
 void *Server::handleClient(void *args) {
     char input[INSIZE] = {0};
@@ -73,7 +80,7 @@ void *Server::handleClient(void *args) {
     int check = read(clientSocket, input, sizeof(input));
     if (check == -1 || check == 0)
         throw "Error on read";
-        MenuManager::getInstance()->executeCommand(string(input), clientSocket);
+    MenuManager::getInstance()->executeCommand(string(input), clientSocket);
     }
 }
 

@@ -8,7 +8,7 @@
 class GameManager {
 public:
 	static GameManager * getInstance();
-	void executeCommand(string commandStr, int socket, int socket2 = 0);
+	void executeCommand(string commandStr, int socket = 0, int socket2 = 0);
     /*******************
  * Function name: checkServer
  * The function return the serverRun parameter, that is false if the server got an exit command

@@ -10,13 +10,22 @@
 
 class RemoteGameRoom {
 public:
+    //c'tor
     RemoteGameRoom();
 private:
     RemoteConnection *rc;
     bool stopped;
+    /*
+     * function for game list request
+     */
     void getList();
+    /*
+     * function to run game
+     */
     void startGame();
-    void joinGame();
+    /*
+     * function that gets the server response if request is valid
+     */
     bool validityCheck();
 
 };

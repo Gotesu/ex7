@@ -2,7 +2,14 @@
 #define MENUMANAGER_H_
 
 #include <map>
+#include <vector>
 #include "MenuCommand.h"
+
+struct gameSet {
+	pthread_t thread;
+	int clientSocket1;
+	int clientSocket2;
+};
 
 class MenuManager {
 public:
@@ -43,6 +50,9 @@ public:
      *******************/
 	void exit();
 private:
+    //this vector will hold the gameSets which holds info about player sockets
+    //and their thread
+    vector<gameSet> games;
 	MenuManager();
 	MenuManager(const MenuManager&);
 	~MenuManager();
