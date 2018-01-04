@@ -20,7 +20,7 @@ public:
 		// copy the list string into the output char[]
 		strcpy(output,list.str().c_str());
 		// write to the socket
-		int n = write(socket, output, sizeof(output[INSIZE]));
+		int n = write(socket, output, sizeof(output));
 		if (n == -1)
 			cout << "Error writing to socket number " << socket << endl;
 	}

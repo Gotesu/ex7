@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <sstream>
-#include <string.h>
+#include <string>
+#include <cstring>
 #include "Player.h"
 #include "RemoteConnection.h"
 #include "Logic.h"

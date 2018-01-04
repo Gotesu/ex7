@@ -36,6 +36,10 @@ Move* RemotePlayer::download() {
 	}
 	if ((strcmp(move, "NoMove") == 0) || (strcmp(move, "End") == 0))
 		return NULL;
+	if (strcmp(move, "exit") == 0) {
+		cout << "game session was closed abruptly by server" << endl;
+		return NULL;
+	}
 	int row, col;
     string first,second;
     istringstream iss(move);

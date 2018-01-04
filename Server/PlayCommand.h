@@ -24,8 +24,8 @@ public:
 		}
 		// write to the socket
 		int check = write(socket, output, sizeof(output));
-		if (check == -1) {
-			cout << "Error writing to socket " << socket << endl;
+		if (check == -1 || check == 0) {
+			throw "Error writing to socket " + socket;
 		}
 	}
 };

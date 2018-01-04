@@ -1,7 +1,7 @@
 #include "JoinCommand.h"
 #include "MenuManager.h"
 #include "GameManager.h"
-
+#include "Message.h"
 void JoinCommand::execute(int socket2, string gameName) {
 	Message sendy;
 	// get the other client socket from map
@@ -32,8 +32,16 @@ void JoinCommand::playGame(int client1Socket, int client2Socket) {
 	// send player-number
 	int first = 1;
 	check = write(client1Socket, &first, 4);
+	if (check == 0 || check == -1) {
+        cout << "disconnection of client " << client1Socket << endl;
+        return;
+    }
 	first++;
 	check = write(client2Socket, &first, 4);
+	if (check == 0 || check == -1) {
+        cout << "disconnection of client " << client2Socket << endl;
+        return;
+    }
 	// create a output char[]
 	char input[INSIZE] = {0};
 	int readen = client1Socket, writen = client2Socket;
@@ -41,8 +49,17 @@ void JoinCommand::playGame(int client1Socket, int client2Socket) {
 	while (GameManager::getInstance()->checkServer()) {
 		// read readen-player command
 		check = read(readen, input, sizeof(input));
+        if (check == 0 || check == -1) {
+            cout << "failed to read from client" << readen << endl;
+            return;
+        }
 		// send the command to GameManager
-		GameManager::getInstance()->executeCommand(input, writen, readen);
+		try {
+			GameManager::getInstance()->executeCommand(input, writen, readen);
+		} catch (const char* e) {
+			cout << e;
+            return;
+		}
 		// swap between the players
 		int swap = readen;
 		readen = writen;
