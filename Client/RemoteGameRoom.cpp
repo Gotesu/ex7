@@ -33,7 +33,7 @@ RemoteGameRoom::RemoteGameRoom() {
         cout << "your options are:" << endl
              << "1. list_games" << endl << "2. start <game-name>" << endl
              << "3. join <game-name>" << endl;
-        cout << "please enter a command string" << endl
+        cout << "please enter a command string" << endl;
         getline(cin, input);
         istringstream iss(input);
         iss >> command;
