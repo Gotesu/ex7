@@ -41,13 +41,18 @@ private:
     vector<pthread_t>* threads;
     bool running;
 /**************************
- * handleClient
+ * acceptClients
  * @param args
- * this function is a simple thread that accpets a client connection and directing the client to
- * an execution manager.
+ * this function is a simple main thread that listens
+ * to client connections and opens a thread after accept
  */
     static void* acceptClients(void* args);
-
+/**************************
+ * handleClient
+ * @param args
+ * this is the function that asks the client for input
+ * and directs him according to the command he sent
+ */
     static void* handleClient(void* args);
 };
 #endif //SERVER_SERVER_H

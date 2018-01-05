@@ -10,18 +10,33 @@ void RemoteGame::playRound() {
 	if (player2->sign() == 'X') {
 			vis->printBoard();
 			// Player 2 play a turn
-			player2->doMove();
+        try {
+            player2->doMove();
+        } catch (const char* e) {
+            cout << e << endl;
+            return;
+        }
 	}
 	//  the loop continue when x or o had a turn
 	do {
 		vis->printBoard();
 		// Player 1 play a turn
-		player1->doMove();
+        try {
+            player1->doMove();
+        } catch (const char* e) {
+            cout << e << endl;
+            return;
+        }
 		// RemotePlayer (Player2) get an update
 		((RemotePlayer*)player2)->upload(player1->lastMove());
 		vis->printBoard();
 		// Player 2 play a turn
-		player2->doMove();
+        try {
+            player2->doMove();
+        } catch (const char* e) {
+            cout << e << endl;
+            return;
+        }
 	} while ((player1->lastMove() != NULL) || (player2->lastMove() != NULL));
 	// RemotePlayer (Player2) disconnect from the server
 	((RemotePlayer*)player2)->disconnect();

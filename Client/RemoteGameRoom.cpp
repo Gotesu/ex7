@@ -89,6 +89,7 @@ void RemoteGameRoom::startGame() {
     RemotePlayer* p2 = new RemotePlayer(*log, *board, (Side) -eSide, *rc);
     game = new RemoteGame(board, vis, p1, p2);
     game->playRound();
+    rc->shutDown();
 }
 
 

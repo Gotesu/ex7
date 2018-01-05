@@ -4,7 +4,6 @@
 #include <cstdlib>
 #include "Server.h"
 #include "MenuManager.h"
-#include "GameManager.h"
 #include "serverClients.h"
 
 using namespace std;
@@ -86,7 +85,6 @@ void *Server::handleClient(void *args) {
 void Server::stop() {
 	cout << "Server closing" << endl;
 	// terminate all threads
-	terminate();
 	// close all sockets
   serverClients::getInstance()->exit();
 	close(serverSocket);

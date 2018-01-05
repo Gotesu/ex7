@@ -2,6 +2,7 @@
 #include "MenuManager.h"
 #include "GameManager.h"
 #include "Message.h"
+#include "serverClients.h"
 
 void JoinCommand::execute(int socket2, string gameName) {
 	Message sendy;
@@ -16,11 +17,15 @@ void JoinCommand::execute(int socket2, string gameName) {
 	// send the client a massage that the command accepted
 	sendy.accept(socket2);
 	playGame(socket, socket2);
+    //removing the thread from the thread vector after play
+    serverClients::getInstance()->removeThread(pthread_self());
 }
 
 void JoinCommand::playGame(int client1Socket, int client2Socket) {
 	int check;
-	// send player-number
+	//adding thread to thread vector
+	serverClients::getInstance()->addThread(pthread_self());
+    // send player-number
 	int first = 1;
 	check = write(client1Socket, &first, 4);
 	if (check == 0 || check == -1) {

@@ -860,6 +860,33 @@ Server/main.cpp.s:
 	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/main.cpp.s
 .PHONY : Server/main.cpp.s
 
+Server/serverClients.o: Server/serverClients.cpp.o
+
+.PHONY : Server/serverClients.o
+
+# target to build an object file
+Server/serverClients.cpp.o:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/serverClients.cpp.o
+.PHONY : Server/serverClients.cpp.o
+
+Server/serverClients.i: Server/serverClients.cpp.i
+
+.PHONY : Server/serverClients.i
+
+# target to preprocess a source file
+Server/serverClients.cpp.i:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/serverClients.cpp.i
+.PHONY : Server/serverClients.cpp.i
+
+Server/serverClients.s: Server/serverClients.cpp.s
+
+.PHONY : Server/serverClients.s
+
+# target to generate assembly for a file
+Server/serverClients.cpp.s:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/serverClients.cpp.s
+.PHONY : Server/serverClients.cpp.s
+
 test/gtest_main.o: test/gtest_main.cpp.o
 
 .PHONY : test/gtest_main.o
@@ -1078,6 +1105,9 @@ help:
 	@echo "... Server/main.o"
 	@echo "... Server/main.i"
 	@echo "... Server/main.s"
+	@echo "... Server/serverClients.o"
+	@echo "... Server/serverClients.i"
+	@echo "... Server/serverClients.s"
 	@echo "... test/gtest_main.o"
 	@echo "... test/gtest_main.i"
 	@echo "... test/gtest_main.s"

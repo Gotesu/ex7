@@ -102,3 +102,7 @@ int RemoteConnection::stringToInt(string input) {
         return number;
 }
 
+void RemoteConnection::shutDown() {
+    close(clientSocket);
+}
+

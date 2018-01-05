@@ -46,6 +46,10 @@ public:
      * set the side by who connected first
      */
     void setSide();
+    /*****************
+     * shutDown closes the socket
+     **********/
+    void shutDown();
 private:
 
     int side;

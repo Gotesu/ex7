@@ -63,7 +63,9 @@ set (Server_FILES
         Server/PlayCommand.h
         Server/NoMoveCommand.h
         Server/ListCommand.h
-        Server/StartCommand.h)
+        Server/StartCommand.h
+        Server/serverClients.cpp
+        Server/serverClients.h)
 add_executable(Server ${Server_FILES} Server/main.cpp)
 
 add_executable(ex5_test ${Client_FILES} ${SeqServer_Files} ${TEST_FILES} test/gtest_main.cpp)

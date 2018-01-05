@@ -37,8 +37,9 @@ Move* RemotePlayer::download() {
 	if ((strcmp(move, "NoMove") == 0) || (strcmp(move, "End") == 0))
 		return NULL;
 	if (strcmp(move, "exit") == 0) {
+		//case server went down
 		cout << "game session was closed abruptly by server" << endl;
-		return NULL;
+		throw "Server down";
 	}
 	int row, col;
     string first,second;
@@ -59,9 +60,14 @@ void RemotePlayer::disconnect() {
 bool RemotePlayer::doMove() {
 	// free last move
 	delete last;
+    Move * choice;
 	cout << "Its " << sign() << " turn." << endl;
   cout << "Waiting for " << sign() << "'s move..." << endl;
-	Move *choice = download();
+    try {
+        choice = download();
+    } catch (const char* e) {
+        throw e;
+    }
 	// check if had a possible move
 	if (choice == NULL)
 	{

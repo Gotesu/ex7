@@ -9,33 +9,6 @@
 #include "RemoteGameRoom.h"
 
 /***********************************************
- * Remote
- * this function is used by GameCreator to handle the Remote game creation.
- */
-GameSession* Remote(Player *p1, RemotePlayer *p2, Board *board, Logic *log, Visual *vis) {
-    RemoteConnection rc = RemoteConnection();
-    rc.connectToServer();
-    // check Player1 side, and create the Players
-    rc.setSide();
-    int side = rc.getSide();
-    RemoteGame* game;
-    switch (side) {
-        case 1:
-            p1 = new Human(*log, *board, BLACK);
-            p2 = new RemotePlayer(*log, *board, WHITE, rc);
-            game = new RemoteGame(board, vis, p1, p2);
-            game->playRound();
-        case 2:
-            p1 = new Human(*log, *board, WHITE);
-            p2 = new RemotePlayer(*log, *board, BLACK, rc);
-            game = new RemoteGame(board, vis, p1, p2);
-            game->playRound();
-        default:
-            cout << "Error: Illegal input from server";
-            return 0;
-    }
-}
-/***********************************************
  * GameCreator
  * this function creates the game according to our user's choice
  * directly creating a local game in case of choice  1 or 2 and
@@ -80,14 +53,6 @@ void GameCreator(int c) {
             } catch (char const* e) {
                 throw e;
             }
-        case 4:
-            b = new Board();
-            log = new StdLogic();
-            vis = new StdVisual(b);
-            Player* p1;
-            RemotePlayer* p2;
-            Remote(p1,p2,b,log,vis);
-            break;
         default:
             cout << "Error, Illegal Choice" << endl;
     }
@@ -100,7 +65,6 @@ int main() {
     cout << "1. a human local player" << endl;
     cout << "2. an AI player" << endl;
     cout << "3. Connect to remote GameRoom" << endl;
-    cout << "4. remote game in the old format for testing" << endl;
     cin >> c;
     try {
     	GameCreator(c);
