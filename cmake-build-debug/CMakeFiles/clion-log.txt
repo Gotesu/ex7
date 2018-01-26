@@ -1,4 +1,4 @@
-/home/gotesu/Desktop/AP/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/gotesu/CLionProjects/ex5
+/home/gotesu/Desktop/AP/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/gotesu/CLionProjects/ex7
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/gotesu/CLionProjects/ex5/cmake-build-debug
+-- Build files have been written to: /home/gotesu/CLionProjects/ex7/cmake-build-debug

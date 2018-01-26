@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(ex5)
+project(ex7)
 
 set(CMAKE_CXX_STANDARD 98)
 set(CMAKE_CXX_FLAGS -pthread)
@@ -40,7 +40,7 @@ set(Client_FILES
 set(TEST_FILES
         test/gtest_main.cpp test/test_Board.cpp test/test_StdLogic.cpp test/test_Human.cpp test/test_Computer.cpp)
 
-add_executable(ex5 ${Client_FILES} Client/main.cpp Client/RemoteGameRoom.cpp Client/RemoteGameRoom.h)
+add_executable(ex7 ${Client_FILES} Client/main.cpp Client/RemoteGameRoom.cpp Client/RemoteGameRoom.h)
 
 set (SeqServer_FILES
         SeqServer/Server.cpp SeqServer/Server.h)
@@ -65,10 +65,10 @@ set (Server_FILES
         Server/ListCommand.h
         Server/StartCommand.h
         Server/serverClients.cpp
-        Server/serverClients.h)
+        Server/serverClients.h Server/Task.h Server/ThreadPool.cpp Server/ThreadPool.h)
 add_executable(Server ${Server_FILES} Server/main.cpp)
 
-add_executable(ex5_test ${Client_FILES} ${SeqServer_Files} ${TEST_FILES} test/gtest_main.cpp)
+add_executable(ex7_test ${Client_FILES} ${SeqServer_Files} ${TEST_FILES} test/gtest_main.cpp)
 
-target_link_libraries(ex5_test gtest gmock gtest_main)
-add_test(ex5_test ex5_test)
+target_link_libraries(ex7_test gtest gmock gtest_main)
+add_test(ex7_test ex7_test)

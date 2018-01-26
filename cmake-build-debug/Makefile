@@ -48,37 +48,13 @@ RM = /home/gotesu/Desktop/AP/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gotesu/CLionProjects/ex5
+CMAKE_SOURCE_DIR = /home/gotesu/CLionProjects/ex7
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gotesu/CLionProjects/ex5/cmake-build-debug
+CMAKE_BINARY_DIR = /home/gotesu/CLionProjects/ex7/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/gotesu/Desktop/AP/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/gotesu/Desktop/AP/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/gotesu/Desktop/AP/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/gotesu/Desktop/AP/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
 
 # Special rule for the target install
 install: preinstall
@@ -124,11 +100,35 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/gotesu/Desktop/AP/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/gotesu/Desktop/AP/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/gotesu/Desktop/AP/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/gotesu/Desktop/AP/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gotesu/CLionProjects/ex5/cmake-build-debug/CMakeFiles /home/gotesu/CLionProjects/ex5/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gotesu/CLionProjects/ex7/cmake-build-debug/CMakeFiles /home/gotesu/CLionProjects/ex7/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gotesu/CLionProjects/ex5/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gotesu/CLionProjects/ex7/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -157,17 +157,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ex5_test
+# Target rules for targets named ex7_test
 
 # Build rule for target.
-ex5_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ex5_test
-.PHONY : ex5_test
+ex7_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex7_test
+.PHONY : ex7_test
 
 # fast build rule for target.
-ex5_test/fast:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/build
-.PHONY : ex5_test/fast
+ex7_test/fast:
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/build
+.PHONY : ex7_test/fast
 
 #=============================================================================
 # Target rules for targets named Server
@@ -196,17 +196,17 @@ SeqServer/fast:
 .PHONY : SeqServer/fast
 
 #=============================================================================
-# Target rules for targets named ex5
+# Target rules for targets named ex7
 
 # Build rule for target.
-ex5: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ex5
-.PHONY : ex5
+ex7: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex7
+.PHONY : ex7
 
 # fast build rule for target.
-ex5/fast:
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/build
-.PHONY : ex5/fast
+ex7/fast:
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/build
+.PHONY : ex7/fast
 
 #=============================================================================
 # Target rules for targets named gmock_main
@@ -266,8 +266,8 @@ Client/Board.o: Client/Board.cpp.o
 
 # target to build an object file
 Client/Board.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Board.cpp.o
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Board.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Board.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Board.cpp.o
 .PHONY : Client/Board.cpp.o
 
 Client/Board.i: Client/Board.cpp.i
@@ -276,8 +276,8 @@ Client/Board.i: Client/Board.cpp.i
 
 # target to preprocess a source file
 Client/Board.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Board.cpp.i
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Board.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Board.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Board.cpp.i
 .PHONY : Client/Board.cpp.i
 
 Client/Board.s: Client/Board.cpp.s
@@ -286,8 +286,8 @@ Client/Board.s: Client/Board.cpp.s
 
 # target to generate assembly for a file
 Client/Board.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Board.cpp.s
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Board.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Board.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Board.cpp.s
 .PHONY : Client/Board.cpp.s
 
 Client/Computer.o: Client/Computer.cpp.o
@@ -296,8 +296,8 @@ Client/Computer.o: Client/Computer.cpp.o
 
 # target to build an object file
 Client/Computer.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Computer.cpp.o
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Computer.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Computer.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Computer.cpp.o
 .PHONY : Client/Computer.cpp.o
 
 Client/Computer.i: Client/Computer.cpp.i
@@ -306,8 +306,8 @@ Client/Computer.i: Client/Computer.cpp.i
 
 # target to preprocess a source file
 Client/Computer.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Computer.cpp.i
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Computer.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Computer.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Computer.cpp.i
 .PHONY : Client/Computer.cpp.i
 
 Client/Computer.s: Client/Computer.cpp.s
@@ -316,8 +316,8 @@ Client/Computer.s: Client/Computer.cpp.s
 
 # target to generate assembly for a file
 Client/Computer.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Computer.cpp.s
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Computer.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Computer.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Computer.cpp.s
 .PHONY : Client/Computer.cpp.s
 
 Client/Human.o: Client/Human.cpp.o
@@ -326,8 +326,8 @@ Client/Human.o: Client/Human.cpp.o
 
 # target to build an object file
 Client/Human.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Human.cpp.o
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Human.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Human.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Human.cpp.o
 .PHONY : Client/Human.cpp.o
 
 Client/Human.i: Client/Human.cpp.i
@@ -336,8 +336,8 @@ Client/Human.i: Client/Human.cpp.i
 
 # target to preprocess a source file
 Client/Human.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Human.cpp.i
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Human.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Human.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Human.cpp.i
 .PHONY : Client/Human.cpp.i
 
 Client/Human.s: Client/Human.cpp.s
@@ -346,8 +346,8 @@ Client/Human.s: Client/Human.cpp.s
 
 # target to generate assembly for a file
 Client/Human.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Human.cpp.s
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Human.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Human.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Human.cpp.s
 .PHONY : Client/Human.cpp.s
 
 Client/Move.o: Client/Move.cpp.o
@@ -356,8 +356,8 @@ Client/Move.o: Client/Move.cpp.o
 
 # target to build an object file
 Client/Move.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Move.cpp.o
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Move.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Move.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Move.cpp.o
 .PHONY : Client/Move.cpp.o
 
 Client/Move.i: Client/Move.cpp.i
@@ -366,8 +366,8 @@ Client/Move.i: Client/Move.cpp.i
 
 # target to preprocess a source file
 Client/Move.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Move.cpp.i
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Move.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Move.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Move.cpp.i
 .PHONY : Client/Move.cpp.i
 
 Client/Move.s: Client/Move.cpp.s
@@ -376,8 +376,8 @@ Client/Move.s: Client/Move.cpp.s
 
 # target to generate assembly for a file
 Client/Move.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Move.cpp.s
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Move.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Move.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Move.cpp.s
 .PHONY : Client/Move.cpp.s
 
 Client/Player.o: Client/Player.cpp.o
@@ -386,8 +386,8 @@ Client/Player.o: Client/Player.cpp.o
 
 # target to build an object file
 Client/Player.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Player.cpp.o
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Player.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Player.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Player.cpp.o
 .PHONY : Client/Player.cpp.o
 
 Client/Player.i: Client/Player.cpp.i
@@ -396,8 +396,8 @@ Client/Player.i: Client/Player.cpp.i
 
 # target to preprocess a source file
 Client/Player.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Player.cpp.i
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Player.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Player.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Player.cpp.i
 .PHONY : Client/Player.cpp.i
 
 Client/Player.s: Client/Player.cpp.s
@@ -406,8 +406,8 @@ Client/Player.s: Client/Player.cpp.s
 
 # target to generate assembly for a file
 Client/Player.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/Player.cpp.s
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/Player.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/Player.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/Player.cpp.s
 .PHONY : Client/Player.cpp.s
 
 Client/RemoteConnection.o: Client/RemoteConnection.cpp.o
@@ -416,8 +416,8 @@ Client/RemoteConnection.o: Client/RemoteConnection.cpp.o
 
 # target to build an object file
 Client/RemoteConnection.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/RemoteConnection.cpp.o
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteConnection.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/RemoteConnection.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/RemoteConnection.cpp.o
 .PHONY : Client/RemoteConnection.cpp.o
 
 Client/RemoteConnection.i: Client/RemoteConnection.cpp.i
@@ -426,8 +426,8 @@ Client/RemoteConnection.i: Client/RemoteConnection.cpp.i
 
 # target to preprocess a source file
 Client/RemoteConnection.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/RemoteConnection.cpp.i
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteConnection.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/RemoteConnection.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/RemoteConnection.cpp.i
 .PHONY : Client/RemoteConnection.cpp.i
 
 Client/RemoteConnection.s: Client/RemoteConnection.cpp.s
@@ -436,8 +436,8 @@ Client/RemoteConnection.s: Client/RemoteConnection.cpp.s
 
 # target to generate assembly for a file
 Client/RemoteConnection.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/RemoteConnection.cpp.s
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteConnection.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/RemoteConnection.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/RemoteConnection.cpp.s
 .PHONY : Client/RemoteConnection.cpp.s
 
 Client/RemoteGame.o: Client/RemoteGame.cpp.o
@@ -446,8 +446,8 @@ Client/RemoteGame.o: Client/RemoteGame.cpp.o
 
 # target to build an object file
 Client/RemoteGame.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/RemoteGame.cpp.o
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteGame.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/RemoteGame.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/RemoteGame.cpp.o
 .PHONY : Client/RemoteGame.cpp.o
 
 Client/RemoteGame.i: Client/RemoteGame.cpp.i
@@ -456,8 +456,8 @@ Client/RemoteGame.i: Client/RemoteGame.cpp.i
 
 # target to preprocess a source file
 Client/RemoteGame.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/RemoteGame.cpp.i
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteGame.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/RemoteGame.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/RemoteGame.cpp.i
 .PHONY : Client/RemoteGame.cpp.i
 
 Client/RemoteGame.s: Client/RemoteGame.cpp.s
@@ -466,8 +466,8 @@ Client/RemoteGame.s: Client/RemoteGame.cpp.s
 
 # target to generate assembly for a file
 Client/RemoteGame.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/RemoteGame.cpp.s
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteGame.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/RemoteGame.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/RemoteGame.cpp.s
 .PHONY : Client/RemoteGame.cpp.s
 
 Client/RemoteGameRoom.o: Client/RemoteGameRoom.cpp.o
@@ -476,7 +476,7 @@ Client/RemoteGameRoom.o: Client/RemoteGameRoom.cpp.o
 
 # target to build an object file
 Client/RemoteGameRoom.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteGameRoom.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/RemoteGameRoom.cpp.o
 .PHONY : Client/RemoteGameRoom.cpp.o
 
 Client/RemoteGameRoom.i: Client/RemoteGameRoom.cpp.i
@@ -485,7 +485,7 @@ Client/RemoteGameRoom.i: Client/RemoteGameRoom.cpp.i
 
 # target to preprocess a source file
 Client/RemoteGameRoom.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteGameRoom.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/RemoteGameRoom.cpp.i
 .PHONY : Client/RemoteGameRoom.cpp.i
 
 Client/RemoteGameRoom.s: Client/RemoteGameRoom.cpp.s
@@ -494,7 +494,7 @@ Client/RemoteGameRoom.s: Client/RemoteGameRoom.cpp.s
 
 # target to generate assembly for a file
 Client/RemoteGameRoom.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemoteGameRoom.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/RemoteGameRoom.cpp.s
 .PHONY : Client/RemoteGameRoom.cpp.s
 
 Client/RemotePlayer.o: Client/RemotePlayer.cpp.o
@@ -503,8 +503,8 @@ Client/RemotePlayer.o: Client/RemotePlayer.cpp.o
 
 # target to build an object file
 Client/RemotePlayer.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/RemotePlayer.cpp.o
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemotePlayer.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/RemotePlayer.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/RemotePlayer.cpp.o
 .PHONY : Client/RemotePlayer.cpp.o
 
 Client/RemotePlayer.i: Client/RemotePlayer.cpp.i
@@ -513,8 +513,8 @@ Client/RemotePlayer.i: Client/RemotePlayer.cpp.i
 
 # target to preprocess a source file
 Client/RemotePlayer.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/RemotePlayer.cpp.i
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemotePlayer.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/RemotePlayer.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/RemotePlayer.cpp.i
 .PHONY : Client/RemotePlayer.cpp.i
 
 Client/RemotePlayer.s: Client/RemotePlayer.cpp.s
@@ -523,8 +523,8 @@ Client/RemotePlayer.s: Client/RemotePlayer.cpp.s
 
 # target to generate assembly for a file
 Client/RemotePlayer.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/RemotePlayer.cpp.s
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/RemotePlayer.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/RemotePlayer.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/RemotePlayer.cpp.s
 .PHONY : Client/RemotePlayer.cpp.s
 
 Client/StdGame.o: Client/StdGame.cpp.o
@@ -533,8 +533,8 @@ Client/StdGame.o: Client/StdGame.cpp.o
 
 # target to build an object file
 Client/StdGame.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/StdGame.cpp.o
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/StdGame.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/StdGame.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/StdGame.cpp.o
 .PHONY : Client/StdGame.cpp.o
 
 Client/StdGame.i: Client/StdGame.cpp.i
@@ -543,8 +543,8 @@ Client/StdGame.i: Client/StdGame.cpp.i
 
 # target to preprocess a source file
 Client/StdGame.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/StdGame.cpp.i
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/StdGame.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/StdGame.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/StdGame.cpp.i
 .PHONY : Client/StdGame.cpp.i
 
 Client/StdGame.s: Client/StdGame.cpp.s
@@ -553,8 +553,8 @@ Client/StdGame.s: Client/StdGame.cpp.s
 
 # target to generate assembly for a file
 Client/StdGame.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/StdGame.cpp.s
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/StdGame.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/StdGame.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/StdGame.cpp.s
 .PHONY : Client/StdGame.cpp.s
 
 Client/StdLogic.o: Client/StdLogic.cpp.o
@@ -563,8 +563,8 @@ Client/StdLogic.o: Client/StdLogic.cpp.o
 
 # target to build an object file
 Client/StdLogic.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/StdLogic.cpp.o
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/StdLogic.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/StdLogic.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/StdLogic.cpp.o
 .PHONY : Client/StdLogic.cpp.o
 
 Client/StdLogic.i: Client/StdLogic.cpp.i
@@ -573,8 +573,8 @@ Client/StdLogic.i: Client/StdLogic.cpp.i
 
 # target to preprocess a source file
 Client/StdLogic.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/StdLogic.cpp.i
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/StdLogic.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/StdLogic.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/StdLogic.cpp.i
 .PHONY : Client/StdLogic.cpp.i
 
 Client/StdLogic.s: Client/StdLogic.cpp.s
@@ -583,8 +583,8 @@ Client/StdLogic.s: Client/StdLogic.cpp.s
 
 # target to generate assembly for a file
 Client/StdLogic.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/StdLogic.cpp.s
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/StdLogic.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/StdLogic.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/StdLogic.cpp.s
 .PHONY : Client/StdLogic.cpp.s
 
 Client/StdVisual.o: Client/StdVisual.cpp.o
@@ -593,8 +593,8 @@ Client/StdVisual.o: Client/StdVisual.cpp.o
 
 # target to build an object file
 Client/StdVisual.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/StdVisual.cpp.o
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/StdVisual.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/StdVisual.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/StdVisual.cpp.o
 .PHONY : Client/StdVisual.cpp.o
 
 Client/StdVisual.i: Client/StdVisual.cpp.i
@@ -603,8 +603,8 @@ Client/StdVisual.i: Client/StdVisual.cpp.i
 
 # target to preprocess a source file
 Client/StdVisual.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/StdVisual.cpp.i
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/StdVisual.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/StdVisual.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/StdVisual.cpp.i
 .PHONY : Client/StdVisual.cpp.i
 
 Client/StdVisual.s: Client/StdVisual.cpp.s
@@ -613,8 +613,8 @@ Client/StdVisual.s: Client/StdVisual.cpp.s
 
 # target to generate assembly for a file
 Client/StdVisual.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/Client/StdVisual.cpp.s
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/StdVisual.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/Client/StdVisual.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/StdVisual.cpp.s
 .PHONY : Client/StdVisual.cpp.s
 
 Client/main.o: Client/main.cpp.o
@@ -623,7 +623,7 @@ Client/main.o: Client/main.cpp.o
 
 # target to build an object file
 Client/main.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/main.cpp.o
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/main.cpp.o
 .PHONY : Client/main.cpp.o
 
 Client/main.i: Client/main.cpp.i
@@ -632,7 +632,7 @@ Client/main.i: Client/main.cpp.i
 
 # target to preprocess a source file
 Client/main.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/main.cpp.i
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/main.cpp.i
 .PHONY : Client/main.cpp.i
 
 Client/main.s: Client/main.cpp.s
@@ -641,7 +641,7 @@ Client/main.s: Client/main.cpp.s
 
 # target to generate assembly for a file
 Client/main.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5.dir/build.make CMakeFiles/ex5.dir/Client/main.cpp.s
+	$(MAKE) -f CMakeFiles/ex7.dir/build.make CMakeFiles/ex7.dir/Client/main.cpp.s
 .PHONY : Client/main.cpp.s
 
 SeqServer/Server.o: SeqServer/Server.cpp.o
@@ -833,6 +833,33 @@ Server/Server.cpp.s:
 	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/Server.cpp.s
 .PHONY : Server/Server.cpp.s
 
+Server/ThreadPool.o: Server/ThreadPool.cpp.o
+
+.PHONY : Server/ThreadPool.o
+
+# target to build an object file
+Server/ThreadPool.cpp.o:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/ThreadPool.cpp.o
+.PHONY : Server/ThreadPool.cpp.o
+
+Server/ThreadPool.i: Server/ThreadPool.cpp.i
+
+.PHONY : Server/ThreadPool.i
+
+# target to preprocess a source file
+Server/ThreadPool.cpp.i:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/ThreadPool.cpp.i
+.PHONY : Server/ThreadPool.cpp.i
+
+Server/ThreadPool.s: Server/ThreadPool.cpp.s
+
+.PHONY : Server/ThreadPool.s
+
+# target to generate assembly for a file
+Server/ThreadPool.cpp.s:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server/ThreadPool.cpp.s
+.PHONY : Server/ThreadPool.cpp.s
+
 Server/main.o: Server/main.cpp.o
 
 .PHONY : Server/main.o
@@ -893,7 +920,7 @@ test/gtest_main.o: test/gtest_main.cpp.o
 
 # target to build an object file
 test/gtest_main.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/gtest_main.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/gtest_main.cpp.o
 .PHONY : test/gtest_main.cpp.o
 
 test/gtest_main.i: test/gtest_main.cpp.i
@@ -902,7 +929,7 @@ test/gtest_main.i: test/gtest_main.cpp.i
 
 # target to preprocess a source file
 test/gtest_main.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/gtest_main.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/gtest_main.cpp.i
 .PHONY : test/gtest_main.cpp.i
 
 test/gtest_main.s: test/gtest_main.cpp.s
@@ -911,7 +938,7 @@ test/gtest_main.s: test/gtest_main.cpp.s
 
 # target to generate assembly for a file
 test/gtest_main.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/gtest_main.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/gtest_main.cpp.s
 .PHONY : test/gtest_main.cpp.s
 
 test/test_Board.o: test/test_Board.cpp.o
@@ -920,7 +947,7 @@ test/test_Board.o: test/test_Board.cpp.o
 
 # target to build an object file
 test/test_Board.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/test_Board.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/test_Board.cpp.o
 .PHONY : test/test_Board.cpp.o
 
 test/test_Board.i: test/test_Board.cpp.i
@@ -929,7 +956,7 @@ test/test_Board.i: test/test_Board.cpp.i
 
 # target to preprocess a source file
 test/test_Board.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/test_Board.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/test_Board.cpp.i
 .PHONY : test/test_Board.cpp.i
 
 test/test_Board.s: test/test_Board.cpp.s
@@ -938,7 +965,7 @@ test/test_Board.s: test/test_Board.cpp.s
 
 # target to generate assembly for a file
 test/test_Board.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/test_Board.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/test_Board.cpp.s
 .PHONY : test/test_Board.cpp.s
 
 test/test_Computer.o: test/test_Computer.cpp.o
@@ -947,7 +974,7 @@ test/test_Computer.o: test/test_Computer.cpp.o
 
 # target to build an object file
 test/test_Computer.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/test_Computer.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/test_Computer.cpp.o
 .PHONY : test/test_Computer.cpp.o
 
 test/test_Computer.i: test/test_Computer.cpp.i
@@ -956,7 +983,7 @@ test/test_Computer.i: test/test_Computer.cpp.i
 
 # target to preprocess a source file
 test/test_Computer.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/test_Computer.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/test_Computer.cpp.i
 .PHONY : test/test_Computer.cpp.i
 
 test/test_Computer.s: test/test_Computer.cpp.s
@@ -965,7 +992,7 @@ test/test_Computer.s: test/test_Computer.cpp.s
 
 # target to generate assembly for a file
 test/test_Computer.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/test_Computer.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/test_Computer.cpp.s
 .PHONY : test/test_Computer.cpp.s
 
 test/test_Human.o: test/test_Human.cpp.o
@@ -974,7 +1001,7 @@ test/test_Human.o: test/test_Human.cpp.o
 
 # target to build an object file
 test/test_Human.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/test_Human.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/test_Human.cpp.o
 .PHONY : test/test_Human.cpp.o
 
 test/test_Human.i: test/test_Human.cpp.i
@@ -983,7 +1010,7 @@ test/test_Human.i: test/test_Human.cpp.i
 
 # target to preprocess a source file
 test/test_Human.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/test_Human.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/test_Human.cpp.i
 .PHONY : test/test_Human.cpp.i
 
 test/test_Human.s: test/test_Human.cpp.s
@@ -992,7 +1019,7 @@ test/test_Human.s: test/test_Human.cpp.s
 
 # target to generate assembly for a file
 test/test_Human.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/test_Human.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/test_Human.cpp.s
 .PHONY : test/test_Human.cpp.s
 
 test/test_StdLogic.o: test/test_StdLogic.cpp.o
@@ -1001,7 +1028,7 @@ test/test_StdLogic.o: test/test_StdLogic.cpp.o
 
 # target to build an object file
 test/test_StdLogic.cpp.o:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/test_StdLogic.cpp.o
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/test_StdLogic.cpp.o
 .PHONY : test/test_StdLogic.cpp.o
 
 test/test_StdLogic.i: test/test_StdLogic.cpp.i
@@ -1010,7 +1037,7 @@ test/test_StdLogic.i: test/test_StdLogic.cpp.i
 
 # target to preprocess a source file
 test/test_StdLogic.cpp.i:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/test_StdLogic.cpp.i
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/test_StdLogic.cpp.i
 .PHONY : test/test_StdLogic.cpp.i
 
 test/test_StdLogic.s: test/test_StdLogic.cpp.s
@@ -1019,7 +1046,7 @@ test/test_StdLogic.s: test/test_StdLogic.cpp.s
 
 # target to generate assembly for a file
 test/test_StdLogic.cpp.s:
-	$(MAKE) -f CMakeFiles/ex5_test.dir/build.make CMakeFiles/ex5_test.dir/test/test_StdLogic.cpp.s
+	$(MAKE) -f CMakeFiles/ex7_test.dir/build.make CMakeFiles/ex7_test.dir/test/test_StdLogic.cpp.s
 .PHONY : test/test_StdLogic.cpp.s
 
 # Help Target
@@ -1028,16 +1055,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install/local"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... ex5_test"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... ex7_test"
 	@echo "... Server"
 	@echo "... SeqServer"
-	@echo "... ex5"
+	@echo "... ex7"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"
@@ -1102,6 +1129,9 @@ help:
 	@echo "... Server/Server.o"
 	@echo "... Server/Server.i"
 	@echo "... Server/Server.s"
+	@echo "... Server/ThreadPool.o"
+	@echo "... Server/ThreadPool.i"
+	@echo "... Server/ThreadPool.s"
 	@echo "... Server/main.o"
 	@echo "... Server/main.i"
 	@echo "... Server/main.s"
