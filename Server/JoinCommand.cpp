@@ -17,14 +17,10 @@ void JoinCommand::execute(int socket2, string gameName) {
 	// send the client a massage that the command accepted
 	sendy.accept(socket2);
 	playGame(socket, socket2);
-    //removing the thread from the thread vector after play
-    serverClients::getInstance()->removeThread(pthread_self());
 }
 
 void JoinCommand::playGame(int client1Socket, int client2Socket) {
 	int check;
-	//adding thread to thread vector
-	serverClients::getInstance()->addThread(pthread_self());
     // send player-number
 	int first = 1;
 	check = write(client1Socket, &first, 4);

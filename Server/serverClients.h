@@ -20,20 +20,8 @@ public:
      *******************/
 	void removeSocket(int socket);
     /*******************
- * Function name: addThread
- * @param socket - the thread id number
- * The function add the thread to the vector.
-     *******************/
-    void addThread(pthread_t thread);
-    /*******************
- * Function name: removeThread
- * @param thread - the thread id number
- * The function finds the thread in the vector and remove it.
-     *******************/
-    void removeThread(pthread_t thread);
-    /*******************
     * Function name: exit
-    * The function go-over the threads vector and the
+    * The function go-over  the
      * sockets vector , and closes them all.
      *******************/
 	void exit();
@@ -42,7 +30,6 @@ private:
 	serverClients(const serverClients&);
 	~serverClients();
 	vector<int> sockets;
-	vector<pthread_t>threads;
 	static serverClients* instance;
 	static pthread_mutex_t lock;
 	static pthread_mutex_t mapLock;

@@ -5,10 +5,14 @@
 #include "Server.h"
 #include "MenuManager.h"
 #include "serverClients.h"
+#include "Task.h"
+#include "ThreadPool.h"
 
 using namespace std;
 
 #define MAX_CONNECTED_CLIENTS 2
+#define THREADS_NUM 5
+#define TASKS_NUM 5
 #define INSIZE 255
 
 struct mainThreadsArgs{
@@ -67,8 +71,8 @@ void *Server::acceptClients(void* args) {
             throw "Error on accept";
         serverClients::getInstance()->addSocket(clientSocket);
         cout << "Client (" << clientSocket << ") connected" << endl;
-        pthread_t threadId;
-        pthread_create(&threadId, NULL, &handleClient, (void *)clientSocket);
+        Task *t = new Task(handleClient, (void *)clientSocket);
+        ThreadPool::getInstance()->addTask(t);
     }
 }
 void *Server::handleClient(void *args) {
@@ -85,6 +89,7 @@ void *Server::handleClient(void *args) {
 void Server::stop() {
 	cout << "Server closing" << endl;
 	// terminate all threads
+    ThreadPool::getInstance()->terminate();
 	// close all sockets
   serverClients::getInstance()->exit();
 	close(serverSocket);

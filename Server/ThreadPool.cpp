@@ -3,6 +3,11 @@
 //
 #include "ThreadPool.h"
 #include <unistd.h>
+#define THREADS_NUM 5
+
+ThreadPool* ThreadPool::instance = 0;
+pthread_mutex_t ThreadPool::lock;
+
 ThreadPool::ThreadPool(int threadsNum) :
         stopped(false) {
     threads = new pthread_t[threadsNum];
@@ -41,4 +46,15 @@ void ThreadPool::terminate() {
 }
 ThreadPool::~ThreadPool() {
     delete[] threads;
+}
+
+ThreadPool *ThreadPool::getInstance() {
+        if (instance == 0) {
+            pthread_mutex_lock(&lock);
+            if (instance == 0) {
+                instance = new ThreadPool(THREADS_NUM);
+            }
+            pthread_mutex_unlock(&lock);
+        }
+        return instance;
 }

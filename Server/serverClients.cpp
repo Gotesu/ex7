@@ -42,34 +42,11 @@ void serverClients::removeSocket(int socket) {
 	pthread_mutex_unlock(&mapLock);
 }
 
-void serverClients::addThread(pthread_t thread) {
-	pthread_mutex_lock(&mapLock);
-	// add the socket to the vector
-	threads.push_back(thread);
-	pthread_mutex_unlock(&mapLock);
-}
-
-void serverClients::removeThread(pthread_t thread) {
-	pthread_mutex_lock(&mapLock);
-	// go-over the vector
-	vector<pthread_t>::iterator it;
-	for (it = threads.begin(); it != threads.end(); it++) {
-		// check if the current socket is the given one
-		if (thread == *it) {
-			// close the socket
-			pthread_cancel(*it);
-			cout << "thread (" << *it << ") closed" << endl;
-			// erase the socket from the vector
-			threads.erase(it);
-		}
-	}
-	pthread_mutex_unlock(&mapLock);
-}
 
 void serverClients::exit() {
 	Message sendy;
 	// go-over the vector of sockets
-    pthread_mutex_lock(&mapLock);
+	pthread_mutex_lock(&mapLock);
 	vector<int>::iterator it;
 	for (it = sockets.begin(); it != sockets.end(); it++) {
 		// send an exit command
@@ -78,17 +55,7 @@ void serverClients::exit() {
 		close(*it);
 		cout << "Client (" << *it << ") disconnected" << endl;
 	}
-    pthread_mutex_unlock(&mapLock);
-
-    //go over vector of threads;
-    pthread_mutex_lock(&mapLock);
-    vector<pthread_t>::iterator it2;
-    for (it2 = threads.begin(); it2 != threads.end(); it2++) {
-        // close the thread
-        pthread_cancel(*it2);
-        cout << "thread (" << *it2 << ") closed" << endl;
-    }
-    pthread_mutex_unlock(&mapLock);
+	pthread_mutex_unlock(&mapLock);
 }
 
 serverClients::~serverClients() {
