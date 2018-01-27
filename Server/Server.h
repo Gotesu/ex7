@@ -39,7 +39,6 @@ private:
     int port;
     int serverSocket; // the socket's file descriptor
     pthread_t serverThreadId;
-    vector<pthread_t>* threads;
     bool running;
 /**************************
  * acceptClients

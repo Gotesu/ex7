@@ -62,6 +62,7 @@ bool MenuManager::addGame(int socket, string name) {
 	if (it == gamesMap.end()) {
 		// add the game to the map
 		gamesMap.insert(it, make_pair(name, socket));
+		sockets.insert(socket);
 		check = true;
 	}
 	pthread_mutex_unlock(&mapLock);
@@ -78,6 +79,7 @@ int MenuManager::removeGame(string name) {
 		socket = it->second;
 		// remove the game from the map
 		gamesMap.erase(it);
+        sockets.erase(socket);
 	}
 	pthread_mutex_unlock(&mapLock);
 	// return the socket number
@@ -95,7 +97,7 @@ void MenuManager::executeCommand(string commandStr, int socket) {
 	MenuCommand *commandObj = commandsMap[command];
 	// check that the command exist
 	if (commandObj != NULL) {
-		commandObj->execute(socket, gameName);
+			commandObj->execute(socket, gameName);
 	} else {
 		// send error message
 		Message sendy;
@@ -108,4 +110,10 @@ MenuManager::~MenuManager() {
 	for (it = commandsMap.begin(); it != commandsMap.end(); it++) {
 		delete it->second;
 	}
+}
+
+bool MenuManager::isWaiting(int socket) {
+    if (sockets.find(socket) == sockets.end())
+        return false;
+    return true;
 }

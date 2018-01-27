@@ -12,7 +12,6 @@ using namespace std;
 
 #define MAX_CONNECTED_CLIENTS 2
 #define THREADS_NUM 5
-#define TASKS_NUM 5
 #define INSIZE 255
 
 struct mainThreadsArgs{
@@ -23,7 +22,6 @@ struct mainThreadsArgs{
 
 Server::Server(int port): port(port), serverSocket(0), serverThreadId(0) {
     cout << "Server running" << endl;
-    threads = new vector<pthread_t>();
     running = true;
 }
 
@@ -79,11 +77,17 @@ void *Server::handleClient(void *args) {
     char input[INSIZE] = {0};
     long clientSocket = (long) args;
     while(true) {
-    int check = read(clientSocket, input, sizeof(input));
-    if (check == -1 || check == 0)
-        throw "Error on read";
-    MenuManager::getInstance()->executeCommand(string(input), clientSocket);
+        int check = read(clientSocket, input, sizeof(input));
+        if (check == -1 || check == 0) {
+            cout << "Error on read " << clientSocket << " disconnected" << endl;
+            serverClients::getInstance()->removeSocket(clientSocket);
+            break;
+        }
+        MenuManager::getInstance()->executeCommand(string(input), clientSocket);
+        if (MenuManager::getInstance()->isWaiting(clientSocket))
+            break;
     }
+    return NULL;
 }
 
 void Server::stop() {

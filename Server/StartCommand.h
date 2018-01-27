@@ -1,6 +1,7 @@
 #ifndef STARTCOMMAND_H_
 #define STARTCOMMAND_H_
 
+#include <cstdlib>
 #include "MenuCommand.h"
 
 class StartCommand: public MenuCommand {
@@ -22,7 +23,6 @@ public:
 			// send the client a massage that the command accepted
 			sendy.accept(socket);
 		}
-		pthread_exit (NULL);
 	}
 };
 

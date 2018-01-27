@@ -17,9 +17,11 @@ void JoinCommand::execute(int socket2, string gameName) {
 	// send the client a massage that the command accepted
 	sendy.accept(socket2);
 	playGame(socket, socket2);
+    serverClients::getInstance()->removeSocket(socket);
 }
 
 void JoinCommand::playGame(int client1Socket, int client2Socket) {
+    Message sendy;
 	int check;
     // send player-number
 	int first = 1;
@@ -42,7 +44,8 @@ void JoinCommand::playGame(int client1Socket, int client2Socket) {
 		// read readen-player command
 		check = read(readen, input, sizeof(input));
         if (check == 0 || check == -1) {
-            cout << "failed to read from client" << readen << endl;
+            cout << "failed to read from client " << readen << endl;
+            sendy.exit(writen);
             return;
         }
 		// send the command to GameManager

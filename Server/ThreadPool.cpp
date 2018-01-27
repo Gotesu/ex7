@@ -3,7 +3,7 @@
 //
 #include "ThreadPool.h"
 #include <unistd.h>
-#define THREADS_NUM 5
+#define THREADS_NUM 2
 
 ThreadPool* ThreadPool::instance = 0;
 pthread_mutex_t ThreadPool::lock;

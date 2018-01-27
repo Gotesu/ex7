@@ -29,7 +29,7 @@ void serverClients::removeSocket(int socket) {
 	pthread_mutex_lock(&mapLock);
 	// go-over the vector
 	vector<int>::iterator it;
-	for (it = sockets.begin(); it != sockets.end(); it++) {
+	for (it = sockets.begin(); it < sockets.end(); it++) {
 		// check if the current socket is the given one
 		if (socket == *it) {
 			// close the socket

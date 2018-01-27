@@ -3,6 +3,7 @@
 
 #include <map>
 #include <vector>
+#include <set>
 #include "MenuCommand.h"
 
 struct gameSet {
@@ -37,10 +38,12 @@ public:
  * if succeeds return the other player socket, else return -1.
      *******************/
 	int removeGame(string name);
+	bool isWaiting(int socket);
 private:
     //this vector will hold the gameSets which holds info about player sockets
     //and their thread
     vector<gameSet> games;
+    set<int> sockets;
 	MenuManager();
 	MenuManager(const MenuManager&);
 	~MenuManager();

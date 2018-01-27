@@ -30,6 +30,7 @@ private:
 	serverClients(const serverClients&);
 	~serverClients();
 	vector<int> sockets;
+	vector<pthread_t>threads;
 	static serverClients* instance;
 	static pthread_mutex_t lock;
 	static pthread_mutex_t mapLock;

@@ -73,7 +73,7 @@ void RemoteGameRoom::getList() {
 }
 
 void RemoteGameRoom::startGame() {
-    Board* board = new Board();
+    Board* board = new Board(4,4);
     Logic* log = new StdLogic();
     Visual *vis = new StdVisual(board);
     rc->setSide();
