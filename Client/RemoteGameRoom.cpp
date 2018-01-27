@@ -9,7 +9,6 @@
 #include "Human.h"
 #include "RemotePlayer.h"
 #include "RemoteGame.h"
-#include <sstream>
 #define INSIZE 255
 using namespace std;
 
@@ -74,7 +73,7 @@ void RemoteGameRoom::getList() {
 }
 
 void RemoteGameRoom::startGame() {
-    Board* board = new Board(4,4);
+    Board* board = new Board();
     Logic* log = new StdLogic();
     Visual *vis = new StdVisual(board);
     rc->setSide();
