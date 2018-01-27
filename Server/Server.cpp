@@ -76,14 +76,18 @@ void *Server::acceptClients(void* args) {
 void *Server::handleClient(void *args) {
     char input[INSIZE] = {0};
     long clientSocket = (long) args;
+    //loop is important to continue interaction with game_list requestors.
     while(true) {
         int check = read(clientSocket, input, sizeof(input));
         if (check == -1 || check == 0) {
             cout << "Error on read " << clientSocket << " disconnected" << endl;
+            //removing the disfunct socket from the socket list and closing it.
             serverClients::getInstance()->removeSocket(clientSocket);
             break;
         }
         MenuManager::getInstance()->executeCommand(string(input), clientSocket);
+        //clients starting games need to clear our thread so we need
+        //to check if this socket is now waiting to break the loop.
         if (MenuManager::getInstance()->isWaiting(clientSocket))
             break;
     }

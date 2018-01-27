@@ -39,6 +39,7 @@ RemoteGameRoom::RemoteGameRoom() {
         iss >> command;
         //sending the reqeust to server.
         rc->sendInfo(const_cast<char *>(input.c_str()));
+        cout << "waiting patiently for server to attend your request" << endl;
         //making a validity check that our server confirms the request.
         if (!validityCheck()) {
             continue;

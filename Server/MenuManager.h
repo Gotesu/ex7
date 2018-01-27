@@ -38,11 +38,16 @@ public:
  * if succeeds return the other player socket, else return -1.
      *******************/
 	int removeGame(string name);
+    /*************************8
+     * isWaiting
+     * @param socket
+     * @return if socket is a game starter waiting for another player to join
+     *******************/
 	bool isWaiting(int socket);
 private:
     //this vector will hold the gameSets which holds info about player sockets
-    //and their thread
     vector<gameSet> games;
+    //this set is a new addition to handle game starters without closing their threads
     set<int> sockets;
 	MenuManager();
 	MenuManager(const MenuManager&);
