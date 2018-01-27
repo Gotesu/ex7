@@ -12,12 +12,20 @@ using namespace std;
 
 class ThreadPool {
 public:
+    /*
+     * getInstance
+     * using singelton pattern.
+     */
     static ThreadPool * getInstance();
     void addTask(Task *task);
     void terminate();
     virtual ~ThreadPool();
 
 private:
+    /*
+     * threadpool uses a fixed number of threads
+     * with the Thread pool pattern.
+     */
     ThreadPool(int threadsNum);
     queue<Task *> tasksQueue;
     pthread_t* threads;

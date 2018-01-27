@@ -5,7 +5,9 @@
 #ifndef EX7_TASK_H
 #define EX7_TASK_H
 
-
+/*
+ * task interface for Thread pool pattern
+ */
 class Task {
 public:
     Task(void * (*func)(void *arg), void* arg) :

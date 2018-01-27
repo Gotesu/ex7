@@ -3,8 +3,8 @@
 //
 #include "ThreadPool.h"
 #include <unistd.h>
-#define THREADS_NUM 2
-
+#define THREADS_NUM 5
+//singelton locking and instance mechanism
 ThreadPool* ThreadPool::instance = 0;
 pthread_mutex_t ThreadPool::lock;
 
