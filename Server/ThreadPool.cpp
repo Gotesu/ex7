@@ -33,6 +33,7 @@ void ThreadPool::executeTasks() {
             tasksQueue.pop();
             pthread_mutex_unlock(&lock);
             task->execute();
+            delete task;
         }
         else {
             pthread_mutex_unlock(&lock);
@@ -46,6 +47,13 @@ void ThreadPool::terminate() {
 }
 ThreadPool::~ThreadPool() {
     delete[] threads;
+    //we need to delete all tasks on queue.
+    while(!tasksQueue.empty()) {
+        Task* task = tasksQueue.front();
+        tasksQueue.pop();
+        delete task;
+    }
+    //note: threads would be automaticly released when main thread dies.
 }
 
 ThreadPool *ThreadPool::getInstance() {

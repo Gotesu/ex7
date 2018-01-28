@@ -27,8 +27,6 @@ public:
 		serverClients::getInstance()->removeSocket(socket);
 		if (socket2 != -1)
 			serverClients::getInstance()->removeSocket(socket2);
-		// end current pthread
-		pthread_exit(NULL);
 	}
 };
 
