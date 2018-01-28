@@ -76,12 +76,13 @@ void *Server::acceptClients(void* args) {
 void *Server::handleClient(void *args) {
     char input[INSIZE] = {0};
     long clientSocket = (long) args;
-    //loop is important to continue interaction with game_list requestors.
+    //loop is important to continue interaction with requestors
     while(true) {
         int check = read(clientSocket, input, sizeof(input));
         if (check == -1 || check == 0) {
-            cout << "Error on read " << clientSocket << " disconnected" << endl;
+            cout <<  clientSocket << " disconnected" << endl;
             //removing the disfunct socket from the socket list and closing it.
+            //this includes ended joined game players.
             serverClients::getInstance()->removeSocket(clientSocket);
             break;
         }

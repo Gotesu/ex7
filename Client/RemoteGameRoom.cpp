@@ -53,6 +53,7 @@ RemoteGameRoom::RemoteGameRoom() {
         }
         //case start was chosen
         else if (strcmp(command.c_str(), start) == 0) {
+            cout << "waiting for a friend to join" << endl;
             startGame();
             stopped = true;
         }
