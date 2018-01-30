@@ -30,7 +30,7 @@ GameManager::GameManager() {
 	commandsMap["NoMove"] = new NoMoveCommand();
 }
 
-void GameManager::executeCommand(string commandStr, int socket, int socket2) {
+bool GameManager::executeCommand(string commandStr, int socket, int socket2) {
 	istringstream iss(commandStr);
 	string command, gameName;
 	// get the command string
@@ -48,7 +48,7 @@ void GameManager::executeCommand(string commandStr, int socket, int socket2) {
 		args.push_back(command);
 	// get the command from the map
 	GameCommand *commandObj = commandsMap[command];
-	commandObj->execute(socket, args, socket2);
+	return commandObj->execute(socket, args, socket2);
 }
 
 GameManager::~GameManager() {

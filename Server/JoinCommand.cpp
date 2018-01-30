@@ -39,8 +39,9 @@ void JoinCommand::playGame(int client1Socket, int client2Socket) {
 	// create a output char[]
 	char input[INSIZE] = {0};
 	int readen = client1Socket, writen = client2Socket;
+	bool running = true;
 	// a loop to handle the game, continue until checkServer() = false
-	while (true) {
+	while (running) {
 		// read readen-player command
 		check = read(readen, input, sizeof(input));
         if (check == 0 || check == -1) {
@@ -50,7 +51,7 @@ void JoinCommand::playGame(int client1Socket, int client2Socket) {
         }
 		// send the command to GameManager
 		try {
-			GameManager::getInstance()->executeCommand(input, writen, readen);
+			running = GameManager::getInstance()->executeCommand(input, writen, readen);
 		} catch (const char* e) {
 			cout << e;
             return;

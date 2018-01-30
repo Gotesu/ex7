@@ -8,7 +8,7 @@
 class GameManager {
 public:
 	static GameManager * getInstance();
-	void executeCommand(string commandStr, int socket = 0, int socket2 = 0);
+	bool executeCommand(string commandStr, int socket = 0, int socket2 = 0);
 private:
 	GameManager();
 	GameManager(const GameManager&);

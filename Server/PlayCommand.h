@@ -10,7 +10,7 @@
 
 class PlayCommand: public GameCommand {
 public:
-	virtual void execute(int socket, vector<string> args, int socket2 = -1) {
+	virtual bool execute(int socket, vector<string> args, int socket2 = -1) {
 		// create a output char[]
 		char output[INSIZE] = {0};
 		// copy args to the output
@@ -27,6 +27,7 @@ public:
 		if (check == -1 || check == 0) {
 			throw "Error writing to socket " + socket;
 		}
+		return true;
 	}
 };
 

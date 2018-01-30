@@ -10,7 +10,7 @@ using namespace std;
 
 class GameCommand {
 public:
-	virtual void execute(int socket, vector<string> args, int socket2 = -1) = 0;
+	virtual bool execute(int socket, vector<string> args, int socket2 = -1) = 0;
 	virtual ~GameCommand() {}
 };
 
